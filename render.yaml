@@ -14,7 +14,7 @@ services:
     name: shop-lake-norman-lkn
     runtime: static
     branch: main
-    buildCommand: corepack enable && pnpm install && pnpm build:static
+    buildCommand: pnpm install && pnpm build:static
     staticPublishPath: dist/public
     envVars:
       - key: NODE_VERSION

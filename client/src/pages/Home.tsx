@@ -60,18 +60,22 @@ export default function Home() {
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   return <main>
-    <section className="border-b border-[#cdd7e4] bg-white">
-      <div className="mx-auto max-w-[1380px] px-5 py-14 lg:px-10 lg:py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+    <section className="border-b border-[#cdd7e4] bg-[#f8fafc]">
+      <div className="mx-auto max-w-[1380px] px-5 py-16 lg:px-10 lg:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="max-w-xl">
-            <p className="eyebrow mb-4 text-[#0b3d91]">Lake Norman Small Business Network</p>
-            <h1 className="display text-5xl font-bold leading-[1.02] tracking-[-.04em] text-[#0b3d91] sm:text-6xl lg:text-[4.25rem]">
-              Find local.<br />
-              <span className="font-semibold text-[#4a5c70]">Choose close.</span>
+            <p className="eyebrow mb-4 text-[#0b3d91]">Shop Lake Norman · LKNSBN member directory</p>
+            <h1 className="display text-4xl font-bold leading-[1.08] tracking-[-.04em] text-[#0b3d91] sm:text-5xl lg:text-[3.35rem]">
+              The people behind the places you love.
             </h1>
             <p className="mt-6 max-w-lg text-base leading-7 text-[#4a5c70]">
-              A free member directory for the Lake Norman area. Browse business cards, filter by category, and visit a member&apos;s site directly.
+              A free index of Lake Norman Small Business Network members. Browse business cards, filter by category or name, and visit a member&apos;s website directly — no middleman.
             </p>
+            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#4a5c70]">
+              <li><span className="font-semibold text-[#0b3d91]">{allBusinesses.length}</span> members listed</li>
+              <li>Connecting since <span className="font-semibold text-[#0b3d91]">2014</span></li>
+              <li>Free for members &amp; neighbors</li>
+            </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#directory" data-slot="button" className={cn(buttonVariants({ size: 'lg' }))}>
                 Browse the directory <ArrowDown size={16} />
@@ -82,35 +86,23 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border border-[#cdd7e4] bg-[#f3f6fa] p-6 sm:p-8">
-            <img
-              src="/branding-assets/shop-lake-norman-logo-dark.png"
-              alt=""
-              aria-hidden="true"
-              className="mb-6 h-12 w-auto object-contain sm:h-14"
-            />
-            <dl className="grid grid-cols-2 gap-x-6 gap-y-5">
-              <div>
-                <dt className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Members listed</dt>
-                <dd className="display mt-1 text-4xl text-[#0b3d91]">{allBusinesses.length}</dd>
-              </div>
-              <div>
-                <dt className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Established</dt>
-                <dd className="display mt-1 text-4xl text-[#0b3d91]">2014</dd>
-              </div>
-              <div className="col-span-2 border-t border-[#cdd7e4] pt-5">
-                <dt className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Serving</dt>
-                <dd className="mt-2 text-sm leading-6 text-[#4a5c70]">
-                  Cornelius, Davidson, Mooresville, Huntersville, and the communities around Lake Norman.
-                </dd>
-              </div>
-            </dl>
+          <div>
+            <figure className="overflow-hidden rounded-lg border border-[#cdd7e4] bg-white shadow-sm">
+              <img
+                src="/branding-assets/lkn-intro-story.jpg"
+                alt="Local professionals and small businesses connected around Lake Norman"
+                className="aspect-[5/4] w-full object-cover"
+              />
+              <figcaption className="border-t border-[#cdd7e4] bg-white px-4 py-3 text-sm leading-6 text-[#4a5c70]">
+                Cornelius, Davidson, Mooresville, Huntersville &amp; communities around the lake.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="directory" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Meet the local index.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">A visual guide to the people, makers, and professionals doing good work around Lake Norman.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">members listed</div></div></div>
+    <section id="directory" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Browse the member directory.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">Each card belongs to an LKNSBN member. Filter by category or first letter, then click through to visit their site.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">members listed</div></div></div>
 
       <div className="rounded-lg border border-[#cdd7e4] bg-[#f3f6fa] p-3 sm:p-4">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#cdd7e4] pb-3">

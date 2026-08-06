@@ -1,4 +1,4 @@
-/* Carolina Editorial: warm paper, deep ink, lake blue, thin rules, restrained motion. */
+/* LKNSBN brand: royal blue, white, cool lake gray, Inter only. */
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -26,30 +26,34 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: 'DM Sans', sans-serif;
-  --font-serif: 'Fraunces', serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Inter', sans-serif;
+  --font-mono: 'Inter', sans-serif;
 }
 
 :root {
   --radius: 0.45rem;
-  --background: oklch(0.975 0.012 84);
-  --foreground: oklch(0.22 0.025 248);
-  --card: oklch(0.99 0.008 83);
-  --card-foreground: oklch(0.22 0.025 248);
-  --popover: oklch(0.99 0.008 83);
-  --popover-foreground: oklch(0.22 0.025 248);
-  --primary: oklch(0.48 0.08 237);
-  --primary-foreground: oklch(0.985 0.01 84);
-  --secondary: oklch(0.93 0.03 87);
-  --secondary-foreground: oklch(0.25 0.03 248);
-  --muted: oklch(0.94 0.015 84);
-  --muted-foreground: oklch(0.48 0.025 248);
-  --accent: oklch(0.74 0.08 47);
-  --accent-foreground: oklch(0.23 0.03 248);
-  --border: oklch(0.82 0.025 80);
-  --input: oklch(0.82 0.025 80);
-  --ring: oklch(0.48 0.08 237);
+  --background: #ffffff;
+  --foreground: #0b3d91;
+  --card: #ffffff;
+  --card-foreground: #0b3d91;
+  --popover: #ffffff;
+  --popover-foreground: #0b3d91;
+  --primary: #0b3d91;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef5;
+  --secondary-foreground: #0b3d91;
+  --muted: #f3f6fa;
+  --muted-foreground: #4a5c70;
+  --accent: #e8eef5;
+  --accent-foreground: #0b3d91;
+  --border: #cdd7e4;
+  --input: #cdd7e4;
+  --ring: #0b3d91;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
 }
 
 * { box-sizing: border-box; }
@@ -57,24 +61,62 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-width: 320px;
-  background: #f7f3eb;
-  color: #1f3040;
-  font-family: 'DM Sans', sans-serif;
+  background: #ffffff;
+  color: #0b3d91;
+  font-family: 'Inter', sans-serif;
   text-rendering: optimizeLegibility;
 }
-a { color: inherit; text-decoration: none; }
+a:not([data-slot="button"]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+[data-slot="button"] {
+  text-decoration: none;
+}
+
+[data-slot="button"].bg-primary {
+  color: #ffffff;
+}
+
+[data-slot="button"].bg-primary:hover {
+  color: #ffffff;
+  background-color: #082e6e;
+}
+
+[data-slot="button"].bg-white {
+  color: #0b3d91;
+}
+
+[data-slot="button"].bg-white:hover {
+  color: #0b3d91;
+}
+
+[data-slot="button"].bg-destructive {
+  color: #ffffff;
+}
 button, input, textarea { font: inherit; }
-::selection { background: #2d6f8f; color: #f7f3eb; }
+::selection { background: #0b3d91; color: #ffffff; }
 
 .paper-noise {
-  background-image: radial-gradient(rgba(31,48,64,.06) .6px, transparent .6px);
+  background-image: radial-gradient(rgba(11,61,145,.06) .6px, transparent .6px);
   background-size: 7px 7px;
 }
-.eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
-.display { font-family: 'Fraunces', serif; letter-spacing: -.055em; }
-.rule { border-top: 1px solid #cfc5b4; }
-.rule-bottom { border-bottom: 1px solid #cfc5b4; }
-.focus-ring:focus-visible { outline: 3px solid rgba(45,111,143,.35); outline-offset: 3px; }
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.display {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+.rule { border-top: 1px solid #cdd7e4; }
+.rule-bottom { border-bottom: 1px solid #cdd7e4; }
+.focus-ring:focus-visible { outline: 3px solid rgba(11,61,145,.35); outline-offset: 3px; }
 
 @media (prefers-reduced-motion: no-preference) {
   .reveal { animation: reveal .6s cubic-bezier(.23,1,.32,1) both; }

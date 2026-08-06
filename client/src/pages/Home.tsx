@@ -20,7 +20,7 @@ function Card({ business, index }: { business: Business; index: number }) {
 }
 
 function categoryButtonClass(active: boolean) {
-  return `px-3 py-2 text-left text-[10px] font-semibold uppercase tracking-[.12em] transition ${active ? 'bg-[#0b3d91] text-white' : 'border border-[#cdd7e4] bg-white text-[#4a5c70] hover:border-[#0b3d91] hover:text-[#0b3d91]'}`;
+  return `px-2.5 py-1.5 text-left text-[9px] font-semibold uppercase leading-snug tracking-[.08em] transition ${active ? 'bg-[#0b3d91] text-white' : 'border border-[#cdd7e4] bg-white/80 text-[#0b3d91] hover:border-[#0b3d91] hover:bg-white'}`;
 }
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
     <section id="directory" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><div className="eyebrow mb-4 text-[#0b3d91]">01 / The e-rolodex</div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Meet the local index.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">A visual guide to the people, makers, and professionals doing good work around Lake Norman.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">members listed</div></div></div>
 
       <div className="border border-[#cdd7e4] bg-[#e8eef5] p-4 sm:p-5">
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
           <button onClick={() => { setCategory('All categories'); setVisibleCount(24); }} className={categoryButtonClass(category === 'All categories')}>All categories</button>
           {allCategories.map(item => <button key={item} onClick={() => { setCategory(item); setVisibleCount(24); }} className={categoryButtonClass(category === item)}>{item}</button>)}
         </div>

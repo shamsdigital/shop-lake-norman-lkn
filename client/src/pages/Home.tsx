@@ -57,7 +57,55 @@ export default function Home() {
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   return <main>
-    <section className="relative overflow-hidden border-b border-[#cdd7e4] bg-[#e8eef5] paper-noise"><div className="mx-auto grid max-w-[1380px] items-center gap-10 px-5 py-12 lg:grid-cols-[.95fr_1.05fr] lg:px-10 lg:py-20"><div className="reveal max-w-xl"><div className="eyebrow mb-6 text-[#0b3d91]">The Lake Norman local index</div><h1 className="display text-6xl font-semibold leading-[.88] tracking-[-.07em] text-[#0b3d91] sm:text-8xl">Find local.<br/><em className="font-medium italic text-[#0b3d91]">Choose close.</em></h1><p className="mt-7 max-w-md text-base leading-7 text-[#4a5c70]">Click a business card to go directly to an LKNSBN member’s website. Browse the people, makers, and services shaping life around the lake.</p><div className="mt-8 flex flex-wrap gap-3"><a href="#directory" className="focus-ring inline-flex items-center gap-2 bg-[#0b3d91] px-5 py-3 text-xs font-semibold uppercase tracking-[.13em] text-white transition hover:bg-[#082e6e]">Browse the directory <ArrowDown size={16}/></a><a href="/about" className="focus-ring inline-flex items-center border border-[#9aabc0] px-5 py-3 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] transition hover:border-[#0b3d91] hover:text-[#0b3d91]">About the network</a></div></div><div className="reveal reveal-delay-1 relative"><div className="absolute -right-10 -top-10 h-44 w-44 rounded-full border border-[#0b3d91]/20"/><img src="/branding-assets/lkn-intro-story.jpg" alt="Illustration of connected local businesses around Lake Norman" className="relative aspect-[1.18/1] w-full object-cover shadow-[12px_12px_0_#0b3d91]"/><div className="absolute -bottom-4 left-5 bg-[#ffffff] px-4 py-3 shadow-sm"><div className="eyebrow text-[#0b3d91]">Since 2014</div><div className="display text-lg text-[#0b3d91]">Small business, big community.</div></div></div></div></section>
+    <section className="border-b border-[#cdd7e4] bg-white">
+      <div className="mx-auto max-w-[1380px] px-5 py-14 lg:px-10 lg:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div className="max-w-xl">
+            <p className="eyebrow mb-4 text-[#0b3d91]">Lake Norman Small Business Network</p>
+            <h1 className="display text-5xl font-bold leading-[1.02] tracking-[-.04em] text-[#0b3d91] sm:text-6xl lg:text-[4.25rem]">
+              Find local.<br />
+              <span className="font-semibold text-[#4a5c70]">Choose close.</span>
+            </h1>
+            <p className="mt-6 max-w-lg text-base leading-7 text-[#4a5c70]">
+              A free member directory for the Lake Norman area. Browse business cards, filter by category, and visit a member&apos;s site directly.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#directory" className="focus-ring inline-flex items-center gap-2 rounded-md bg-[#0b3d91] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#082e6e]">
+                Browse the directory <ArrowDown size={16} />
+              </a>
+              <a href="/about" className="focus-ring inline-flex items-center rounded-md border border-[#cdd7e4] px-5 py-3 text-sm font-semibold text-[#0b3d91] transition hover:border-[#0b3d91]">
+                About the network
+              </a>
+            </div>
+          </div>
+
+          <div className="border border-[#cdd7e4] bg-[#f3f6fa] p-6 sm:p-8">
+            <img
+              src="/branding-assets/shop-lake-norman-logo-dark.png"
+              alt=""
+              aria-hidden="true"
+              className="mb-6 h-12 w-auto object-contain sm:h-14"
+            />
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-5">
+              <div>
+                <dt className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Members listed</dt>
+                <dd className="display mt-1 text-4xl text-[#0b3d91]">{allBusinesses.length}</dd>
+              </div>
+              <div>
+                <dt className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Established</dt>
+                <dd className="display mt-1 text-4xl text-[#0b3d91]">2014</dd>
+              </div>
+              <div className="col-span-2 border-t border-[#cdd7e4] pt-5">
+                <dt className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Serving</dt>
+                <dd className="mt-2 text-sm leading-6 text-[#4a5c70]">
+                  Cornelius, Davidson, Mooresville, Huntersville, and the communities around Lake Norman.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="directory" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Meet the local index.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">A visual guide to the people, makers, and professionals doing good work around Lake Norman.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">members listed</div></div></div>
 

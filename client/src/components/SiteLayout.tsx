@@ -18,7 +18,11 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-40 border-b border-[#cdd7e4] bg-[#ffffff]/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1380px] items-center justify-between px-5 py-4 lg:px-10">
           <Link href="/" className="focus-ring flex items-center gap-3" onClick={() => setOpen(false)}>
-            <img src="/manus-storage/lkn-monogram_de379116.png" alt="" className="h-10 w-10 object-contain" />
+            <img
+              src="/branding-assets/shop-lake-norman-logo-dark.png"
+              alt="LKNSBN — Shop Lake Norman"
+              className="h-11 w-auto object-contain"
+            />
             <span className="leading-none">
               <span className="display block text-[18px] font-semibold tracking-[-.04em]">Shop Lake Norman</span>
               <span className="eyebrow mt-1 block text-[#0b3d91]">Local business index</span>

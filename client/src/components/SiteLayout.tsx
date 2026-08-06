@@ -53,6 +53,21 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function PageIntro({ eyebrow, title, dek }: { eyebrow: string; title: string; dek: string }) {
-  return <section className="mx-auto max-w-[1380px] px-5 pb-14 pt-16 lg:px-10 lg:pb-20 lg:pt-24"><div className="max-w-3xl"><div className="eyebrow mb-5 text-[#0b3d91]">{eyebrow}</div><h1 className="display text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">{title}</h1><p className="mt-7 max-w-2xl text-lg leading-8 text-[#4a5c70]">{dek}</p></div></section>;
+export function PageIntro({ eyebrow, title, dek, image, imageAlt }: { eyebrow: string; title: string; dek: string; image?: string; imageAlt?: string }) {
+  return (
+    <section className="mx-auto max-w-[1380px] px-5 pb-14 pt-16 lg:px-10 lg:pb-20 lg:pt-24">
+      <div className={cn(image && 'grid items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-16')}>
+        <div className="max-w-3xl">
+          <div className="eyebrow mb-5 text-[#0b3d91]">{eyebrow}</div>
+          <h1 className="display text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">{title}</h1>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#4a5c70]">{dek}</p>
+        </div>
+        {image && (
+          <figure className="overflow-hidden rounded-lg border border-[#cdd7e4] bg-white shadow-sm">
+            <img src={image} alt={imageAlt ?? ''} className="aspect-[5/4] w-full object-cover" />
+          </figure>
+        )}
+      </div>
+    </section>
+  );
 }

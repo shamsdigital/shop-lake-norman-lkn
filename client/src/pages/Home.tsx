@@ -19,8 +19,26 @@ function Card({ business, index }: { business: Business; index: number }) {
   return business.business_url ? <a href={business.business_url} target="_blank" rel="noreferrer" aria-label={`Visit ${business.business_name}`}>{inner}</a> : <div>{inner}</div>;
 }
 
-function categoryButtonClass(active: boolean) {
-  return `px-2.5 py-1.5 text-left text-[9px] font-semibold uppercase leading-snug tracking-[.08em] transition ${active ? 'bg-[#0b3d91] text-white' : 'border border-[#cdd7e4] bg-white/80 text-[#0b3d91] hover:border-[#0b3d91] hover:bg-white'}`;
+function formatCategoryLabel(label: string) {
+  return label === 'All categories' ? 'All' : label;
+}
+
+function categoryChipClass(active: boolean) {
+  return `focus-ring rounded-full px-2.5 py-1 text-[11px] font-medium leading-tight transition ${active ? 'bg-[#0b3d91] text-white shadow-sm' : 'border border-[#cdd7e4] bg-white text-[#4a5c70] hover:border-[#0b3d91] hover:text-[#0b3d91]'}`;
+}
+
+function letterChipClass(active: boolean) {
+  return `focus-ring inline-flex h-6 min-w-6 items-center justify-center rounded px-1 text-[10px] font-semibold transition ${active ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:bg-white hover:text-[#0b3d91]'}`;
+}
+
+function selectCategory(setCategory: (value: string) => void, setVisibleCount: (value: number | ((current: number) => number)) => void, value: string) {
+  setCategory(value);
+  setVisibleCount(24);
+}
+
+function selectLetter(setLetter: (value: string) => void, setVisibleCount: (value: number | ((current: number) => number)) => void, value: string) {
+  setLetter(value);
+  setVisibleCount(24);
 }
 
 export default function Home() {
@@ -43,21 +61,52 @@ export default function Home() {
 
     <section id="directory" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><div className="eyebrow mb-4 text-[#0b3d91]">01 / The e-rolodex</div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Meet the local index.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">A visual guide to the people, makers, and professionals doing good work around Lake Norman.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">members listed</div></div></div>
 
-      <div className="border border-[#cdd7e4] bg-[#e8eef5] p-4 sm:p-5">
-        <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
-          <button onClick={() => { setCategory('All categories'); setVisibleCount(24); }} className={categoryButtonClass(category === 'All categories')}>All categories</button>
-          {allCategories.map(item => <button key={item} onClick={() => { setCategory(item); setVisibleCount(24); }} className={categoryButtonClass(category === item)}>{item}</button>)}
+      <div className="rounded-lg border border-[#cdd7e4] bg-[#f3f6fa] p-3 sm:p-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#cdd7e4] pb-3">
+          <p className="text-xs font-semibold text-[#0b3d91]">Filter the directory</p>
+          <p className="text-[11px] text-[#4a5c70]">
+            Showing <span className="font-semibold text-[#0b3d91]">{Math.min(visibleCount, filtered.length)}</span> of{' '}
+            <span className="font-semibold text-[#0b3d91]">{filtered.length}</span>
+          </p>
         </div>
-        <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-[#cdd7e4] pt-4">
-          <span className="eyebrow shrink-0 text-[10px] text-[#7a8b9c]">Jump to</span>
-          <button onClick={() => setLetter('All')} className={`shrink-0 px-2 py-1 text-[10px] font-semibold ${letter === 'All' ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:text-[#0b3d91]'}`}>All</button>
-          {letters.map(item => <button key={item} onClick={() => { setLetter(item); setVisibleCount(24); }} className={`shrink-0 px-2 py-1 text-[10px] font-semibold ${letter === item ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:text-[#0b3d91]'}`}>{item}</button>)}
+
+        <div className="mt-3">
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Category</p>
+          <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter by category">
+            <button type="button" onClick={() => selectCategory(setCategory, setVisibleCount, 'All categories')} aria-pressed={category === 'All categories'} className={categoryChipClass(category === 'All categories')}>
+              {formatCategoryLabel('All categories')}
+            </button>
+            {allCategories.map(item => (
+              <button key={item} type="button" onClick={() => selectCategory(setCategory, setVisibleCount, item)} aria-pressed={category === item} className={categoryChipClass(category === item)}>
+                {formatCategoryLabel(item)}
+              </button>
+            ))}
+          </div>
         </div>
+
+        <div className="mt-3 border-t border-[#cdd7e4] pt-3">
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Starts with</p>
+          <div className="flex flex-wrap gap-0.5" role="group" aria-label="Filter by first letter">
+            <button type="button" onClick={() => selectLetter(setLetter, setVisibleCount, 'All')} aria-pressed={letter === 'All'} className={letterChipClass(letter === 'All')}>All</button>
+            {letters.map(item => (
+              <button key={item} type="button" onClick={() => selectLetter(setLetter, setVisibleCount, item)} aria-pressed={letter === item} className={letterChipClass(letter === item)}>{item}</button>
+            ))}
+          </div>
+        </div>
+
+        {activeFilterCount > 0 && (
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#cdd7e4] pt-3">
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#d6e2f0] px-2 py-0.5 text-[10px] font-semibold text-[#0b3d91]">
+              <Check size={11} /> {activeFilterCount} active
+            </span>
+            <button type="button" onClick={clearFilters} className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0b3d91] hover:underline">
+              Clear filters <X size={12} />
+            </button>
+          </div>
+        )}
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-3"><div className="flex items-center gap-3"><span className="eyebrow text-[#4a5c70]">Showing {Math.min(visibleCount, filtered.length)} of {filtered.length}</span>{activeFilterCount > 0 && <span className="inline-flex items-center gap-1 bg-[#d6e2f0] px-2 py-1 text-[10px] font-semibold text-[#0b3d91]"><Check size={12}/> {activeFilterCount} filter{activeFilterCount > 1 ? 's' : ''} active</span>}</div>{activeFilterCount > 0 && <button onClick={clearFilters} className="inline-flex items-center gap-1 text-xs font-semibold text-[#0b3d91] underline underline-offset-4">Clear all <X size={13}/></button>}</div>
-
-      {filtered.length > 0 ? <><div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{visibleBusinesses.map((business, index) => <Card key={`${business.category}-${business.business_name}-${index}`} business={business} index={index}/>)}</div>{visibleCount < filtered.length && <div className="mt-10 text-center"><button onClick={() => setVisibleCount(current => current + 24)} className="inline-flex items-center gap-2 border border-[#0b3d91] px-5 py-3 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] transition hover:bg-[#0b3d91] hover:text-white">Load 24 more <ArrowDown size={15}/></button></div>}</> : <div className="mt-5 border border-dashed border-[#cdd7e4] py-20 text-center"><div className="display text-3xl text-[#0b3d91]">No members found.</div><p className="mt-2 text-sm text-[#4a5c70]">Try a different category or letter.</p><button onClick={clearFilters} className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] underline underline-offset-4">Reset filters <ArrowUpRight size={14}/></button></div>}
+      {filtered.length > 0 ? <><div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{visibleBusinesses.map((business, index) => <Card key={`${business.category}-${business.business_name}-${index}`} business={business} index={index}/>)}</div>{visibleCount < filtered.length && <div className="mt-10 text-center"><button onClick={() => setVisibleCount(current => current + 24)} className="inline-flex items-center gap-2 border border-[#0b3d91] px-5 py-3 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] transition hover:bg-[#0b3d91] hover:text-white">Load 24 more <ArrowDown size={15}/></button></div>}</> : <div className="mt-5 border border-dashed border-[#cdd7e4] py-20 text-center"><div className="display text-3xl text-[#0b3d91]">No members found.</div><p className="mt-2 text-sm text-[#4a5c70]">Try a different category or letter.</p><button onClick={clearFilters} className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] underline underline-offset-4">Reset filters <ArrowUpRight size={14}/></button></div>}
     </div></section>
   </main>;
 }

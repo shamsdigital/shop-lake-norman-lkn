@@ -1,1709 +1,287 @@
-export type Business = {
-  category: string;
-  business_name: string;
-  business_url: string;
-  visiting_card_image_url: string;
-};
-
+export type Business = { category: string; business_name: string; business_url: string; visiting_card_image_url: string };
 export const businesses: Business[] = [
-  {
-    "category": "Personal Services",
-    "business_name": "Lynn Alberts",
-    "business_url": "http://www.thelynnproject.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/alberts_lynn.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Angie Alterations",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/alterations_angie.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Ashley Conger",
-    "business_url": "https://soccerstars.com/nc/lkn/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/conger_ashley.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Joseph Coyle",
-    "business_url": "https://twinkletoesnanny.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/coyle_joseph.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Ann Garrity",
-    "business_url": "http://www.annofsiam.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/garrity_ann.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Robert Heil",
-    "business_url": "https://car-olina.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/heil_robert.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Susan Joosten",
-    "business_url": "http://www.freedomboatclub.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/joosten_susan.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Edi King",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/king_edi.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Andy Knorr",
-    "business_url": "https://www.boundlessmoving.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/knorr_andy.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Max Knutson",
-    "business_url": "https://maxsfurreverfriends.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/knutson_max.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Shannon Lewis",
-    "business_url": "https://www.sunshinetravelcompany.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lewis_shannon.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "LKN Shoe Repair & Dry Cleaners",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lknshoerepair.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Wendie Lloyd",
-    "business_url": "http://www.coachingwhatmatters.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lloyd_wendie.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Mindy Martinez",
-    "business_url": "https://www.totalnutritiontechnologycharlotte.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/martinez_mindy.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Michelle Mckown-Campbell",
-    "business_url": "https://activatetheawesome.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mckowncampbell_michelle.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Victoria Mexcur",
-    "business_url": "https://treaddeepcounseling.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mexcur_victoria.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Michael Miltich",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/miltich_michael.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Brennyn Molloy",
-    "business_url": "https://theprocessofbeing.org/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/molloy_brennyn.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Lora Newman",
-    "business_url": "http://www.zero2sixtycoach.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/newman_lora.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Kayleigh Pack",
-    "business_url": "https://freecoatnails.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/pack_kayleigh.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Javier Perez",
-    "business_url": "https://ushagent.com/javierperez",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/perez_javier.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Ron Raeford",
-    "business_url": "http://raefordbarbershop.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/raeford_ron.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Chris Riddle",
-    "business_url": "https://movepackclean.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/riddle_chris.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Laurie Schible",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/schible_laurie.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Jason Scianno",
-    "business_url": "https://limitlesswellnessnc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/scianno_jason.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Anne Marie Sibthorp",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sibthorp_annemarie.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Gary Strader",
-    "business_url": "https://cottagecare.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/strader_gary.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Jared Washington",
-    "business_url": "http://www.lknsmallengine.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/washington_jared.jpg"
-  },
-  {
-    "category": "Personal Services",
-    "business_name": "Carol Wiese",
-    "business_url": "https://woofgangbakery.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wiese_carol.jpg"
-  },
-  {
-    "category": "Pet Services",
-    "business_name": "Esther Faulmann",
-    "business_url": "http://nc.barksandblooms.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/barks_blooms.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Terry & Dan Adams",
-    "business_url": "https://adamshospitality.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/adams_terry.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Fredricka Allen",
-    "business_url": "https://signhere.services/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/allen_fredricka.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Rod Beard",
-    "business_url": "http://www.charlottepayroll.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/beard_rod.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Lew Brown",
-    "business_url": "https://www.indoff.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/brown_lew.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "James Cassara",
-    "business_url": "https://www.spectrum.com/business/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/cassara_james.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Mike Dunn",
-    "business_url": "https://www.carolinascloud.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/dunn_mike.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Katie Florian",
-    "business_url": "https://www.ciprianit.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/florian_katie.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Bill Gardner",
-    "business_url": "https://provdocsolutions.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/gardner_bill.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Debbie Gennosa",
-    "business_url": "https://www.alignable.com/cornelius-nc/beyond-the-numbers-accounting-resources-llc",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/gennosa_debbie.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Tim Grier",
-    "business_url": "http://www.cetofnc.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/grier_tim.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Jay Harrill",
-    "business_url": "http://www.jh3ts.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/harrill_jay.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Eric Krone",
-    "business_url": "http://kronecpa.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/krone_eric.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Colleen Lloyd-Roberts",
-    "business_url": "http://www.brandgarden.biz",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lloyd-roberts_colleen.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Richard Lloyd-Roberts",
-    "business_url": "http://www.brandgarden.biz",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lloyd-roberts_richard.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Valerie Mano-Badie",
-    "business_url": "https://fullypromoted.com/locations/lake-norman-nc",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/manobadie_valerie.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Derek Milos",
-    "business_url": "http://dipcoatings.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/milos_derek.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "LKN Business Network for Women",
-    "business_url": "https://www.facebook.com/LKNBNW/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lkbn_women.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Sean O'Flynn",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/oflynn_sean.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Jim Puckett",
-    "business_url": "http://www.electropainters.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/puckett_jim.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Darla Redmond",
-    "business_url": "http://www.moffettgroup.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/redmond_darla.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Mark Richmond",
-    "business_url": "https://nlc.net/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/richmond_mark.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Lee Roberts",
-    "business_url": "https://locations.postnet.com/nc/cornelius/19825-n-cove-rd",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/roberts_lee.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Ken Rodes",
-    "business_url": "https://locations.postnet.com/nc/davidson/428-b-south-main-st.",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/rodes_ken.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Kelley Shaw",
-    "business_url": "https://alliant.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/shaw_kelley.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Ashley Sherrill",
-    "business_url": "https://locations.postnet.com/nc/cornelius/19825-n-cove-rd",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sherrill_ashley.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Peter Stauner",
-    "business_url": "https://computersupportg.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/stauner_peter.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Harm Stratman",
-    "business_url": "https://core4businesscoaching.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/stratman_harm.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Rodney Strother",
-    "business_url": "https://www.heartland.us/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/strother_rodney.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Trey Tucker",
-    "business_url": "https://expertip.net/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tucker_trey.jpg"
-  },
-  {
-    "category": "Business Services",
-    "business_name": "Judith Wentzel",
-    "business_url": "http://www.judithwentzel.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wentzel_judith.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Tara Attwood",
-    "business_url": "https://taraattwood.rmsmortgage.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/attwood_tara.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Michael Barbero",
-    "business_url": "http://www.primerica.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/barbero_michael.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Stacie Bright",
-    "business_url": "https://www.planwithaws.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/bright_stacie.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Christian Burns",
-    "business_url": "https://www.edwardjones.com/financial-advisor/index.html?CIRN=pQ9r1VgIGMUF1329bDq7U5WRo0%2FvZxMhtZRz",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/burns_christian.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Thor Chitow",
-    "business_url": "https://genevafi.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/chitow_thor.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Jason Colvin",
-    "business_url": "http://www.countonjason.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/colvin_jason.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Kyle Corgan",
-    "business_url": "https://www.goosehead.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/corgan_kyle.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Rob Cusano",
-    "business_url": "https://northeast-mortgage.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/cusano_rob.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Mark Deptula",
-    "business_url": "https://markknowsmortgages.my.canva.site/polaris-funding",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/deptula_mark.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Mark DeVita",
-    "business_url": "https://www.grarate.com/loan-officers/mark-devita-69892",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/devita_mark.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Joy Dillon",
-    "business_url": "https://www.hammettinsuranceagency.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/dillon_joy.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Erin Egan",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/egan_erin.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Beau Evans",
-    "business_url": "https://nexamortgage.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/evans_beau.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "James Farrell",
-    "business_url": "http://farrellfinancialfreedom.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/farrell_james.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Trina Finch",
-    "business_url": "https://trinasellsinsurance.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/finch_trina.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Shelden Flowers",
-    "business_url": "https://www.edwardjones.com/us-en/financial-advisor/shelden-flowers",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/flowers_shelden.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Holly Gantt Bailey",
-    "business_url": "https://americansecuritymortgage.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/ganttbailey_holly.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Jeffrey Hammett",
-    "business_url": "https://www.erieinsurance.com/agencies/nc/mooresville/jj2280",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/hammett_jeffrey.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Jennifer Kessler",
-    "business_url": "http://www.guildmortgage.com/officers/jenniferkessler/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/kessler_jennifer.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Jay Lesemann",
-    "business_url": "https://www.lesemanncpa.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lesemann_jay.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Douglas Marion",
-    "business_url": "https://www.planwithaws.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/marion_douglas.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Laura Messenger",
-    "business_url": "https://www.waterstonemortgage.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/messenger_laura.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Donovan Miller",
-    "business_url": "https://www.facebook.com/DGplanners.pro/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/miller_donovan.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Adrian Nagy",
-    "business_url": "https://mythrivefinancial.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/nagy_adrian.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Tyler Niblack",
-    "business_url": "http://niblackcpa.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/niblack_tyler.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Alyson O'Neal",
-    "business_url": "https://locations.53.com/nc/cornelius/20301-west-catawba-avenue.html",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/oneal_alyson.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Montez Pogue",
-    "business_url": "https://locations.53.com/nc/cornelius/20301-west-catawba-avenue.html",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/pogue_montez.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Reagan Randall",
-    "business_url": "https://htb.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/randall_reagan.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Jose Rodriguez",
-    "business_url": "https://sapphirecapital.org/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/rodriguez_jose.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Jeff Rogers",
-    "business_url": "https://www.53.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/rogers_jeff.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Robert Schwinn",
-    "business_url": "https://www.schwinncpa.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/schwinn_robert.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Heidi Scott",
-    "business_url": "http://www.frugalfoxbookkeeping.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/scott_heidi.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Glenn Slezak",
-    "business_url": "https://www.edwardjones.com/us-en/financial-advisor/glenn-slezak",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/slezak_glenn.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Sam Stringfellow",
-    "business_url": "https://carolinas.equitableadvisors.com/team/sam-stringfellow",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/stringfellow_sam.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Dan Thomason III",
-    "business_url": "https://www.firstcitizens.com/wealth",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/thomason_dan.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Sean Travis",
-    "business_url": "https://www.edwardjones.com/us-en/financial-advisor/sean-travis",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/travis_sean.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Catelin Vargas",
-    "business_url": "https://romeoins.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/vargas_catelin.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Drew Webster",
-    "business_url": "https://mythrivefinancial.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/webster_drew.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Richard Wenzel",
-    "business_url": "https://wenzelhomeloans.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wenzel_richard.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Linda Whitcher",
-    "business_url": "https://www.sbloans.biz",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/whitcher_linda.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Hayden Wilson",
-    "business_url": "https://www.atlanticbay.com/haydenwilson/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wilson_hayden.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "John Wilson",
-    "business_url": "https://www.financialfundingsolutions.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wilson_john.jpg"
-  },
-  {
-    "category": "Financial Services",
-    "business_name": "Nick Wujciak",
-    "business_url": "http://www.protect1family.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wujciak_nick.jpg"
-  },
-  {
-    "category": "Legal Services",
-    "business_name": "Callan Bryan",
-    "business_url": "http://vbfirm.com/attorneys_callanbryan.asp",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/bryan_callan.jpg"
-  },
-  {
-    "category": "Legal Services",
-    "business_name": "Jesse Jones",
-    "business_url": "https://www.mcintoshlawfirm.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/jones_jesse.jpg"
-  },
-  {
-    "category": "Legal Services",
-    "business_name": "Peter Morgan",
-    "business_url": "https://knipplaw.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/morgan_peter.jpg"
-  },
-  {
-    "category": "Legal Services",
-    "business_name": "Chera Pardue",
-    "business_url": "http://www.mauriellolaw.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/pardue_chera.jpg"
-  },
-  {
-    "category": "Legal Services",
-    "business_name": "Bayan Reed",
-    "business_url": "http://www.bayanreed.wearelegalshield.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/reed_bayan.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "William Abbey",
-    "business_url": "https://360painting.com/lakenorman/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/abbey_william.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Jordan Alexander",
-    "business_url": "https://www.economyexterminators.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/alexander_jordan.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Willie Ammons",
-    "business_url": "https://cgcwater.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/ammons_willie.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Jared Arp",
-    "business_url": "https://mbaroofing.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/arp_jared.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Austin Buergermeister",
-    "business_url": "https://livewell-chiropractic.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/buergermeister_austin.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "John Burak",
-    "business_url": "https://majestikhomelawn.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/burak_john.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Dougs Creations",
-    "business_url": "http://www.dougscreations.biz/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/creations_dougs.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Chris Crutchfield",
-    "business_url": "https://easternrooftech.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/crutchfield_chris.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Victoria DeVita",
-    "business_url": "https://victoriadevita.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/devita_victoria.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Bob Duane",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/duane_bob.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Tyler Elliott",
-    "business_url": "https://www.acehandymanservices.com/offices/lake-norman",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/elliott_tyler.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Josh Elliott",
-    "business_url": "https://mbaroofing.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/elliott_josh.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Ben Esposito",
-    "business_url": "https://roofmaxx.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/esposito_ben.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Michael Fournier",
-    "business_url": "https://www.knottyandboard.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/fournier_michael.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Pete Geraffo",
-    "business_url": "https://easternrooftech.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/geraffo_pete.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Traci Grail",
-    "business_url": "https://www.safewaywatertechnologies.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/grail_traci.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Bill Graves",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/graves_bill.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Brian Holland",
-    "business_url": "https://www.corneliuscustomclosets.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/holland_brian.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Joe Hughes",
-    "business_url": "https://ultimateplumbinginc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/hughes_joe.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Todd Kofoed",
-    "business_url": "http://www.biggtimecarpetcleaning.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/kofoed_todd.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "John Konkowski",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/konkowski_john.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Brian Korsch",
-    "business_url": "https://squeegeepros.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/korsch_brian.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "David Kurschner",
-    "business_url": "https://www.ksaudiovideo.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/kurschner_david.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Mickey Larson",
-    "business_url": "http://lknpermits.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/larson_mickey.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Bryan Lawson",
-    "business_url": "https://xhaleconstruction.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lawson_bryan.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Mattman",
-    "business_url": "https://www.sdmattress.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mattman.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Eli Mondez",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mondez_eli.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Nick Montgomery",
-    "business_url": "https://fournhomeinspections.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/montgomery_nick.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Richard Mucci",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mucci_richard.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Kurk Muenster",
-    "business_url": "https://mbaroofing.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/muenster_kurk.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Joe Nicastro",
-    "business_url": "http://www.electricjoewatchhimgo.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/nicastro_joe.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Colburn Peterson",
-    "business_url": "https://www.allburnpainting.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/peterson_colburn.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Adam Piana",
-    "business_url": "http://www.riseupgaragedoors.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/piana_adam.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Rodd Pickler",
-    "business_url": "http://www.mowgreengrass.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/pickler_rodd.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Sha Poletti",
-    "business_url": "https://www.ashadeabovewindowfashions.com/?metro=charlotte",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/poletti_sha.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Bruce Powell",
-    "business_url": "http://www.puroclean.com/pfwds-nc",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/powell_bruce.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Justin Roman",
-    "business_url": "https://360haulin.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/roman_justin.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Vaughn Seegers",
-    "business_url": "https://strmechanical.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/seegers_vaughn.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Dominic Sielemann",
-    "business_url": "http://kulumoconsulting.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sielemann_dominic.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Debbie Sielemann",
-    "business_url": "http://kulumoconsulting.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sielemann_debbie.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "William Simmons",
-    "business_url": "https://pelicanpoolsanddesign.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/simmons_william.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Dan Stebbing",
-    "business_url": "http://www.prioritycomfortnc.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/stebbing_dan.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Brian Tarle",
-    "business_url": "http://www.internationalkitchenandbath.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tarle_brian.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Jason Tavarez",
-    "business_url": "https://spartanexteriornc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tavarez_jason.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Tommy Tham",
-    "business_url": "https://www.acehandymanservices.com/offices/lake-norman",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tham_tommy.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Rick Tiikkala",
-    "business_url": "http://www.apexexterminatinginc.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tiikkala_rick.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Chase Tomberlin",
-    "business_url": "https://bakerroofing.com/charlotte-roofing-company/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tomberlin_chase.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Fred Turner",
-    "business_url": "https://powur.com/bestsolarnow",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/turner_fred.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Tony Vanderpool",
-    "business_url": "https://www.garageliving.com/f/charlotte",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/vanderpool_tony.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Brian & Lee Waters",
-    "business_url": "http://www.boulderdesigns.net",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/waters_brian.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Dave Wigfield",
-    "business_url": "https://lakecountryco.com/about/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wigfield_dave_lcc.jpg"
-  },
-  {
-    "category": "Building, Construction and Remodeling",
-    "business_name": "Dave Wigfield",
-    "business_url": "https://www.acehandymanservices.com/offices/lake-norman",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wigfield_dave.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Kasandra Blum",
-    "business_url": "https://www.myneighborhoodpm.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/blum_kasandra.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Chris Conrad",
-    "business_url": "https://www.theconradexperience.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/conrad_chris.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Dave Edwards",
-    "business_url": "https://www.welcomehomenc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/edwards_dave.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Enza Friedman",
-    "business_url": "https://www.lepagejohnson.com/agents/1642054/Enza+Friedman",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/friedman_enza.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Sean Herndon",
-    "business_url": "http://seanherndon.kwrealty.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/herndon_sean.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Gregory Josefchuk",
-    "business_url": "https://www.graatify.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/josefchuk_gregory.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Jeremy Katz",
-    "business_url": "http://www.therealestateguync.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/katz_jeremy.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Rusty Knox",
-    "business_url": "http://www.allentate.com/rustyknox",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/knox_rusty.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Lorillee Krebsbach",
-    "business_url": "https://www.zionrea.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/krebsbach-lorillee.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Christine Lowe",
-    "business_url": "https://www.lepagejohnson.com/agents/1881358/Christine+Mullally+Lowe",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lowe_christine.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Dan McEntire",
-    "business_url": "http://www.seniorlivinginstyle.com/independent_living/Davidson_NC/zip_28036/hawthorn_retirement_grou",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mcentire_dan.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Wally Neely",
-    "business_url": "https://thepremierteamnc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/neely_wally.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Emily Phipps",
-    "business_url": "https://emilyphipps.kw.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/phipps_emily.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Barry Pulver",
-    "business_url": "http://theexceptionalbrand.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/pulver_barry.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Janell Snevel",
-    "business_url": "https://www.candorandcorealty.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/snevel_janell.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Jaime Sparks",
-    "business_url": "http://www.loyaltyhomesnc.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sparks_jaime.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Kate Stables",
-    "business_url": "https://katestables.kw.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/stables_kate.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Cynthia Team",
-    "business_url": "http://teamre.biz/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/team_cynthia.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Karen Tovar",
-    "business_url": "http://www.thetovargroup.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tovar_karen.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Casandra Wilburn",
-    "business_url": "https://www.allentate.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wilburn_casandra.jpg"
-  },
-  {
-    "category": "Real Estate and Related",
-    "business_name": "Chris Yaeger",
-    "business_url": "https://www.yaegerdevelopmentservices.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/yaeger_chris.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Terry Anderson",
-    "business_url": "http://www.greasemonkeyhuntersville958.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/anderson_terry.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Blake Bernard",
-    "business_url": "https://www.triplebdetailing.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/bernard_blake.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Joe & Terri Carbon",
-    "business_url": "http://gofarguardianangels.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/carbon_joeandterri.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Auto Glass Experts",
-    "business_url": "https://www.theautoglassexperts.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/experts_autoglass.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Travis Grimm",
-    "business_url": "https://freemanscarstereo.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/grimm_travis.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Tom Kennedy",
-    "business_url": "https://pedegoelectricbikes.com/dealers/cornelius/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/kennedy_tom.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Joe McGraw",
-    "business_url": "https://www.lknboatman.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mcgraw_joe.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Doug McGuire",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mcguire_doug.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Don Scott",
-    "business_url": "http://www.randymarion.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/scott_don.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Dawson Sipes",
-    "business_url": "https://www.parksautogroup.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sipes_dawson.jpg"
-  },
-  {
-    "category": "Vehicle Sales and Service",
-    "business_name": "Brent Thompson",
-    "business_url": "https://www.theautoglassexperts.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/thompson_brent.jpg"
-  },
-  {
-    "category": "Fashion and Retail",
-    "business_name": "Jean Aswell",
-    "business_url": "http://www.marykay.com/jeanaswell",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/aswell_jean.jpg"
-  },
-  {
-    "category": "Fashion and Retail",
-    "business_name": "Adah Fitzgerald",
-    "business_url": "http://www.mainstreetbooksdavidson.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/fitzgerald_adah.jpg"
-  },
-  {
-    "category": "Fashion and Retail",
-    "business_name": "Kathryn Gaus",
-    "business_url": "https://www.sdmattress.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/gaus_kathryn.jpg"
-  },
-  {
-    "category": "Fashion and Retail",
-    "business_name": "Devon Halter",
-    "business_url": "http://www.dogsupplies.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/halter_devon.jpg"
-  },
-  {
-    "category": "Fashion and Retail",
-    "business_name": "Allegretto Marissa",
-    "business_url": "https://skinfinityandbeyond.info/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/allegretto_marissa.jpg"
-  },
-  {
-    "category": "Fashion and Retail",
-    "business_name": "Talyne Price",
-    "business_url": "https://www.marykay.com/talyne",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/price_talyne.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "David Frank",
-    "business_url": "https://www.portraitcreationsnc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/frank_david.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Shelly Hawley",
-    "business_url": "http://www.lkscustomtees.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/hawley_shelly.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Dennis Heskett",
-    "business_url": "https://www.tcrcrafts.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/heskett_dennis.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Nils Lucander",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lucander_nils.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "John McHugh",
-    "business_url": "http://www.ocaidphoto.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mchugh_john.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Barry Nathanson",
-    "business_url": "http://www.charlottelakeview.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/nathanson_barry.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Ricardo Ruiz",
-    "business_url": "https://www.reflectiveexpression.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/ruiz_ricardo.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Janie & Scot Slusarick",
-    "business_url": "https://www.rumormillmarket.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/slusarick_janiescot.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Jana Steenhuyse",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/steenhuyse_jana.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Flo Ward",
-    "business_url": "http://www.wechicdit.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/ward_flo.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Juan Zambrano",
-    "business_url": "http://facebook.com/juanzphotography",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/zambrano_juan.jpg"
-  },
-  {
-    "category": "Artists, Graphics, and Signs",
-    "business_name": "Greg & Stacy Zook",
-    "business_url": "https://www.zookphoto.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/zook_greg_stacy.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "David Aubart",
-    "business_url": "https://hammerseed.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/aubart_david.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Jackie Benjamin",
-    "business_url": "https://www.weassistbusiness.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/benjamin_jackie.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Kerry Burd",
-    "business_url": "http://www.socialmediaconsultantsllc.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/burd_kerry.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Trina Goodman",
-    "business_url": "http://www.socialteigh.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/goodman_trina.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Cathy Leitch",
-    "business_url": "http://www.lakenormancitizen.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/leitch_cathy.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Jasmine Lloyd",
-    "business_url": "https://www.reverbnation.com/jasminelloyd",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lloyd_jasmine.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Jim Luke",
-    "business_url": "http://www.iredelllivingmagazine.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/luke_jim.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "John McCall",
-    "business_url": "https://www.sunnymemoriesphoto.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mccall_john.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Tim McCauley",
-    "business_url": "http://www.getvisualcarolina.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mccauley_tim.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Cathy O'Donnell",
-    "business_url": "https://triadmediacommunications.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/odonnell_cathy.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Greg Prinz",
-    "business_url": "http://chapteronefilms.biz/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/prinz_greg.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Matt Swanson",
-    "business_url": "http://www.msdigitalsolutions.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/swanson_matt.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Ray Terry",
-    "business_url": "https://www.aboutyourhouseradio.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/terry_ray.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Bryan Viger",
-    "business_url": "https://www.overyondermag.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/viger_bryan.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Jim Vogel",
-    "business_url": "http://www.imusocialmedia.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/vogel_jim.jpg"
-  },
-  {
-    "category": "Media and Entertainment",
-    "business_name": "Brad Watkins",
-    "business_url": "https://localandqualified.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/watkins_brad.jpg"
-  },
-  {
-    "category": "Events and Recreation",
-    "business_name": "Robert Archer",
-    "business_url": "https://www.theamazingmrarcher.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/archer_robert.jpg"
-  },
-  {
-    "category": "Events and Recreation",
-    "business_name": "Michelle Cerilli",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/cerilli_michelle.jpg"
-  },
-  {
-    "category": "Events and Recreation",
-    "business_name": "Peter Coucolo",
-    "business_url": "http://www.charlottespecialevents.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/coucolo_peter.jpg"
-  },
-  {
-    "category": "Events and Recreation",
-    "business_name": "Mariano and Caroline Doble",
-    "business_url": "https://davidsoninn.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/doble_mariano_caroline.jpg"
-  },
-  {
-    "category": "Events and Recreation",
-    "business_name": "LeAnna Dunlap",
-    "business_url": "https://www.theservepickleball.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/dunlap_leanna.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Cameron Bearder",
-    "business_url": "https://www.chiropractorlkn.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/bearder_cameron.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Delaney Cortazzo",
-    "business_url": "https://maxliving.com/chiropractor/us/nc/mooresville/maxliving-chiropractic-mooresville/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/cortazzo_delaney.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "David Konstandt",
-    "business_url": "https://carolinaurology.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/konstandt_david.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Jennifer Kraftchick",
-    "business_url": "https://jennifersgreenrelief.greencompassglobal.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/kraftchick_jennifer.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Kevin Lafone",
-    "business_url": "http://www.carolinaeye.net",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lafone_kevin.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Drs. Carter & Lewis",
-    "business_url": "http://www.growingtreechiro.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/carter_lewis.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Terri Long",
-    "business_url": "https://hemplily.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/long_terri.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Lindsey Mashburn",
-    "business_url": "http://www.southlakewomens.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mashburn_lindsey.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Leisa Newman",
-    "business_url": "http://monocleeyecare.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/newman_leisa.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Armentha Prosper-Chicas DDS",
-    "business_url": "https://prosperdentalstudio.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/prosper-chicas_aementha.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Blake Sanders",
-    "business_url": "https://sacredheartdermatology.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sanders_blake.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Jane Sanders",
-    "business_url": "https://www.lakecitypsychiatry.net/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sanders_jane.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Nicole Sheehan DVM",
-    "business_url": "https://davidsonvet.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sheehan_nicole.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Cori Stuart",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/stuart_cori.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Joe Wallace",
-    "business_url": "https://www.optimizechironc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/wallace_joe.jpg"
-  },
-  {
-    "category": "Health and Fitness",
-    "business_name": "Matthew Zimmerman",
-    "business_url": "http://www.zimmermanfamilywellness.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/zimmerman_matthew.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Kim Boyd",
-    "business_url": "https://www.lknwatertree.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/boyd_kim.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Michael Cuddy",
-    "business_url": "http://www.ghostfacebrewing.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/cuddy_michael.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Keith DuPont",
-    "business_url": "https://www.marcos.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/dupont_keith.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Andrew Durstewitz",
-    "business_url": "http://www.d9brewing.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/durstewitz_andrew.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Natalie Kudlacz",
-    "business_url": "http://www.thicketandmeadow.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/kudlacz_natalie.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Amy Liu",
-    "business_url": "https://www.concettositalianice.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/liu_amy.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Guido Lombardi",
-    "business_url": "",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/lombardi_guido.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Josh McCracken",
-    "business_url": "https://www.h2publichouse.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mccracken_josh.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Joel Pfyffer",
-    "business_url": "http://www.prosciuttos.com",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/pfyffer_joel.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Jeff Pietrangelo",
-    "business_url": "https://pfgc.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/pietrangelo_jeff.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Paul Plyler",
-    "business_url": "https://www.southerndistillingcompany.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/plyler_paul.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Eileen Randle",
-    "business_url": "https://www.mycustombakes.com/lampshadebakingco",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/randle_eileen.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Sam Sharpe",
-    "business_url": "https://redmooncoffee.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/sharpe_sam.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "To the Moon and Mac",
-    "business_url": "https://www.moonandmac.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/tothemoonandmac.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Monica Walsh",
-    "business_url": "https://queensice.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/walsh_monica.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Angela Yeo",
-    "business_url": "https://www.cocottebakery.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/yeo_angela.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Scott York",
-    "business_url": "https://artisanalwatersolutions.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/york_scott.jpg"
-  },
-  {
-    "category": "Food and Drink",
-    "business_name": "Victor & Debra Zavaleta",
-    "business_url": "http://wingzonwheelz.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/zavalets_victor-debra.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Phyllis Boyd-VanHoy",
-    "business_url": "https://www.cpcc.edu/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/boydvanhoy_phyllis.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "R Gary Byrd",
-    "business_url": "http://www.charlotte.score.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/byrd_gary.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Debbie Dalton",
-    "business_url": "http://thehdlife.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/dalton_debbie.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Lynn Hegedus",
-    "business_url": "https://mooresvillenc.gov//",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/hegedus_lynn.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Wayne Herron",
-    "business_url": "http://www.cornelius.org/planning",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/herron_wayne.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Scott Higgins",
-    "business_url": "https://cornelius.org/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/higgins_scott.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Eileen Joyce",
-    "business_url": "http://www.sba.gov",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/joyce_eileen.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Maria Marvels-Stubbs",
-    "business_url": "https://ourpinkvictory.com/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/marvelsstubbs_maria.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "John McAlpine",
-    "business_url": "http://engr.uncc.edu",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/mcalpine_john.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "John Misner",
-    "business_url": "http://www.charlotte.score.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/misner_john.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Debbie O'Handley",
-    "business_url": "http://www.hopehousefoundation.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/ohandley_debbie.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Michael O'Hara",
-    "business_url": "http://www.charlotte.score.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/ohara_michael.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Andrew Oliver",
-    "business_url": "http://www.patsplacecac.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/oliver_andrew.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Dave Olson",
-    "business_url": "http://www.charlotte.score.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/olson_dave.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Diane Rumley",
-    "business_url": "https://www.supportmilitaryfamilies.org/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/rumley_diane.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Bill Russell",
-    "business_url": "http://www.lakenormanchamber.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/russell_bill.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Woody Washam",
-    "business_url": "http://www.cornelius.org",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/washam_woody.jpg"
-  },
-  {
-    "category": "Government and Non-Profit",
-    "business_name": "Marquita Williams",
-    "business_url": "https://www.facebook.com/LKNSO/",
-    "visiting_card_image_url": "https://shoplakenormanlkn.com/images/williams_marquita.jpg"
-  }
+  { category: "Personal Services", business_name: "Lynn Alberts", business_url: "http://www.thelynnproject.com/", visiting_card_image_url: "/business-cards/personal-services-lynn-alberts-7e03a45c.jpg" },
+  { category: "Personal Services", business_name: "Angie Alterations", business_url: "", visiting_card_image_url: "/business-cards/personal-services-angie-alterations-80dec864.jpg" },
+  { category: "Personal Services", business_name: "Ashley Conger", business_url: "https://soccerstars.com/nc/lkn/", visiting_card_image_url: "/business-cards/personal-services-ashley-conger-51b85474.jpg" },
+  { category: "Personal Services", business_name: "Joseph Coyle", business_url: "https://twinkletoesnanny.com/", visiting_card_image_url: "/business-cards/personal-services-joseph-coyle-a3ecdcd5.jpg" },
+  { category: "Personal Services", business_name: "Ann Garrity", business_url: "http://www.annofsiam.com", visiting_card_image_url: "/business-cards/personal-services-ann-garrity-2c377bc2.jpg" },
+  { category: "Personal Services", business_name: "Robert Heil", business_url: "https://car-olina.com/", visiting_card_image_url: "/business-cards/personal-services-robert-heil-12688c3d.jpg" },
+  { category: "Personal Services", business_name: "Susan Joosten", business_url: "http://www.freedomboatclub.com/", visiting_card_image_url: "/business-cards/personal-services-susan-joosten-dc31f2e7.jpg" },
+  { category: "Personal Services", business_name: "Edi King", business_url: "", visiting_card_image_url: "/business-cards/personal-services-edi-king-d1f4734e.jpg" },
+  { category: "Personal Services", business_name: "Andy Knorr", business_url: "https://www.boundlessmoving.com/", visiting_card_image_url: "/business-cards/personal-services-andy-knorr-d8783bf1.jpg" },
+  { category: "Personal Services", business_name: "Max Knutson", business_url: "https://maxsfurreverfriends.com/", visiting_card_image_url: "/business-cards/personal-services-max-knutson-e7b88e52.jpg" },
+  { category: "Personal Services", business_name: "Shannon Lewis", business_url: "https://www.sunshinetravelcompany.com/", visiting_card_image_url: "/business-cards/personal-services-shannon-lewis-22b186f4.jpg" },
+  { category: "Personal Services", business_name: "LKN Shoe Repair & Dry Cleaners", business_url: "", visiting_card_image_url: "/business-cards/personal-services-lkn-shoe-repair-dry-cleaners-6f931625.jpg" },
+  { category: "Personal Services", business_name: "Wendie Lloyd", business_url: "http://www.coachingwhatmatters.com", visiting_card_image_url: "/business-cards/personal-services-wendie-lloyd-785663c8.jpg" },
+  { category: "Personal Services", business_name: "Mindy Martinez", business_url: "https://www.totalnutritiontechnologycharlotte.com/", visiting_card_image_url: "/business-cards/personal-services-mindy-martinez-edebaf3c.jpg" },
+  { category: "Personal Services", business_name: "Michelle Mckown-Campbell", business_url: "https://activatetheawesome.com/", visiting_card_image_url: "/business-cards/personal-services-michelle-mckown-campbell-2a35ade6.jpg" },
+  { category: "Personal Services", business_name: "Victoria Mexcur", business_url: "https://treaddeepcounseling.com/", visiting_card_image_url: "/business-cards/personal-services-victoria-mexcur-79611f41.jpg" },
+  { category: "Personal Services", business_name: "Michael Miltich", business_url: "", visiting_card_image_url: "/business-cards/personal-services-michael-miltich-1d1191d2.jpg" },
+  { category: "Personal Services", business_name: "Brennyn Molloy", business_url: "https://theprocessofbeing.org/", visiting_card_image_url: "/business-cards/personal-services-brennyn-molloy-49982092.jpg" },
+  { category: "Personal Services", business_name: "Lora Newman", business_url: "http://www.zero2sixtycoach.com", visiting_card_image_url: "/business-cards/personal-services-lora-newman-60518e8f.jpg" },
+  { category: "Personal Services", business_name: "Kayleigh Pack", business_url: "https://freecoatnails.com/", visiting_card_image_url: "/business-cards/personal-services-kayleigh-pack-7086afcb.jpg" },
+  { category: "Personal Services", business_name: "Javier Perez", business_url: "https://ushagent.com/javierperez", visiting_card_image_url: "/business-cards/personal-services-javier-perez-789ebe27.jpg" },
+  { category: "Personal Services", business_name: "Ron Raeford", business_url: "http://raefordbarbershop.com", visiting_card_image_url: "/business-cards/personal-services-ron-raeford-ee6212e3.jpg" },
+  { category: "Personal Services", business_name: "Chris Riddle", business_url: "https://movepackclean.com/", visiting_card_image_url: "/business-cards/personal-services-chris-riddle-faa1ace7.jpg" },
+  { category: "Personal Services", business_name: "Laurie Schible", business_url: "", visiting_card_image_url: "/business-cards/personal-services-laurie-schible-1931f640.jpg" },
+  { category: "Personal Services", business_name: "Jason Scianno", business_url: "https://limitlesswellnessnc.com/", visiting_card_image_url: "/business-cards/personal-services-jason-scianno-3c455a0c.jpg" },
+  { category: "Personal Services", business_name: "Anne Marie Sibthorp", business_url: "", visiting_card_image_url: "/business-cards/personal-services-anne-marie-sibthorp-5ab41c22.jpg" },
+  { category: "Personal Services", business_name: "Gary Strader", business_url: "https://cottagecare.com/", visiting_card_image_url: "/business-cards/personal-services-gary-strader-9dc655c9.jpg" },
+  { category: "Personal Services", business_name: "Jared Washington", business_url: "http://www.lknsmallengine.com", visiting_card_image_url: "/business-cards/personal-services-jared-washington-95dab3ef.jpg" },
+  { category: "Personal Services", business_name: "Carol Wiese", business_url: "https://woofgangbakery.com/", visiting_card_image_url: "/business-cards/personal-services-carol-wiese-921f1e2e.jpg" },
+  { category: "Pet Services", business_name: "Esther Faulmann", business_url: "http://nc.barksandblooms.com", visiting_card_image_url: "/business-cards/pet-services-esther-faulmann-e36aa313.jpg" },
+  { category: "Business Services", business_name: "Terry & Dan Adams", business_url: "https://adamshospitality.com/", visiting_card_image_url: "/business-cards/business-services-terry-dan-adams-80dab8d0.jpg" },
+  { category: "Business Services", business_name: "Fredricka Allen", business_url: "https://signhere.services/", visiting_card_image_url: "/business-cards/business-services-fredricka-allen-af93f58a.jpg" },
+  { category: "Business Services", business_name: "Rod Beard", business_url: "http://www.charlottepayroll.com", visiting_card_image_url: "/business-cards/business-services-rod-beard-22dd4e9d.jpg" },
+  { category: "Business Services", business_name: "Lew Brown", business_url: "https://www.indoff.com/", visiting_card_image_url: "/business-cards/business-services-lew-brown-76e5a4e6.jpg" },
+  { category: "Business Services", business_name: "James Cassara", business_url: "https://www.spectrum.com/business/", visiting_card_image_url: "/business-cards/business-services-james-cassara-e56da6ca.jpg" },
+  { category: "Business Services", business_name: "Mike Dunn", business_url: "https://www.carolinascloud.com/", visiting_card_image_url: "/business-cards/business-services-mike-dunn-5a43a7dc.jpg" },
+  { category: "Business Services", business_name: "Katie Florian", business_url: "https://www.ciprianit.com/", visiting_card_image_url: "/business-cards/business-services-katie-florian-ed3dac6a.jpg" },
+  { category: "Business Services", business_name: "Bill Gardner", business_url: "https://provdocsolutions.com/", visiting_card_image_url: "/business-cards/business-services-bill-gardner-f93bbb73.jpg" },
+  { category: "Business Services", business_name: "Debbie Gennosa", business_url: "https://www.alignable.com/cornelius-nc/beyond-the-numbers-accounting-resources-llc", visiting_card_image_url: "/business-cards/business-services-debbie-gennosa-cf4321a5.jpg" },
+  { category: "Business Services", business_name: "Tim Grier", business_url: "http://www.cetofnc.com", visiting_card_image_url: "/business-cards/business-services-tim-grier-175da3be.jpg" },
+  { category: "Business Services", business_name: "Jay Harrill", business_url: "http://www.jh3ts.com/", visiting_card_image_url: "/business-cards/business-services-jay-harrill-93f8978d.jpg" },
+  { category: "Business Services", business_name: "Eric Krone", business_url: "http://kronecpa.com", visiting_card_image_url: "/business-cards/business-services-eric-krone-d0ce2b54.jpg" },
+  { category: "Business Services", business_name: "Colleen Lloyd-Roberts", business_url: "http://www.brandgarden.biz", visiting_card_image_url: "/business-cards/business-services-colleen-lloyd-roberts-3df5760c.jpg" },
+  { category: "Business Services", business_name: "Richard Lloyd-Roberts", business_url: "http://www.brandgarden.biz", visiting_card_image_url: "/business-cards/business-services-richard-lloyd-roberts-5f96576c.jpg" },
+  { category: "Business Services", business_name: "Valerie Mano-Badie", business_url: "https://fullypromoted.com/locations/lake-norman-nc", visiting_card_image_url: "/business-cards/business-services-valerie-mano-badie-83a5a0c4.jpg" },
+  { category: "Business Services", business_name: "Derek Milos", business_url: "http://dipcoatings.com/", visiting_card_image_url: "/business-cards/business-services-derek-milos-52612029.jpg" },
+  { category: "Business Services", business_name: "LKN Business Network for Women", business_url: "https://www.facebook.com/LKNBNW/", visiting_card_image_url: "/business-cards/business-services-lkn-business-network-for-women-77054f4a.jpg" },
+  { category: "Business Services", business_name: "Sean O'Flynn", business_url: "", visiting_card_image_url: "/business-cards/business-services-sean-o-flynn-558e931c.jpg" },
+  { category: "Business Services", business_name: "Jim Puckett", business_url: "http://www.electropainters.com/", visiting_card_image_url: "/business-cards/business-services-jim-puckett-7790b565.jpg" },
+  { category: "Business Services", business_name: "Darla Redmond", business_url: "http://www.moffettgroup.com", visiting_card_image_url: "/business-cards/business-services-darla-redmond-7d890785.jpg" },
+  { category: "Business Services", business_name: "Mark Richmond", business_url: "https://nlc.net/", visiting_card_image_url: "/business-cards/business-services-mark-richmond-138bbd04.jpg" },
+  { category: "Business Services", business_name: "Lee Roberts", business_url: "https://locations.postnet.com/nc/cornelius/19825-n-cove-rd", visiting_card_image_url: "/business-cards/business-services-lee-roberts-dc5cfc47.jpg" },
+  { category: "Business Services", business_name: "Ken Rodes", business_url: "https://locations.postnet.com/nc/davidson/428-b-south-main-st.", visiting_card_image_url: "/business-cards/business-services-ken-rodes-e24eb5d2.jpg" },
+  { category: "Business Services", business_name: "Kelley Shaw", business_url: "https://alliant.com/", visiting_card_image_url: "/business-cards/business-services-kelley-shaw-46236bc2.jpg" },
+  { category: "Business Services", business_name: "Ashley Sherrill", business_url: "https://locations.postnet.com/nc/cornelius/19825-n-cove-rd", visiting_card_image_url: "/business-cards/business-services-ashley-sherrill-544a209b.jpg" },
+  { category: "Business Services", business_name: "Peter Stauner", business_url: "https://computersupportg.com/", visiting_card_image_url: "/business-cards/business-services-peter-stauner-7c24a48c.jpg" },
+  { category: "Business Services", business_name: "Harm Stratman", business_url: "https://core4businesscoaching.com/", visiting_card_image_url: "/business-cards/business-services-harm-stratman-022a0a68.jpg" },
+  { category: "Business Services", business_name: "Rodney Strother", business_url: "https://www.heartland.us/", visiting_card_image_url: "/business-cards/business-services-rodney-strother-adc7f6b6.jpg" },
+  { category: "Business Services", business_name: "Trey Tucker", business_url: "https://expertip.net/", visiting_card_image_url: "/business-cards/business-services-trey-tucker-8efeae7b.jpg" },
+  { category: "Business Services", business_name: "Judith Wentzel", business_url: "http://www.judithwentzel.com", visiting_card_image_url: "/business-cards/business-services-judith-wentzel-8dc4d6ca.jpg" },
+  { category: "Financial Services", business_name: "Tara Attwood", business_url: "https://taraattwood.rmsmortgage.com/", visiting_card_image_url: "/business-cards/financial-services-tara-attwood-18a3e3c8.jpg" },
+  { category: "Financial Services", business_name: "Michael Barbero", business_url: "http://www.primerica.com/", visiting_card_image_url: "/business-cards/financial-services-michael-barbero-eb03a1e6.jpg" },
+  { category: "Financial Services", business_name: "Stacie Bright", business_url: "https://www.planwithaws.com/", visiting_card_image_url: "/business-cards/financial-services-stacie-bright-faf89364.jpg" },
+  { category: "Financial Services", business_name: "Christian Burns", business_url: "https://www.edwardjones.com/financial-advisor/index.html?CIRN=pQ9r1VgIGMUF1329bDq7U5WRo0%2FvZxMhtZRz", visiting_card_image_url: "/business-cards/financial-services-christian-burns-90bb612e.jpg" },
+  { category: "Financial Services", business_name: "Thor Chitow", business_url: "https://genevafi.com/", visiting_card_image_url: "/business-cards/financial-services-thor-chitow-91bc52ff.jpg" },
+  { category: "Financial Services", business_name: "Jason Colvin", business_url: "http://www.countonjason.com/", visiting_card_image_url: "/business-cards/financial-services-jason-colvin-335c5281.jpg" },
+  { category: "Financial Services", business_name: "Kyle Corgan", business_url: "https://www.goosehead.com/", visiting_card_image_url: "/business-cards/financial-services-kyle-corgan-1f1fd1a7.jpg" },
+  { category: "Financial Services", business_name: "Rob Cusano", business_url: "https://northeast-mortgage.com/", visiting_card_image_url: "/business-cards/financial-services-rob-cusano-52092ef7.jpg" },
+  { category: "Financial Services", business_name: "Mark Deptula", business_url: "https://markknowsmortgages.my.canva.site/polaris-funding", visiting_card_image_url: "/business-cards/financial-services-mark-deptula-a450af4e.jpg" },
+  { category: "Financial Services", business_name: "Mark DeVita", business_url: "https://www.grarate.com/loan-officers/mark-devita-69892", visiting_card_image_url: "/business-cards/financial-services-mark-devita-1c87381f.jpg" },
+  { category: "Financial Services", business_name: "Joy Dillon", business_url: "https://www.hammettinsuranceagency.com/", visiting_card_image_url: "/business-cards/financial-services-joy-dillon-8ed83b78.jpg" },
+  { category: "Financial Services", business_name: "Erin Egan", business_url: "", visiting_card_image_url: "/business-cards/financial-services-erin-egan-2d503582.jpg" },
+  { category: "Financial Services", business_name: "Beau Evans", business_url: "https://nexamortgage.com/", visiting_card_image_url: "/business-cards/financial-services-beau-evans-bf52e629.jpg" },
+  { category: "Financial Services", business_name: "James Farrell", business_url: "http://farrellfinancialfreedom.com/", visiting_card_image_url: "/business-cards/financial-services-james-farrell-651b0f38.jpg" },
+  { category: "Financial Services", business_name: "Trina Finch", business_url: "https://trinasellsinsurance.com/", visiting_card_image_url: "/business-cards/financial-services-trina-finch-b4564300.jpg" },
+  { category: "Financial Services", business_name: "Shelden Flowers", business_url: "https://www.edwardjones.com/us-en/financial-advisor/shelden-flowers", visiting_card_image_url: "/business-cards/financial-services-shelden-flowers-bdbc2913.jpg" },
+  { category: "Financial Services", business_name: "Holly Gantt Bailey", business_url: "https://americansecuritymortgage.com/", visiting_card_image_url: "/business-cards/financial-services-holly-gantt-bailey-3a18ef38.jpg" },
+  { category: "Financial Services", business_name: "Jeffrey Hammett", business_url: "https://www.erieinsurance.com/agencies/nc/mooresville/jj2280", visiting_card_image_url: "/business-cards/financial-services-jeffrey-hammett-0a2c4def.jpg" },
+  { category: "Financial Services", business_name: "Jennifer Kessler", business_url: "http://www.guildmortgage.com/officers/jenniferkessler/", visiting_card_image_url: "/business-cards/financial-services-jennifer-kessler-488f1143.jpg" },
+  { category: "Financial Services", business_name: "Jay Lesemann", business_url: "https://www.lesemanncpa.com/", visiting_card_image_url: "/business-cards/financial-services-jay-lesemann-c191c676.jpg" },
+  { category: "Financial Services", business_name: "Douglas Marion", business_url: "https://www.planwithaws.com/", visiting_card_image_url: "/business-cards/financial-services-douglas-marion-3cdf00cb.jpg" },
+  { category: "Financial Services", business_name: "Laura Messenger", business_url: "https://www.waterstonemortgage.com/", visiting_card_image_url: "/business-cards/financial-services-laura-messenger-0ff5deb5.jpg" },
+  { category: "Financial Services", business_name: "Donovan Miller", business_url: "https://www.facebook.com/DGplanners.pro/", visiting_card_image_url: "/business-cards/financial-services-donovan-miller-23a50954.jpg" },
+  { category: "Financial Services", business_name: "Adrian Nagy", business_url: "https://mythrivefinancial.com/", visiting_card_image_url: "/business-cards/financial-services-adrian-nagy-21919565.jpg" },
+  { category: "Financial Services", business_name: "Tyler Niblack", business_url: "http://niblackcpa.com", visiting_card_image_url: "/business-cards/financial-services-tyler-niblack-625e6585.jpg" },
+  { category: "Financial Services", business_name: "Alyson O'Neal", business_url: "https://locations.53.com/nc/cornelius/20301-west-catawba-avenue.html", visiting_card_image_url: "/business-cards/financial-services-alyson-o-neal-c2b7df0f.jpg" },
+  { category: "Financial Services", business_name: "Montez Pogue", business_url: "https://locations.53.com/nc/cornelius/20301-west-catawba-avenue.html", visiting_card_image_url: "/business-cards/financial-services-montez-pogue-9aea769a.jpg" },
+  { category: "Financial Services", business_name: "Reagan Randall", business_url: "https://htb.com/", visiting_card_image_url: "/business-cards/financial-services-reagan-randall-2e2b6eb0.jpg" },
+  { category: "Financial Services", business_name: "Jose Rodriguez", business_url: "https://sapphirecapital.org/", visiting_card_image_url: "/business-cards/financial-services-jose-rodriguez-282919d1.jpg" },
+  { category: "Financial Services", business_name: "Jeff Rogers", business_url: "https://www.53.com/", visiting_card_image_url: "/business-cards/financial-services-jeff-rogers-5ff712e6.jpg" },
+  { category: "Financial Services", business_name: "Robert Schwinn", business_url: "https://www.schwinncpa.com/", visiting_card_image_url: "/business-cards/financial-services-robert-schwinn-3bb2bb2c.jpg" },
+  { category: "Financial Services", business_name: "Heidi Scott", business_url: "http://www.frugalfoxbookkeeping.com", visiting_card_image_url: "/business-cards/financial-services-heidi-scott-484d47fa.jpg" },
+  { category: "Financial Services", business_name: "Glenn Slezak", business_url: "https://www.edwardjones.com/us-en/financial-advisor/glenn-slezak", visiting_card_image_url: "/business-cards/financial-services-glenn-slezak-94b59143.jpg" },
+  { category: "Financial Services", business_name: "Sam Stringfellow", business_url: "https://carolinas.equitableadvisors.com/team/sam-stringfellow", visiting_card_image_url: "/business-cards/financial-services-sam-stringfellow-2f5cc2df.jpg" },
+  { category: "Financial Services", business_name: "Dan Thomason III", business_url: "https://www.firstcitizens.com/wealth", visiting_card_image_url: "/business-cards/financial-services-dan-thomason-iii-8605e618.jpg" },
+  { category: "Financial Services", business_name: "Sean Travis", business_url: "https://www.edwardjones.com/us-en/financial-advisor/sean-travis", visiting_card_image_url: "/business-cards/financial-services-sean-travis-6c66de31.jpg" },
+  { category: "Financial Services", business_name: "Catelin Vargas", business_url: "https://romeoins.com/", visiting_card_image_url: "/business-cards/financial-services-catelin-vargas-a193f9d0.jpg" },
+  { category: "Financial Services", business_name: "Drew Webster", business_url: "https://mythrivefinancial.com/", visiting_card_image_url: "/business-cards/financial-services-drew-webster-0891c8de.jpg" },
+  { category: "Financial Services", business_name: "Richard Wenzel", business_url: "https://wenzelhomeloans.com/", visiting_card_image_url: "/business-cards/financial-services-richard-wenzel-8606bfb6.jpg" },
+  { category: "Financial Services", business_name: "Linda Whitcher", business_url: "https://www.sbloans.biz", visiting_card_image_url: "/business-cards/financial-services-linda-whitcher-2dbe6196.jpg" },
+  { category: "Financial Services", business_name: "Hayden Wilson", business_url: "https://www.atlanticbay.com/haydenwilson/", visiting_card_image_url: "/business-cards/financial-services-hayden-wilson-3356395e.jpg" },
+  { category: "Financial Services", business_name: "John Wilson", business_url: "https://www.financialfundingsolutions.com/", visiting_card_image_url: "/business-cards/financial-services-john-wilson-bd7e663a.jpg" },
+  { category: "Financial Services", business_name: "Nick Wujciak", business_url: "http://www.protect1family.com/", visiting_card_image_url: "/business-cards/financial-services-nick-wujciak-37590329.jpg" },
+  { category: "Legal Services", business_name: "Callan Bryan", business_url: "http://vbfirm.com/attorneys_callanbryan.asp", visiting_card_image_url: "/business-cards/legal-services-callan-bryan-b4e7359e.jpg" },
+  { category: "Legal Services", business_name: "Jesse Jones", business_url: "https://www.mcintoshlawfirm.com/", visiting_card_image_url: "/business-cards/legal-services-jesse-jones-1858c247.jpg" },
+  { category: "Legal Services", business_name: "Peter Morgan", business_url: "https://knipplaw.com/", visiting_card_image_url: "/business-cards/legal-services-peter-morgan-ffea6911.jpg" },
+  { category: "Legal Services", business_name: "Chera Pardue", business_url: "http://www.mauriellolaw.com/", visiting_card_image_url: "/business-cards/legal-services-chera-pardue-066c7ab2.jpg" },
+  { category: "Legal Services", business_name: "Bayan Reed", business_url: "http://www.bayanreed.wearelegalshield.com", visiting_card_image_url: "/business-cards/legal-services-bayan-reed-9a82fa1b.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "William Abbey", business_url: "https://360painting.com/lakenorman/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-william-abbey-ac432403.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Jordan Alexander", business_url: "https://www.economyexterminators.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-jordan-alexander-24e72b7c.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Willie Ammons", business_url: "https://cgcwater.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-willie-ammons-2c006355.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Jared Arp", business_url: "https://mbaroofing.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-jared-arp-a95732ef.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Austin Buergermeister", business_url: "https://livewell-chiropractic.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-austin-buergermeister-cad58994.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "John Burak", business_url: "https://majestikhomelawn.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-john-burak-e378b44d.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Dougs Creations", business_url: "http://www.dougscreations.biz/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-dougs-creations-e9066159.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Chris Crutchfield", business_url: "https://easternrooftech.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-chris-crutchfield-c4a5e924.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Victoria DeVita", business_url: "https://victoriadevita.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-victoria-devita-67fd6ce8.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Bob Duane", business_url: "", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-bob-duane-95b11e8a.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Tyler Elliott", business_url: "https://www.acehandymanservices.com/offices/lake-norman", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-tyler-elliott-6d8ec905.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Josh Elliott", business_url: "https://mbaroofing.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-josh-elliott-236dcead.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Ben Esposito", business_url: "https://roofmaxx.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-ben-esposito-3e52c2fd.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Michael Fournier", business_url: "https://www.knottyandboard.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-michael-fournier-baa66b8b.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Pete Geraffo", business_url: "https://easternrooftech.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-pete-geraffo-9dec0549.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Traci Grail", business_url: "https://www.safewaywatertechnologies.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-traci-grail-25d99d7d.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Bill Graves", business_url: "", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-bill-graves-1eb036ee.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Brian Holland", business_url: "https://www.corneliuscustomclosets.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-brian-holland-a1420939.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Joe Hughes", business_url: "https://ultimateplumbinginc.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-joe-hughes-5637120d.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Todd Kofoed", business_url: "http://www.biggtimecarpetcleaning.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-todd-kofoed-b3626926.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "John Konkowski", business_url: "", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-john-konkowski-360de38c.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Brian Korsch", business_url: "https://squeegeepros.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-brian-korsch-6661d50e.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "David Kurschner", business_url: "https://www.ksaudiovideo.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-david-kurschner-cdef0dd0.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Mickey Larson", business_url: "http://lknpermits.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-mickey-larson-36d34c11.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Bryan Lawson", business_url: "https://xhaleconstruction.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-bryan-lawson-3302afc5.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Mattman", business_url: "https://www.sdmattress.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-mattman-f1e6b3ed.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Eli Mondez", business_url: "", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-eli-mondez-29263ba4.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Nick Montgomery", business_url: "https://fournhomeinspections.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-nick-montgomery-db3c9708.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Richard Mucci", business_url: "", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-richard-mucci-27538a3d.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Kurk Muenster", business_url: "https://mbaroofing.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-kurk-muenster-ae152184.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Joe Nicastro", business_url: "http://www.electricjoewatchhimgo.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-joe-nicastro-9c5c5f84.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Colburn Peterson", business_url: "https://www.allburnpainting.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-colburn-peterson-e02cf1dd.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Adam Piana", business_url: "http://www.riseupgaragedoors.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-adam-piana-73b55b6f.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Rodd Pickler", business_url: "http://www.mowgreengrass.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-rodd-pickler-0c2bf851.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Sha Poletti", business_url: "https://www.ashadeabovewindowfashions.com/?metro=charlotte", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-sha-poletti-64c1f1d9.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Bruce Powell", business_url: "http://www.puroclean.com/pfwds-nc", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-bruce-powell-63a14c5f.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Justin Roman", business_url: "https://360haulin.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-justin-roman-045a1764.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Vaughn Seegers", business_url: "https://strmechanical.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-vaughn-seegers-244bcf47.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Dominic Sielemann", business_url: "http://kulumoconsulting.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-dominic-sielemann-4197edff.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Debbie Sielemann", business_url: "http://kulumoconsulting.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-debbie-sielemann-6feb8ce0.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "William Simmons", business_url: "https://pelicanpoolsanddesign.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-william-simmons-233d2e38.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Dan Stebbing", business_url: "http://www.prioritycomfortnc.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-dan-stebbing-d40f6142.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Brian Tarle", business_url: "http://www.internationalkitchenandbath.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-brian-tarle-267f185c.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Jason Tavarez", business_url: "https://spartanexteriornc.com/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-jason-tavarez-4e588cc4.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Tommy Tham", business_url: "https://www.acehandymanservices.com/offices/lake-norman", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-tommy-tham-bdc8541a.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Rick Tiikkala", business_url: "http://www.apexexterminatinginc.com", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-rick-tiikkala-feac89ea.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Chase Tomberlin", business_url: "https://bakerroofing.com/charlotte-roofing-company/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-chase-tomberlin-c8edd30c.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Fred Turner", business_url: "https://powur.com/bestsolarnow", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-fred-turner-5e6375ab.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Tony Vanderpool", business_url: "https://www.garageliving.com/f/charlotte", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-tony-vanderpool-c4790cbf.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Brian & Lee Waters", business_url: "http://www.boulderdesigns.net", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-brian-lee-waters-3dc5318c.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Dave Wigfield", business_url: "https://lakecountryco.com/about/", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-dave-wigfield-6517f496.jpg" },
+  { category: "Building, Construction and Remodeling", business_name: "Dave Wigfield", business_url: "https://www.acehandymanservices.com/offices/lake-norman", visiting_card_image_url: "/business-cards/building-construction-and-remodeling-dave-wigfield-4526e329.jpg" },
+  { category: "Real Estate and Related", business_name: "Kasandra Blum", business_url: "https://www.myneighborhoodpm.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-kasandra-blum-5e0037b3.jpg" },
+  { category: "Real Estate and Related", business_name: "Chris Conrad", business_url: "https://www.theconradexperience.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-chris-conrad-fe4535b3.jpg" },
+  { category: "Real Estate and Related", business_name: "Dave Edwards", business_url: "https://www.welcomehomenc.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-dave-edwards-b7d75981.jpg" },
+  { category: "Real Estate and Related", business_name: "Enza Friedman", business_url: "https://www.lepagejohnson.com/agents/1642054/Enza+Friedman", visiting_card_image_url: "/business-cards/real-estate-and-related-enza-friedman-7c77e99d.jpg" },
+  { category: "Real Estate and Related", business_name: "Sean Herndon", business_url: "http://seanherndon.kwrealty.com", visiting_card_image_url: "/business-cards/real-estate-and-related-sean-herndon-afc7946a.jpg" },
+  { category: "Real Estate and Related", business_name: "Gregory Josefchuk", business_url: "https://www.graatify.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-gregory-josefchuk-eed216c5.jpg" },
+  { category: "Real Estate and Related", business_name: "Jeremy Katz", business_url: "http://www.therealestateguync.com", visiting_card_image_url: "/business-cards/real-estate-and-related-jeremy-katz-1fba6706.jpg" },
+  { category: "Real Estate and Related", business_name: "Rusty Knox", business_url: "http://www.allentate.com/rustyknox", visiting_card_image_url: "/business-cards/real-estate-and-related-rusty-knox-604bfdbd.jpg" },
+  { category: "Real Estate and Related", business_name: "Lorillee Krebsbach", business_url: "https://www.zionrea.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-lorillee-krebsbach-f91c6219.jpg" },
+  { category: "Real Estate and Related", business_name: "Christine Lowe", business_url: "https://www.lepagejohnson.com/agents/1881358/Christine+Mullally+Lowe", visiting_card_image_url: "/business-cards/real-estate-and-related-christine-lowe-75219b86.jpg" },
+  { category: "Real Estate and Related", business_name: "Dan McEntire", business_url: "http://www.seniorlivinginstyle.com/independent_living/Davidson_NC/zip_28036/hawthorn_retirement_grou", visiting_card_image_url: "/business-cards/real-estate-and-related-dan-mcentire-2595c25b.jpg" },
+  { category: "Real Estate and Related", business_name: "Wally Neely", business_url: "https://thepremierteamnc.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-wally-neely-2eeecf73.jpg" },
+  { category: "Real Estate and Related", business_name: "Emily Phipps", business_url: "https://emilyphipps.kw.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-emily-phipps-aec58f6c.jpg" },
+  { category: "Real Estate and Related", business_name: "Barry Pulver", business_url: "http://theexceptionalbrand.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-barry-pulver-4fd0fffb.jpg" },
+  { category: "Real Estate and Related", business_name: "Janell Snevel", business_url: "https://www.candorandcorealty.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-janell-snevel-56060797.jpg" },
+  { category: "Real Estate and Related", business_name: "Jaime Sparks", business_url: "http://www.loyaltyhomesnc.com", visiting_card_image_url: "/business-cards/real-estate-and-related-jaime-sparks-c45b2526.jpg" },
+  { category: "Real Estate and Related", business_name: "Kate Stables", business_url: "https://katestables.kw.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-kate-stables-f90f29af.jpg" },
+  { category: "Real Estate and Related", business_name: "Cynthia Team", business_url: "http://teamre.biz/", visiting_card_image_url: "/business-cards/real-estate-and-related-cynthia-team-5b8d0f20.jpg" },
+  { category: "Real Estate and Related", business_name: "Karen Tovar", business_url: "http://www.thetovargroup.com", visiting_card_image_url: "/business-cards/real-estate-and-related-karen-tovar-a53a8275.jpg" },
+  { category: "Real Estate and Related", business_name: "Casandra Wilburn", business_url: "https://www.allentate.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-casandra-wilburn-cad7f26b.jpg" },
+  { category: "Real Estate and Related", business_name: "Chris Yaeger", business_url: "https://www.yaegerdevelopmentservices.com/", visiting_card_image_url: "/business-cards/real-estate-and-related-chris-yaeger-1c58aaf9.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Terry Anderson", business_url: "http://www.greasemonkeyhuntersville958.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-terry-anderson-6e533dd6.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Blake Bernard", business_url: "https://www.triplebdetailing.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-blake-bernard-cfeff153.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Joe & Terri Carbon", business_url: "http://gofarguardianangels.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-joe-terri-carbon-3b29e45c.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Auto Glass Experts", business_url: "https://www.theautoglassexperts.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-auto-glass-experts-52548067.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Travis Grimm", business_url: "https://freemanscarstereo.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-travis-grimm-20135658.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Tom Kennedy", business_url: "https://pedegoelectricbikes.com/dealers/cornelius/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-tom-kennedy-30f37668.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Joe McGraw", business_url: "https://www.lknboatman.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-joe-mcgraw-f67b6859.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Doug McGuire", business_url: "", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-doug-mcguire-3214be58.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Don Scott", business_url: "http://www.randymarion.com", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-don-scott-dde2da15.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Dawson Sipes", business_url: "https://www.parksautogroup.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-dawson-sipes-d3e75452.jpg" },
+  { category: "Vehicle Sales and Service", business_name: "Brent Thompson", business_url: "https://www.theautoglassexperts.com/", visiting_card_image_url: "/business-cards/vehicle-sales-and-service-brent-thompson-22e1e30a.jpg" },
+  { category: "Fashion and Retail", business_name: "Jean Aswell", business_url: "http://www.marykay.com/jeanaswell", visiting_card_image_url: "/business-cards/fashion-and-retail-jean-aswell-583abb8b.jpg" },
+  { category: "Fashion and Retail", business_name: "Adah Fitzgerald", business_url: "http://www.mainstreetbooksdavidson.com/", visiting_card_image_url: "/business-cards/fashion-and-retail-adah-fitzgerald-704076ce.jpg" },
+  { category: "Fashion and Retail", business_name: "Kathryn Gaus", business_url: "https://www.sdmattress.com/", visiting_card_image_url: "/business-cards/fashion-and-retail-kathryn-gaus-7f3a9a31.jpg" },
+  { category: "Fashion and Retail", business_name: "Devon Halter", business_url: "http://www.dogsupplies.com/", visiting_card_image_url: "/business-cards/fashion-and-retail-devon-halter-fd6a5912.jpg" },
+  { category: "Fashion and Retail", business_name: "Allegretto Marissa", business_url: "https://skinfinityandbeyond.info/", visiting_card_image_url: "/business-cards/fashion-and-retail-allegretto-marissa-7b07839a.jpg" },
+  { category: "Fashion and Retail", business_name: "Talyne Price", business_url: "https://www.marykay.com/talyne", visiting_card_image_url: "/business-cards/fashion-and-retail-talyne-price-9be0ef5b.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "David Frank", business_url: "https://www.portraitcreationsnc.com/", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-david-frank-8c28546a.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Shelly Hawley", business_url: "http://www.lkscustomtees.com", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-shelly-hawley-889b6926.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Dennis Heskett", business_url: "https://www.tcrcrafts.com/", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-dennis-heskett-78136d49.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Nils Lucander", business_url: "", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-nils-lucander-acadbf3b.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "John McHugh", business_url: "http://www.ocaidphoto.com/", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-john-mchugh-dfe5e9aa.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Barry Nathanson", business_url: "http://www.charlottelakeview.com", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-barry-nathanson-37223154.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Ricardo Ruiz", business_url: "https://www.reflectiveexpression.com/", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-ricardo-ruiz-871955e6.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Janie & Scot Slusarick", business_url: "https://www.rumormillmarket.com/", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-janie-scot-slusarick-33d4245e.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Jana Steenhuyse", business_url: "", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-jana-steenhuyse-6e62f412.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Flo Ward", business_url: "http://www.wechicdit.com", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-flo-ward-eccef951.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Juan Zambrano", business_url: "http://facebook.com/juanzphotography", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-juan-zambrano-76de7735.jpg" },
+  { category: "Artists, Graphics, and Signs", business_name: "Greg & Stacy Zook", business_url: "https://www.zookphoto.com/", visiting_card_image_url: "/business-cards/artists-graphics-and-signs-greg-stacy-zook-35f84962.jpg" },
+  { category: "Media and Entertainment", business_name: "David Aubart", business_url: "https://hammerseed.com/", visiting_card_image_url: "/business-cards/media-and-entertainment-david-aubart-17721fa0.jpg" },
+  { category: "Media and Entertainment", business_name: "Jackie Benjamin", business_url: "https://www.weassistbusiness.com/", visiting_card_image_url: "/business-cards/media-and-entertainment-jackie-benjamin-f06a24af.jpg" },
+  { category: "Media and Entertainment", business_name: "Kerry Burd", business_url: "http://www.socialmediaconsultantsllc.com", visiting_card_image_url: "/business-cards/media-and-entertainment-kerry-burd-8e9a402d.jpg" },
+  { category: "Media and Entertainment", business_name: "Trina Goodman", business_url: "http://www.socialteigh.com", visiting_card_image_url: "/business-cards/media-and-entertainment-trina-goodman-31d443a8.jpg" },
+  { category: "Media and Entertainment", business_name: "Cathy Leitch", business_url: "http://www.lakenormancitizen.com", visiting_card_image_url: "/business-cards/media-and-entertainment-cathy-leitch-7d0026b2.jpg" },
+  { category: "Media and Entertainment", business_name: "Jasmine Lloyd", business_url: "https://www.reverbnation.com/jasminelloyd", visiting_card_image_url: "/business-cards/media-and-entertainment-jasmine-lloyd-27aa072a.jpg" },
+  { category: "Media and Entertainment", business_name: "Jim Luke", business_url: "http://www.iredelllivingmagazine.com", visiting_card_image_url: "/business-cards/media-and-entertainment-jim-luke-e0229fc2.jpg" },
+  { category: "Media and Entertainment", business_name: "John McCall", business_url: "https://www.sunnymemoriesphoto.com/", visiting_card_image_url: "/business-cards/media-and-entertainment-john-mccall-d07a362d.jpg" },
+  { category: "Media and Entertainment", business_name: "Tim McCauley", business_url: "http://www.getvisualcarolina.com", visiting_card_image_url: "/business-cards/media-and-entertainment-tim-mccauley-22e693b7.jpg" },
+  { category: "Media and Entertainment", business_name: "Cathy O'Donnell", business_url: "https://triadmediacommunications.com/", visiting_card_image_url: "/business-cards/media-and-entertainment-cathy-o-donnell-4f242153.jpg" },
+  { category: "Media and Entertainment", business_name: "Greg Prinz", business_url: "http://chapteronefilms.biz/", visiting_card_image_url: "/business-cards/media-and-entertainment-greg-prinz-a7dc7beb.jpg" },
+  { category: "Media and Entertainment", business_name: "Matt Swanson", business_url: "http://www.msdigitalsolutions.com", visiting_card_image_url: "/business-cards/media-and-entertainment-matt-swanson-65b65e44.jpg" },
+  { category: "Media and Entertainment", business_name: "Ray Terry", business_url: "https://www.aboutyourhouseradio.com/", visiting_card_image_url: "/business-cards/media-and-entertainment-ray-terry-153e7b9e.jpg" },
+  { category: "Media and Entertainment", business_name: "Bryan Viger", business_url: "https://www.overyondermag.com", visiting_card_image_url: "/business-cards/media-and-entertainment-bryan-viger-8c4f46a3.jpg" },
+  { category: "Media and Entertainment", business_name: "Jim Vogel", business_url: "http://www.imusocialmedia.com", visiting_card_image_url: "/business-cards/media-and-entertainment-jim-vogel-69dbae60.jpg" },
+  { category: "Media and Entertainment", business_name: "Brad Watkins", business_url: "https://localandqualified.com/", visiting_card_image_url: "/business-cards/media-and-entertainment-brad-watkins-326c619d.jpg" },
+  { category: "Events and Recreation", business_name: "Robert Archer", business_url: "https://www.theamazingmrarcher.com/", visiting_card_image_url: "/business-cards/events-and-recreation-robert-archer-2ed7ef58.jpg" },
+  { category: "Events and Recreation", business_name: "Michelle Cerilli", business_url: "", visiting_card_image_url: "/business-cards/events-and-recreation-michelle-cerilli-783ef5fd.jpg" },
+  { category: "Events and Recreation", business_name: "Peter Coucolo", business_url: "http://www.charlottespecialevents.com", visiting_card_image_url: "/business-cards/events-and-recreation-peter-coucolo-97e28dd2.jpg" },
+  { category: "Events and Recreation", business_name: "Mariano and Caroline Doble", business_url: "https://davidsoninn.com/", visiting_card_image_url: "/business-cards/events-and-recreation-mariano-and-caroline-doble-522cf5c1.jpg" },
+  { category: "Events and Recreation", business_name: "LeAnna Dunlap", business_url: "https://www.theservepickleball.com/", visiting_card_image_url: "/business-cards/events-and-recreation-leanna-dunlap-33452ac2.jpg" },
+  { category: "Health and Fitness", business_name: "Cameron Bearder", business_url: "https://www.chiropractorlkn.com", visiting_card_image_url: "/business-cards/health-and-fitness-cameron-bearder-d528d4f7.jpg" },
+  { category: "Health and Fitness", business_name: "Delaney Cortazzo", business_url: "https://maxliving.com/chiropractor/us/nc/mooresville/maxliving-chiropractic-mooresville/", visiting_card_image_url: "/business-cards/health-and-fitness-delaney-cortazzo-8a63a8bc.jpg" },
+  { category: "Health and Fitness", business_name: "David Konstandt", business_url: "https://carolinaurology.com/", visiting_card_image_url: "/business-cards/health-and-fitness-david-konstandt-eb32ce2f.jpg" },
+  { category: "Health and Fitness", business_name: "Jennifer Kraftchick", business_url: "https://jennifersgreenrelief.greencompassglobal.com/", visiting_card_image_url: "/business-cards/health-and-fitness-jennifer-kraftchick-e03b173e.jpg" },
+  { category: "Health and Fitness", business_name: "Kevin Lafone", business_url: "http://www.carolinaeye.net", visiting_card_image_url: "/business-cards/health-and-fitness-kevin-lafone-1192b5ca.jpg" },
+  { category: "Health and Fitness", business_name: "Drs. Carter & Lewis", business_url: "http://www.growingtreechiro.com", visiting_card_image_url: "/business-cards/health-and-fitness-drs-carter-lewis-ee66987f.jpg" },
+  { category: "Health and Fitness", business_name: "Terri Long", business_url: "https://hemplily.com/", visiting_card_image_url: "/business-cards/health-and-fitness-terri-long-d83e2dfe.jpg" },
+  { category: "Health and Fitness", business_name: "Lindsey Mashburn", business_url: "http://www.southlakewomens.com", visiting_card_image_url: "/business-cards/health-and-fitness-lindsey-mashburn-7ed3eabc.jpg" },
+  { category: "Health and Fitness", business_name: "Leisa Newman", business_url: "http://monocleeyecare.com", visiting_card_image_url: "/business-cards/health-and-fitness-leisa-newman-aaa345a0.jpg" },
+  { category: "Health and Fitness", business_name: "Armentha Prosper-Chicas DDS", business_url: "https://prosperdentalstudio.com/", visiting_card_image_url: "/business-cards/health-and-fitness-armentha-prosper-chicas-dds-79368800.jpg" },
+  { category: "Health and Fitness", business_name: "Blake Sanders", business_url: "https://sacredheartdermatology.com/", visiting_card_image_url: "/business-cards/health-and-fitness-blake-sanders-074f79ed.jpg" },
+  { category: "Health and Fitness", business_name: "Jane Sanders", business_url: "https://www.lakecitypsychiatry.net/", visiting_card_image_url: "/business-cards/health-and-fitness-jane-sanders-b204790a.jpg" },
+  { category: "Health and Fitness", business_name: "Nicole Sheehan DVM", business_url: "https://davidsonvet.com", visiting_card_image_url: "/business-cards/health-and-fitness-nicole-sheehan-dvm-e0f309cf.jpg" },
+  { category: "Health and Fitness", business_name: "Cori Stuart", business_url: "", visiting_card_image_url: "/business-cards/health-and-fitness-cori-stuart-01572c7d.jpg" },
+  { category: "Health and Fitness", business_name: "Joe Wallace", business_url: "https://www.optimizechironc.com/", visiting_card_image_url: "/business-cards/health-and-fitness-joe-wallace-17d7124a.jpg" },
+  { category: "Health and Fitness", business_name: "Matthew Zimmerman", business_url: "http://www.zimmermanfamilywellness.com", visiting_card_image_url: "/business-cards/health-and-fitness-matthew-zimmerman-3cdf9ad0.jpg" },
+  { category: "Food and Drink", business_name: "Kim Boyd", business_url: "https://www.lknwatertree.com/", visiting_card_image_url: "/business-cards/food-and-drink-kim-boyd-5407989f.jpg" },
+  { category: "Food and Drink", business_name: "Michael Cuddy", business_url: "http://www.ghostfacebrewing.com", visiting_card_image_url: "/business-cards/food-and-drink-michael-cuddy-7f415831.jpg" },
+  { category: "Food and Drink", business_name: "Keith DuPont", business_url: "https://www.marcos.com/", visiting_card_image_url: "/business-cards/food-and-drink-keith-dupont-d28ac560.jpg" },
+  { category: "Food and Drink", business_name: "Andrew Durstewitz", business_url: "http://www.d9brewing.com/", visiting_card_image_url: "/business-cards/food-and-drink-andrew-durstewitz-97e70a34.jpg" },
+  { category: "Food and Drink", business_name: "Natalie Kudlacz", business_url: "http://www.thicketandmeadow.com/", visiting_card_image_url: "/business-cards/food-and-drink-natalie-kudlacz-0442cee6.jpg" },
+  { category: "Food and Drink", business_name: "Amy Liu", business_url: "https://www.concettositalianice.com/", visiting_card_image_url: "/business-cards/food-and-drink-amy-liu-6b7a1f5b.jpg" },
+  { category: "Food and Drink", business_name: "Guido Lombardi", business_url: "", visiting_card_image_url: "/business-cards/food-and-drink-guido-lombardi-b5922fd4.jpg" },
+  { category: "Food and Drink", business_name: "Josh McCracken", business_url: "https://www.h2publichouse.com/", visiting_card_image_url: "/business-cards/food-and-drink-josh-mccracken-34432c51.jpg" },
+  { category: "Food and Drink", business_name: "Joel Pfyffer", business_url: "http://www.prosciuttos.com", visiting_card_image_url: "/business-cards/food-and-drink-joel-pfyffer-3f81cce9.jpg" },
+  { category: "Food and Drink", business_name: "Jeff Pietrangelo", business_url: "https://pfgc.com/", visiting_card_image_url: "/business-cards/food-and-drink-jeff-pietrangelo-dcca0686.jpg" },
+  { category: "Food and Drink", business_name: "Paul Plyler", business_url: "https://www.southerndistillingcompany.com/", visiting_card_image_url: "/business-cards/food-and-drink-paul-plyler-96985e92.jpg" },
+  { category: "Food and Drink", business_name: "Eileen Randle", business_url: "https://www.mycustombakes.com/lampshadebakingco", visiting_card_image_url: "/business-cards/food-and-drink-eileen-randle-e2b484f6.jpg" },
+  { category: "Food and Drink", business_name: "Sam Sharpe", business_url: "https://redmooncoffee.com/", visiting_card_image_url: "/business-cards/food-and-drink-sam-sharpe-ecd6f137.jpg" },
+  { category: "Food and Drink", business_name: "To the Moon and Mac", business_url: "https://www.moonandmac.com/", visiting_card_image_url: "/business-cards/food-and-drink-to-the-moon-and-mac-69e1308d.jpg" },
+  { category: "Food and Drink", business_name: "Monica Walsh", business_url: "https://queensice.com/", visiting_card_image_url: "/business-cards/food-and-drink-monica-walsh-17fc6164.jpg" },
+  { category: "Food and Drink", business_name: "Angela Yeo", business_url: "https://www.cocottebakery.com/", visiting_card_image_url: "/business-cards/food-and-drink-angela-yeo-23000c15.jpg" },
+  { category: "Food and Drink", business_name: "Scott York", business_url: "https://artisanalwatersolutions.com/", visiting_card_image_url: "/business-cards/food-and-drink-scott-york-915a8e95.jpg" },
+  { category: "Food and Drink", business_name: "Victor & Debra Zavaleta", business_url: "http://wingzonwheelz.com/", visiting_card_image_url: "/business-cards/food-and-drink-victor-debra-zavaleta-03abf00d.jpg" },
+  { category: "Government and Non-Profit", business_name: "Phyllis Boyd-VanHoy", business_url: "https://www.cpcc.edu/", visiting_card_image_url: "/business-cards/government-and-non-profit-phyllis-boyd-vanhoy-2f278c25.jpg" },
+  { category: "Government and Non-Profit", business_name: "R Gary Byrd", business_url: "http://www.charlotte.score.org", visiting_card_image_url: "/business-cards/government-and-non-profit-r-gary-byrd-384ce6ab.jpg" },
+  { category: "Government and Non-Profit", business_name: "Debbie Dalton", business_url: "http://thehdlife.org", visiting_card_image_url: "/business-cards/government-and-non-profit-debbie-dalton-c392ef51.jpg" },
+  { category: "Government and Non-Profit", business_name: "Lynn Hegedus", business_url: "https://mooresvillenc.gov//", visiting_card_image_url: "/business-cards/government-and-non-profit-lynn-hegedus-2b01f8f4.jpg" },
+  { category: "Government and Non-Profit", business_name: "Wayne Herron", business_url: "http://www.cornelius.org/planning", visiting_card_image_url: "/business-cards/government-and-non-profit-wayne-herron-9f0f3909.jpg" },
+  { category: "Government and Non-Profit", business_name: "Scott Higgins", business_url: "https://cornelius.org/", visiting_card_image_url: "/business-cards/government-and-non-profit-scott-higgins-547654c1.jpg" },
+  { category: "Government and Non-Profit", business_name: "Eileen Joyce", business_url: "http://www.sba.gov", visiting_card_image_url: "/business-cards/government-and-non-profit-eileen-joyce-71ef2dbe.jpg" },
+  { category: "Government and Non-Profit", business_name: "Maria Marvels-Stubbs", business_url: "https://ourpinkvictory.com/", visiting_card_image_url: "/business-cards/government-and-non-profit-maria-marvels-stubbs-32f5fb3b.jpg" },
+  { category: "Government and Non-Profit", business_name: "John McAlpine", business_url: "http://engr.uncc.edu", visiting_card_image_url: "/business-cards/government-and-non-profit-john-mcalpine-b38c57fe.jpg" },
+  { category: "Government and Non-Profit", business_name: "John Misner", business_url: "http://www.charlotte.score.org", visiting_card_image_url: "/business-cards/government-and-non-profit-john-misner-392d64a6.jpg" },
+  { category: "Government and Non-Profit", business_name: "Debbie O'Handley", business_url: "http://www.hopehousefoundation.org", visiting_card_image_url: "/business-cards/government-and-non-profit-debbie-o-handley-b7d17d58.jpg" },
+  { category: "Government and Non-Profit", business_name: "Michael O'Hara", business_url: "http://www.charlotte.score.org", visiting_card_image_url: "/business-cards/government-and-non-profit-michael-o-hara-d44e755f.jpg" },
+  { category: "Government and Non-Profit", business_name: "Andrew Oliver", business_url: "http://www.patsplacecac.org", visiting_card_image_url: "/business-cards/government-and-non-profit-andrew-oliver-386568c8.jpg" },
+  { category: "Government and Non-Profit", business_name: "Dave Olson", business_url: "http://www.charlotte.score.org", visiting_card_image_url: "/business-cards/government-and-non-profit-dave-olson-ee33a6cc.jpg" },
+  { category: "Government and Non-Profit", business_name: "Diane Rumley", business_url: "https://www.supportmilitaryfamilies.org/", visiting_card_image_url: "/business-cards/government-and-non-profit-diane-rumley-0bd23934.jpg" },
+  { category: "Government and Non-Profit", business_name: "Bill Russell", business_url: "http://www.lakenormanchamber.org", visiting_card_image_url: "/business-cards/government-and-non-profit-bill-russell-57a8676a.jpg" },
+  { category: "Government and Non-Profit", business_name: "Woody Washam", business_url: "http://www.cornelius.org", visiting_card_image_url: "/business-cards/government-and-non-profit-woody-washam-8776aa9d.jpg" },
+  { category: "Government and Non-Profit", business_name: "Marquita Williams", business_url: "https://www.facebook.com/LKNSO/", visiting_card_image_url: "/business-cards/government-and-non-profit-marquita-williams-27c5cdcf.jpg" },
 ];
-
-export const categories = Array.from(new Set(businesses.map((business) => business.category)));
+export const categories = ['Artists, Graphics, and Signs', 'Building, Construction and Remodeling', 'Business Services', 'Events and Recreation', 'Fashion and Retail', 'Financial Services', 'Food and Drink', 'Government and Non-Profit', 'Health and Fitness', 'Legal Services', 'Media and Entertainment', 'Personal Services', 'Pet Services', 'Real Estate and Related', 'Vehicle Sales and Service'];

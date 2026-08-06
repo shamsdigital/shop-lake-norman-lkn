@@ -1,6 +1,6 @@
 /* LKNSBN brand: directory as a readable local guide in royal blue and Inter. */
 import { useMemo, useState } from 'react';
-import { ArrowDown, ArrowUpRight, Check, ExternalLink, Search, SlidersHorizontal, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Check, ExternalLink, X } from 'lucide-react';
 import { businesses, categories, type Business } from '@/lib/businesses';
 import { trpc } from '@/lib/trpc';
 
@@ -19,21 +19,23 @@ function Card({ business, index }: { business: Business; index: number }) {
   return business.business_url ? <a href={business.business_url} target="_blank" rel="noreferrer" aria-label={`Visit ${business.business_name}`}>{inner}</a> : <div>{inner}</div>;
 }
 
+function categoryButtonClass(active: boolean) {
+  return `px-3 py-2 text-left text-[10px] font-semibold uppercase tracking-[.12em] transition ${active ? 'bg-[#0b3d91] text-white' : 'border border-[#cdd7e4] bg-white text-[#4a5c70] hover:border-[#0b3d91] hover:text-[#0b3d91]'}`;
+}
+
 export default function Home() {
   const storedCards = trpc.cards.list.useQuery().data ?? [];
   const allBusinesses = useMemo<Business[]>(() => [...businesses, ...storedCards.map((card) => ({ business_name: card.businessName, business_url: card.businessUrl ?? '', visiting_card_image_url: card.imageUrl, category: card.category }))], [storedCards]);
   const allCategories = useMemo(() => Array.from(new Set([...categories, ...storedCards.map(card => card.category)])).sort(), [storedCards]);
-  const [mode, setMode] = useState<'last' | 'business' | 'category'>('business');
-  const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All categories');
   const [letter, setLetter] = useState('All');
   const [visibleCount, setVisibleCount] = useState(24);
 
-  const sorted = useMemo(() => [...allBusinesses].sort((a, b) => mode === 'category' ? a.category.localeCompare(b.category) || a.business_name.localeCompare(b.business_name) : mode === 'last' ? a.business_name.split(' ').slice(-1)[0].localeCompare(b.business_name.split(' ').slice(-1)[0]) : a.business_name.localeCompare(b.business_name)), [mode, allBusinesses]);
-  const filtered = useMemo(() => sorted.filter((business) => { const haystack = `${business.business_name} ${business.category}`.toLowerCase(); return (!query || haystack.includes(query.toLowerCase())) && (category === 'All categories' || business.category === category) && (letter === 'All' || business.business_name.trim().toUpperCase().startsWith(letter)); }), [sorted, query, category, letter]);
+  const sorted = useMemo(() => [...allBusinesses].sort((a, b) => a.business_name.localeCompare(b.business_name)), [allBusinesses]);
+  const filtered = useMemo(() => sorted.filter((business) => (category === 'All categories' || business.category === category) && (letter === 'All' || business.business_name.trim().toUpperCase().startsWith(letter))), [sorted, category, letter]);
   const visibleBusinesses = filtered.slice(0, visibleCount);
-  const activeFilterCount = Number(Boolean(query)) + Number(category !== 'All categories') + Number(letter !== 'All');
-  const clearFilters = () => { setQuery(''); setCategory('All categories'); setLetter('All'); setVisibleCount(24); };
+  const activeFilterCount = Number(category !== 'All categories') + Number(letter !== 'All');
+  const clearFilters = () => { setCategory('All categories'); setLetter('All'); setVisibleCount(24); };
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   return <main>
@@ -41,11 +43,21 @@ export default function Home() {
 
     <section id="directory" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><div className="eyebrow mb-4 text-[#0b3d91]">01 / The e-rolodex</div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Meet the local index.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">A visual guide to the people, makers, and professionals doing good work around Lake Norman.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">members listed</div></div></div>
 
-      <div className="border border-[#cdd7e4] bg-[#e8eef5] p-4 sm:p-5"><div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"><label className="flex min-w-0 flex-1 items-center gap-3 border-b border-[#9aabc0] py-2 text-sm text-[#4a5c70]"><Search size={17}/><span className="sr-only">Search the local index</span><input value={query} onChange={event => { setQuery(event.target.value); setVisibleCount(24); }} placeholder="Search by business or category" className="w-full bg-transparent outline-none placeholder:text-[#7a8b9c]" /></label><div className="flex items-center gap-2"><SlidersHorizontal size={15} className="text-[#0b3d91]"/><span className="eyebrow text-[10px] text-[#4a5c70]">Sort</span><select value={mode} onChange={event => setMode(event.target.value as typeof mode)} className="bg-transparent py-2 text-sm font-semibold text-[#0b3d91] outline-none"><option value="business">Business name</option><option value="last">Last name</option><option value="category">Category</option></select></div></div><div className="mt-5 flex gap-2 overflow-x-auto pb-1"><button onClick={() => { setCategory('All categories'); setVisibleCount(24); }} className={`whitespace-nowrap px-3 py-2 text-[10px] font-semibold uppercase tracking-[.12em] transition ${category === 'All categories' ? 'bg-[#0b3d91] text-white' : 'border border-[#cdd7e4] text-[#4a5c70] hover:border-[#0b3d91] hover:text-[#0b3d91]'}`}>All categories</button>{allCategories.map(item => <button key={item} onClick={() => { setCategory(item); setVisibleCount(24); }} className={`whitespace-nowrap px-3 py-2 text-[10px] font-semibold uppercase tracking-[.12em] transition ${category === item ? 'bg-[#0b3d91] text-white' : 'border border-[#cdd7e4] text-[#4a5c70] hover:border-[#0b3d91] hover:text-[#0b3d91]'}`}>{item}</button>)}</div><div className="mt-4 flex items-center gap-2 overflow-x-auto border-t border-[#cdd7e4] pt-4"><span className="eyebrow shrink-0 text-[10px] text-[#7a8b9c]">Jump to</span><button onClick={() => setLetter('All')} className={`shrink-0 px-2 py-1 text-[10px] font-semibold ${letter === 'All' ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:text-[#0b3d91]'}`}>All</button>{letters.map(item => <button key={item} onClick={() => { setLetter(item); setVisibleCount(24); }} className={`shrink-0 px-2 py-1 text-[10px] font-semibold ${letter === item ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:text-[#0b3d91]'}`}>{item}</button>)}</div></div>
+      <div className="border border-[#cdd7e4] bg-[#e8eef5] p-4 sm:p-5">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <button onClick={() => { setCategory('All categories'); setVisibleCount(24); }} className={categoryButtonClass(category === 'All categories')}>All categories</button>
+          {allCategories.map(item => <button key={item} onClick={() => { setCategory(item); setVisibleCount(24); }} className={categoryButtonClass(category === item)}>{item}</button>)}
+        </div>
+        <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-[#cdd7e4] pt-4">
+          <span className="eyebrow shrink-0 text-[10px] text-[#7a8b9c]">Jump to</span>
+          <button onClick={() => setLetter('All')} className={`shrink-0 px-2 py-1 text-[10px] font-semibold ${letter === 'All' ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:text-[#0b3d91]'}`}>All</button>
+          {letters.map(item => <button key={item} onClick={() => { setLetter(item); setVisibleCount(24); }} className={`shrink-0 px-2 py-1 text-[10px] font-semibold ${letter === item ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:text-[#0b3d91]'}`}>{item}</button>)}
+        </div>
+      </div>
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3"><div className="flex items-center gap-3"><span className="eyebrow text-[#4a5c70]">Showing {Math.min(visibleCount, filtered.length)} of {filtered.length}</span>{activeFilterCount > 0 && <span className="inline-flex items-center gap-1 bg-[#d6e2f0] px-2 py-1 text-[10px] font-semibold text-[#0b3d91]"><Check size={12}/> {activeFilterCount} filter{activeFilterCount > 1 ? 's' : ''} active</span>}</div>{activeFilterCount > 0 && <button onClick={clearFilters} className="inline-flex items-center gap-1 text-xs font-semibold text-[#0b3d91] underline underline-offset-4">Clear all <X size={13}/></button>}</div>
 
-      {filtered.length > 0 ? <><div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{visibleBusinesses.map((business, index) => <Card key={`${business.category}-${business.business_name}-${index}`} business={business} index={index}/>)}</div>{visibleCount < filtered.length && <div className="mt-10 text-center"><button onClick={() => setVisibleCount(current => current + 24)} className="inline-flex items-center gap-2 border border-[#0b3d91] px-5 py-3 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] transition hover:bg-[#0b3d91] hover:text-white">Load 24 more <ArrowDown size={15}/></button></div>}</> : <div className="mt-5 border border-dashed border-[#cdd7e4] py-20 text-center"><div className="display text-3xl text-[#0b3d91]">No members found.</div><p className="mt-2 text-sm text-[#4a5c70]">Try a different search, category, or letter.</p><button onClick={clearFilters} className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] underline underline-offset-4">Reset filters <ArrowUpRight size={14}/></button></div>}
+      {filtered.length > 0 ? <><div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{visibleBusinesses.map((business, index) => <Card key={`${business.category}-${business.business_name}-${index}`} business={business} index={index}/>)}</div>{visibleCount < filtered.length && <div className="mt-10 text-center"><button onClick={() => setVisibleCount(current => current + 24)} className="inline-flex items-center gap-2 border border-[#0b3d91] px-5 py-3 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] transition hover:bg-[#0b3d91] hover:text-white">Load 24 more <ArrowDown size={15}/></button></div>}</> : <div className="mt-5 border border-dashed border-[#cdd7e4] py-20 text-center"><div className="display text-3xl text-[#0b3d91]">No members found.</div><p className="mt-2 text-sm text-[#4a5c70]">Try a different category or letter.</p><button onClick={clearFilters} className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] underline underline-offset-4">Reset filters <ArrowUpRight size={14}/></button></div>}
     </div></section>
   </main>;
 }

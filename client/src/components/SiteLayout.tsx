@@ -23,10 +23,6 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               alt="LKNSBN — Shop Lake Norman"
               className="h-11 w-auto object-contain"
             />
-            <span className="leading-none">
-              <span className="display block text-[18px] font-semibold tracking-[-.04em]">Shop Lake Norman</span>
-              <span className="eyebrow mt-1 block text-[#0b3d91]">Local business index</span>
-            </span>
           </Link>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
             {nav.map((item) => {

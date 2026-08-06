@@ -1,4 +1,4 @@
-/* LKNSBN brand: directory as a readable local guide in royal blue and Inter. */
+/* LKNSBN brand: member listings as a readable local guide in royal blue and Inter. */
 import { useMemo, useState } from 'react';
 import { Link } from 'wouter';
 import { ArrowDown, ArrowUpRight, Check, ExternalLink, X } from 'lucide-react';
@@ -64,21 +64,22 @@ export default function Home() {
       <div className="mx-auto max-w-[1380px] px-5 py-10 lg:px-10 lg:py-14">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="max-w-xl">
-            <p className="eyebrow mb-4 text-[#0b3d91]">Shop Lake Norman · LKNSBN member directory</p>
+            <p className="eyebrow mb-4 text-[#0b3d91]">Lake Norman Small Business Network</p>
             <h1 className="display text-4xl font-bold leading-[1.08] tracking-[-.04em] text-[#0b3d91] sm:text-5xl lg:text-[3.35rem]">
-              The people behind the places you love.
+              Find local.<br />
+              <span className="text-[#4a5c70]">Choose close.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-7 text-[#4a5c70]">
-              A free index of Lake Norman Small Business Network members. Browse business cards, filter by category or name, and visit a member&apos;s website directly — no middleman.
+              Browse business cards from local shops, makers, and pros around the lake. Search by name or trade, then visit their website directly.
             </p>
             <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#4a5c70]">
-              <li><span className="font-semibold text-[#0b3d91]">{allBusinesses.length}</span> members listed</li>
-              <li>Connecting since <span className="font-semibold text-[#0b3d91]">2014</span></li>
-              <li>Free for members &amp; neighbors</li>
+              <li><span className="font-semibold text-[#0b3d91]">{allBusinesses.length}</span> local businesses</li>
+              <li>Together since <span className="font-semibold text-[#0b3d91]">2014</span></li>
+              <li>Free to browse</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#directory" data-slot="button" className={cn(buttonVariants({ size: 'lg' }))}>
-                Browse the directory <ArrowDown size={16} />
+              <a href="#members" data-slot="button" className={cn(buttonVariants({ size: 'lg' }))}>
+                See who&apos;s here <ArrowDown size={16} />
               </a>
               <Link href="/about" data-slot="button" className={cn(buttonVariants({ size: 'lg', variant: 'outline' }))}>
                 About the network
@@ -102,11 +103,11 @@ export default function Home() {
       </div>
     </section>
 
-    <section id="directory" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Browse the member directory.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">Each card belongs to an LKNSBN member. Filter by category or first letter, then click through to visit their site.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">members listed</div></div></div>
+    <section id="members" className="scroll-mt-20 bg-[#ffffff] px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto max-w-[1380px]"><div className="mb-10 grid gap-8 border-b border-[#cdd7e4] pb-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="display max-w-3xl text-5xl font-semibold leading-[.95] text-[#0b3d91] sm:text-7xl">Meet the members.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-[#4a5c70]">Every card belongs to someone in the network. Pick a category or letter, then click through to their site.</p></div><div className="border-l border-[#cdd7e4] pl-5 lg:min-w-[190px]"><div className="display text-4xl text-[#0b3d91]">{allBusinesses.length}</div><div className="eyebrow mt-1 text-[#7a8b9c]">in the network</div></div></div>
 
       <div className="rounded-lg border border-[#cdd7e4] bg-[#f3f6fa] p-3 sm:p-4">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#cdd7e4] pb-3">
-          <p className="text-xs font-semibold text-[#0b3d91]">Filter the directory</p>
+          <p className="text-xs font-semibold text-[#0b3d91]">Find a business</p>
           <p className="text-[11px] text-[#4a5c70]">
             Showing <span className="font-semibold text-[#0b3d91]">{Math.min(visibleCount, filtered.length)}</span> of{' '}
             <span className="font-semibold text-[#0b3d91]">{filtered.length}</span>

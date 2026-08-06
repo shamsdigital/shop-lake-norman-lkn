@@ -6,7 +6,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const nav = [
-  { href: '/', label: 'Directory' },
+  { href: '/', label: 'Members' },
   { href: '/stories', label: 'Stories' },
   { href: '/about', label: 'About' },
 ];
@@ -43,7 +43,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       {children}
       <footer className="mt-24 bg-[#0b3d91] text-[#ffffff]">
         <div className="mx-auto grid max-w-[1380px] gap-12 px-5 py-14 lg:grid-cols-[1.4fr_.7fr_.7fr] lg:px-10">
-          <div><div className="eyebrow mb-4 text-[#a8c0e0]">Lake Norman Small Business Network</div><h2 className="display max-w-md text-4xl leading-[.98]">Find the people behind the places you love.</h2><p className="mt-5 max-w-sm text-sm leading-7 text-[#c5d4e8]">A free local index for discovering and supporting the independent businesses that make Lake Norman feel like home.</p></div>
+          <div><div className="eyebrow mb-4 text-[#a8c0e0]">Lake Norman Small Business Network</div><h2 className="display max-w-md text-4xl leading-[.98]">Find the people behind the places you love.</h2><p className="mt-5 max-w-sm text-sm leading-7 text-[#c5d4e8]">A free way to discover and support the independent businesses that make Lake Norman feel like home.</p></div>
           <div><div className="eyebrow mb-4 text-[#a8c0e0]">Explore</div>{nav.map(item => <Link key={item.href} href={item.href} className="flex items-center gap-1 py-1 text-sm text-[#ffffff] hover:text-[#a8c0e0]">{item.label}<ArrowUpRight size={13}/></Link>)}<Link href={contactHref} className="mt-2 flex items-center gap-1 py-1 text-sm text-[#ffffff] hover:text-[#a8c0e0]">Contact<ArrowUpRight size={13}/></Link></div>
           <div><div className="eyebrow mb-4 text-[#a8c0e0]">Gather</div><p className="flex gap-2 text-sm leading-6 text-[#c5d4e8]"><MapPin size={15} className="mt-1 shrink-0"/>Cornelius, Davidson, Mooresville, Huntersville & beyond.</p><a href="mailto:lknsbn@yahoo.com" className="mt-4 block text-sm text-[#ffffff] underline decoration-[#6b8fc4] underline-offset-4">lknsbn@yahoo.com</a></div>
         </div>

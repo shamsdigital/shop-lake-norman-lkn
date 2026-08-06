@@ -26,6 +26,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Inter', sans-serif;
   --font-mono: 'Inter', sans-serif;
@@ -50,6 +52,8 @@
   --border: #cdd7e4;
   --input: #cdd7e4;
   --ring: #0b3d91;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
 }
 
 * { box-sizing: border-box; }

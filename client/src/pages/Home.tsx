@@ -1,6 +1,9 @@
 /* LKNSBN brand: directory as a readable local guide in royal blue and Inter. */
 import { useMemo, useState } from 'react';
+import { Link } from 'wouter';
 import { ArrowDown, ArrowUpRight, Check, ExternalLink, X } from 'lucide-react';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { businesses, categories, type Business } from '@/lib/businesses';
 import { trpc } from '@/lib/trpc';
 
@@ -24,11 +27,11 @@ function formatCategoryLabel(label: string) {
 }
 
 function categoryChipClass(active: boolean) {
-  return `focus-ring rounded-full px-2.5 py-1 text-[11px] font-medium leading-tight transition ${active ? 'bg-[#0b3d91] text-white shadow-sm' : 'border border-[#cdd7e4] bg-white text-[#4a5c70] hover:border-[#0b3d91] hover:text-[#0b3d91]'}`;
+  return cn(buttonVariants({ variant: 'chip', size: 'chip' }), active && 'border-primary bg-primary text-primary-foreground');
 }
 
 function letterChipClass(active: boolean) {
-  return `focus-ring inline-flex h-6 min-w-6 items-center justify-center rounded px-1 text-[10px] font-semibold transition ${active ? 'bg-[#0b3d91] text-white' : 'text-[#4a5c70] hover:bg-white hover:text-[#0b3d91]'}`;
+  return cn(buttonVariants({ variant: 'ghost', size: 'letter' }), active && 'bg-primary text-primary-foreground hover:bg-primary');
 }
 
 function selectCategory(setCategory: (value: string) => void, setVisibleCount: (value: number | ((current: number) => number)) => void, value: string) {
@@ -70,12 +73,14 @@ export default function Home() {
               A free member directory for the Lake Norman area. Browse business cards, filter by category, and visit a member&apos;s site directly.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#directory" className="focus-ring inline-flex items-center gap-2 rounded-md bg-[#0b3d91] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#082e6e]">
-                Browse the directory <ArrowDown size={16} />
-              </a>
-              <a href="/about" className="focus-ring inline-flex items-center rounded-md border border-[#cdd7e4] px-5 py-3 text-sm font-semibold text-[#0b3d91] transition hover:border-[#0b3d91]">
-                About the network
-              </a>
+              <Button asChild size="lg">
+                <a href="#directory">
+                  Browse the directory <ArrowDown size={16} />
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/about">About the network</Link>
+              </Button>
             </div>
           </div>
 
@@ -121,13 +126,13 @@ export default function Home() {
         <div className="mt-3">
           <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Category</p>
           <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter by category">
-            <button type="button" onClick={() => selectCategory(setCategory, setVisibleCount, 'All categories')} aria-pressed={category === 'All categories'} className={categoryChipClass(category === 'All categories')}>
+            <Button type="button" variant="chip" size="chip" onClick={() => selectCategory(setCategory, setVisibleCount, 'All categories')} aria-pressed={category === 'All categories'} className={categoryChipClass(category === 'All categories')}>
               {formatCategoryLabel('All categories')}
-            </button>
+            </Button>
             {allCategories.map(item => (
-              <button key={item} type="button" onClick={() => selectCategory(setCategory, setVisibleCount, item)} aria-pressed={category === item} className={categoryChipClass(category === item)}>
+              <Button key={item} type="button" variant="chip" size="chip" onClick={() => selectCategory(setCategory, setVisibleCount, item)} aria-pressed={category === item} className={categoryChipClass(category === item)}>
                 {formatCategoryLabel(item)}
-              </button>
+              </Button>
             ))}
           </div>
         </div>
@@ -135,9 +140,9 @@ export default function Home() {
         <div className="mt-3 border-t border-[#cdd7e4] pt-3">
           <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.14em] text-[#7a8b9c]">Starts with</p>
           <div className="flex flex-wrap gap-0.5" role="group" aria-label="Filter by first letter">
-            <button type="button" onClick={() => selectLetter(setLetter, setVisibleCount, 'All')} aria-pressed={letter === 'All'} className={letterChipClass(letter === 'All')}>All</button>
+            <Button type="button" variant="ghost" size="letter" onClick={() => selectLetter(setLetter, setVisibleCount, 'All')} aria-pressed={letter === 'All'} className={letterChipClass(letter === 'All')}>All</Button>
             {letters.map(item => (
-              <button key={item} type="button" onClick={() => selectLetter(setLetter, setVisibleCount, item)} aria-pressed={letter === item} className={letterChipClass(letter === item)}>{item}</button>
+              <Button key={item} type="button" variant="ghost" size="letter" onClick={() => selectLetter(setLetter, setVisibleCount, item)} aria-pressed={letter === item} className={letterChipClass(letter === item)}>{item}</Button>
             ))}
           </div>
         </div>
@@ -147,14 +152,14 @@ export default function Home() {
             <span className="inline-flex items-center gap-1 rounded-full bg-[#d6e2f0] px-2 py-0.5 text-[10px] font-semibold text-[#0b3d91]">
               <Check size={11} /> {activeFilterCount} active
             </span>
-            <button type="button" onClick={clearFilters} className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0b3d91] hover:underline">
+            <Button type="button" variant="link" size="sm" onClick={clearFilters} className="text-[11px]">
               Clear filters <X size={12} />
-            </button>
+            </Button>
           </div>
         )}
       </div>
 
-      {filtered.length > 0 ? <><div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{visibleBusinesses.map((business, index) => <Card key={`${business.category}-${business.business_name}-${index}`} business={business} index={index}/>)}</div>{visibleCount < filtered.length && <div className="mt-10 text-center"><button onClick={() => setVisibleCount(current => current + 24)} className="inline-flex items-center gap-2 border border-[#0b3d91] px-5 py-3 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] transition hover:bg-[#0b3d91] hover:text-white">Load 24 more <ArrowDown size={15}/></button></div>}</> : <div className="mt-5 border border-dashed border-[#cdd7e4] py-20 text-center"><div className="display text-3xl text-[#0b3d91]">No members found.</div><p className="mt-2 text-sm text-[#4a5c70]">Try a different category or letter.</p><button onClick={clearFilters} className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] underline underline-offset-4">Reset filters <ArrowUpRight size={14}/></button></div>}
+      {filtered.length > 0 ? <><div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{visibleBusinesses.map((business, index) => <Card key={`${business.category}-${business.business_name}-${index}`} business={business} index={index}/>)}</div>{visibleCount < filtered.length && <div className="mt-10 text-center"><Button variant="outline" size="lg" onClick={() => setVisibleCount(current => current + 24)}>Load 24 more <ArrowDown size={15}/></Button></div>}</> : <div className="mt-5 border border-dashed border-[#cdd7e4] py-20 text-center"><div className="display text-3xl text-[#0b3d91]">No members found.</div><p className="mt-2 text-sm text-[#4a5c70]">Try a different category or letter.</p><Button variant="link" className="mt-5" onClick={clearFilters}>Reset filters <ArrowUpRight size={14}/></Button></div>}
     </div></section>
   </main>;
 }

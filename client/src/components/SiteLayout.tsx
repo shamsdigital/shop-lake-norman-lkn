@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X, ArrowUpRight, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const nav = [
   { href: '/', label: 'Directory' },
@@ -30,16 +31,13 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               const active = item.href === '/' ? location === '/' : location.startsWith(item.href);
               return <Link key={item.href} href={item.href} className={`focus-ring eyebrow relative py-2 text-[11px] transition-colors hover:text-[#0b3d91] ${active ? 'text-[#0b3d91]' : 'text-[#4a5c70]'}`}>{item.label}{active && <span className="absolute inset-x-0 -bottom-[1px] h-px bg-[#0b3d91]" />}</Link>;
             })}
-            <Link
-              href={contactHref}
-              className={`focus-ring eyebrow inline-flex items-center rounded-md px-4 py-2 text-[11px] font-semibold uppercase tracking-[.12em] transition ${location.startsWith(contactHref) ? 'bg-[#082e6e] text-white' : 'bg-[#0b3d91] text-white hover:bg-[#082e6e]'}`}
-            >
-              Contact
-            </Link>
+            <Button asChild size="sm">
+              <Link href={contactHref}>Contact</Link>
+            </Button>
           </nav>
           <button className="focus-ring inline-flex h-10 w-10 items-center justify-center md:hidden" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X size={22} /> : <Menu size={22} />}</button>
         </div>
-        {open && <nav className="border-t border-[#cdd7e4] px-5 py-4 md:hidden" aria-label="Mobile navigation">{nav.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="eyebrow block border-b border-[#dce4ee] py-4 text-[#4a5c70]">{item.label}</Link>)}<Link href={contactHref} onClick={() => setOpen(false)} className="focus-ring eyebrow mt-4 inline-flex w-full items-center justify-center rounded-md bg-[#0b3d91] px-4 py-3 text-[11px] font-semibold uppercase tracking-[.12em] text-white">Contact</Link></nav>}
+        {open && <nav className="border-t border-[#cdd7e4] px-5 py-4 md:hidden" aria-label="Mobile navigation">{nav.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="eyebrow block border-b border-[#dce4ee] py-4 text-[#4a5c70]">{item.label}</Link>)}<Button asChild className="mt-4 w-full"><Link href={contactHref} onClick={() => setOpen(false)}>Contact</Link></Button></nav>}
       </header>
       {children}
       <footer className="mt-24 bg-[#0b3d91] text-[#ffffff]">

@@ -1,13 +1,13 @@
 # Render Static Site — Shop Lake Norman / LKNSBN
 # https://render.com/docs/blueprint-spec
 #
+# IMPORTANT: Publish Directory must be dist/public (not dist)
+#
 # Deploy:
 #   1. Render Dashboard → New → Static Site (or Blueprint)
 #   2. Connect github.com/shamsdigital/shop-lake-norman-lkn
 #   3. Branch: main
-#
-# Note: Static hosting serves the public site only (member directory, stories,
-# about, contact). /admin card uploads require a Render Web Service backend.
+#   4. Publish Directory: dist/public
 
 services:
   - type: web

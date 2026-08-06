@@ -61,7 +61,7 @@ export default function Home() {
 
   return <main>
     <section className="border-b border-[#cdd7e4] bg-[#f8fafc]">
-      <div className="mx-auto max-w-[1380px] px-5 py-16 lg:px-10 lg:py-24">
+      <div className="mx-auto max-w-[1380px] px-5 py-10 lg:px-10 lg:py-14">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="max-w-xl">
             <p className="eyebrow mb-4 text-[#0b3d91]">Shop Lake Norman · LKNSBN member directory</p>

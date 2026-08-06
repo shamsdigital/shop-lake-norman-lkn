@@ -21,7 +21,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
             <img
               src="/branding-assets/shop-lake-norman-logo-dark.png"
               alt="LKNSBN — Shop Lake Norman"
-              className="h-11 w-auto object-contain"
+              className="h-14 w-auto object-contain sm:h-16"
             />
           </Link>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Primary navigation">

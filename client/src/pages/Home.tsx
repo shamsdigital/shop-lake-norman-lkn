@@ -67,7 +67,7 @@ export default function Home() {
             <p className="eyebrow mb-4 text-[#0b3d91]">Lake Norman Small Business Network</p>
             <h1 className="display text-4xl font-bold leading-[1.08] tracking-[-.04em] text-[#0b3d91] sm:text-5xl lg:text-[3.35rem]">
               Find local.<br />
-              <span className="text-[#4a5c70]">Choose close.</span>
+              Choose close.
             </h1>
             <p className="mt-6 max-w-lg text-base leading-7 text-[#4a5c70]">
               Browse business cards from local shops, makers, and pros around the lake. Search by name or trade, then visit their website directly.

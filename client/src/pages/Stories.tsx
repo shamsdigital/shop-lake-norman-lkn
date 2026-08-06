@@ -8,7 +8,7 @@ const introStoryImage = '/branding-assets/lkn-network-meeting.jpg';
 const holidayStoryImage = '/branding-assets/lkn-holiday-gathering.jpg';
 
 function ArticleShell({ children, title, eyebrow, dek, date, image }: { children: React.ReactNode; title: string; eyebrow: string; dek: string; date: string; image: string }) {
-  return <main><div className="mx-auto max-w-[1380px] px-5 pb-10 pt-14 lg:px-10 lg:pt-20"><Link href="/stories" className="eyebrow inline-flex items-center gap-2 text-[#0b3d91] hover:underline"><ArrowLeft size={14}/> Back to stories</Link><div className="mt-12 grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><div className="eyebrow mb-5 text-[#0b3d91]">{eyebrow}</div><h1 className="display text-5xl font-semibold leading-[.92] text-[#0b3d91] sm:text-7xl">{title}</h1><p className="mt-7 max-w-xl text-lg leading-8 text-[#4a5c70]">{dek}</p></div><img src={image} alt="" className="aspect-[1.65/1] w-full object-cover" /></div></div><div className="mx-auto grid max-w-[1120px] gap-12 px-5 pb-24 pt-12 lg:grid-cols-[180px_1fr] lg:px-10"><aside className="rule pt-4"><div className="eyebrow text-[#0b3d91]">Filed under</div><div className="mt-3 text-sm text-[#4a5c70]">Lake Norman Small Business Networking</div><div className="mt-7 flex items-center gap-2 text-xs text-[#4a5c70]"><CalendarDays size={14}/>{date}</div></aside><article className="prose prose-lg max-w-3xl prose-headings:font-sans prose-headings:tracking-tight prose-headings:text-[#0b3d91] prose-p:leading-8 prose-p:text-[#4a5c70] prose-a:text-[#0b3d91]">{children}</article></div></main>;
+  return <main><div className="mx-auto max-w-[1380px] px-5 pb-10 pt-14 lg:px-10 lg:pt-20"><Link href="/stories" className="eyebrow inline-flex items-center gap-2 text-[#0b3d91] hover:underline"><ArrowLeft size={14}/> Back to stories</Link><div className="mt-12 grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><div className="eyebrow mb-5 text-[#0b3d91]">{eyebrow}</div><h1 className="display max-w-xl text-3xl font-semibold leading-[1.12] tracking-[-.02em] text-[#0b3d91] sm:text-4xl lg:text-[2.5rem]">{title}</h1><p className="mt-5 max-w-xl text-base leading-7 text-[#4a5c70] sm:text-lg sm:leading-8">{dek}</p></div><img src={image} alt="" className="aspect-[1.65/1] w-full object-cover" /></div></div><div className="mx-auto grid max-w-[1120px] gap-12 px-5 pb-24 pt-12 lg:grid-cols-[180px_1fr] lg:px-10"><aside className="rule pt-4"><div className="eyebrow text-[#0b3d91]">Filed under</div><div className="mt-3 text-sm text-[#4a5c70]">Lake Norman Small Business Networking</div><div className="mt-7 flex items-center gap-2 text-xs text-[#4a5c70]"><CalendarDays size={14}/>{date}</div></aside><article className="prose prose-lg max-w-3xl prose-headings:font-sans prose-headings:tracking-tight prose-headings:text-[#0b3d91] prose-p:leading-8 prose-p:text-[#4a5c70] prose-a:text-[#0b3d91]">{children}</article></div></main>;
 }
 
 export function StoriesIndex() {
@@ -47,7 +47,7 @@ export function HolidayStory() {
   return (
     <ArticleShell
       eyebrow="Holiday cheer · December 2017"
-      title="LKNSBN Annual Holiday Party SPONSORS"
+      title="Holiday party sponsors"
       dek="These fine professionals contributed to the 2017 Rotary Club of Davidson Christmas Tree Fund and the annual LKNSBN Christmas Holiday Party at Bayne Brewing Company."
       date="December 8, 2017"
       image={holidayStoryImage}

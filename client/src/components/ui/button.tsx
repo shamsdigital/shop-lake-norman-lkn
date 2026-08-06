@@ -9,17 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-[#082e6e]",
+        default:
+          "bg-primary text-white hover:bg-[#082e6e] hover:text-white",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive/30",
+          "bg-destructive text-white hover:bg-destructive/90 hover:text-white focus-visible:ring-destructive/30",
         outline:
-          "border border-border bg-background text-primary hover:border-primary hover:bg-muted",
+          "border border-border bg-white text-primary hover:border-primary hover:bg-[#f3f6fa] hover:text-primary",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[#dce4ee]",
-        ghost: "text-primary hover:bg-muted",
-        link: "h-auto p-0 text-primary underline-offset-4 hover:underline",
+          "bg-secondary text-primary hover:bg-[#dce4ee] hover:text-primary",
+        ghost: "text-primary hover:bg-muted hover:text-primary",
+        link: "h-auto p-0 text-primary underline-offset-4 hover:text-[#082e6e] hover:underline",
         chip:
-          "rounded-full border border-border bg-background font-medium text-muted-foreground hover:border-primary hover:text-primary aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-primary-foreground",
+          "rounded-full border border-border bg-white font-medium text-[#4a5c70] hover:border-primary hover:bg-white hover:text-primary aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -52,7 +53,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     />
   );

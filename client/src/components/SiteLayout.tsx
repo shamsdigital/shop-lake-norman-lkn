@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X, ArrowUpRight, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 const nav = [
   { href: '/', label: 'Directory' },
@@ -31,13 +32,13 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               const active = item.href === '/' ? location === '/' : location.startsWith(item.href);
               return <Link key={item.href} href={item.href} className={`focus-ring eyebrow relative py-2 text-[11px] transition-colors hover:text-[#0b3d91] ${active ? 'text-[#0b3d91]' : 'text-[#4a5c70]'}`}>{item.label}{active && <span className="absolute inset-x-0 -bottom-[1px] h-px bg-[#0b3d91]" />}</Link>;
             })}
-            <Button asChild size="sm">
-              <Link href={contactHref}>Contact</Link>
-            </Button>
+            <Link href={contactHref} data-slot="button" className={cn(buttonVariants({ size: 'sm' }))}>
+              Contact
+            </Link>
           </nav>
           <button className="focus-ring inline-flex h-10 w-10 items-center justify-center md:hidden" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X size={22} /> : <Menu size={22} />}</button>
         </div>
-        {open && <nav className="border-t border-[#cdd7e4] px-5 py-4 md:hidden" aria-label="Mobile navigation">{nav.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="eyebrow block border-b border-[#dce4ee] py-4 text-[#4a5c70]">{item.label}</Link>)}<Button asChild className="mt-4 w-full"><Link href={contactHref} onClick={() => setOpen(false)}>Contact</Link></Button></nav>}
+        {open && <nav className="border-t border-[#cdd7e4] px-5 py-4 md:hidden" aria-label="Mobile navigation">{nav.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="eyebrow block border-b border-[#dce4ee] py-4 text-[#4a5c70]">{item.label}</Link>)}<Link href={contactHref} data-slot="button" onClick={() => setOpen(false)} className={cn(buttonVariants({ size: 'default' }), 'mt-4 w-full')}>Contact</Link></nav>}
       </header>
       {children}
       <footer className="mt-24 bg-[#0b3d91] text-[#ffffff]">

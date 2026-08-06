@@ -27,11 +27,11 @@ function formatCategoryLabel(label: string) {
 }
 
 function categoryChipClass(active: boolean) {
-  return cn(buttonVariants({ variant: 'chip', size: 'chip' }), active && 'border-primary bg-primary text-primary-foreground');
+  return cn(buttonVariants({ variant: 'chip', size: 'chip' }), active && 'border-primary bg-primary text-white hover:text-white');
 }
 
 function letterChipClass(active: boolean) {
-  return cn(buttonVariants({ variant: 'ghost', size: 'letter' }), active && 'bg-primary text-primary-foreground hover:bg-primary');
+  return cn(buttonVariants({ variant: 'ghost', size: 'letter' }), active && 'bg-primary text-white hover:bg-primary hover:text-white');
 }
 
 function selectCategory(setCategory: (value: string) => void, setVisibleCount: (value: number | ((current: number) => number)) => void, value: string) {
@@ -73,14 +73,12 @@ export default function Home() {
               A free member directory for the Lake Norman area. Browse business cards, filter by category, and visit a member&apos;s site directly.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg">
-                <a href="#directory">
-                  Browse the directory <ArrowDown size={16} />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/about">About the network</Link>
-              </Button>
+              <a href="#directory" data-slot="button" className={cn(buttonVariants({ size: 'lg' }))}>
+                Browse the directory <ArrowDown size={16} />
+              </a>
+              <Link href="/about" data-slot="button" className={cn(buttonVariants({ size: 'lg', variant: 'outline' }))}>
+                About the network
+              </Link>
             </div>
           </div>
 

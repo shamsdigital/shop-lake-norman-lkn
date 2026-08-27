@@ -1,15 +1,15 @@
-# Render Static Site — Shop Lake Norman / LKNSBN
+# Render Static Site — public website (no backend)
 # https://render.com/docs/blueprint-spec
 #
-# Public site only (no /admin). For admin, use render-web.yaml instead.
+# Split setup with render-web.yaml:
+#   • This Static Site — public pages (/, /about, /stories, etc.)
+#   • Web Service shop-lake-norman-admin — /admin + API
 #
-# IMPORTANT: Publish Directory must be dist/public (not dist)
+# After the Web Service is live, set:
+#   VITE_ADMIN_URL=https://shop-lake-norman-admin.onrender.com/admin
+# (use your actual Web Service URL) and redeploy this Static Site.
 #
-# Deploy:
-#   1. Render Dashboard → New → Static Site (or Blueprint)
-#   2. Connect github.com/shamsdigital/shop-lake-norman-lkn
-#   3. Branch: main
-#   4. Publish Directory: dist/public
+# Publish Directory must be dist/public (not dist)
 
 services:
   - type: web
@@ -21,6 +21,8 @@ services:
     envVars:
       - key: NODE_VERSION
         value: "22"
+      - key: VITE_ADMIN_URL
+        sync: false
     routes:
       - type: rewrite
         source: /*

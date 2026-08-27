@@ -1,18 +1,22 @@
-# Render Web Service — full site + /admin
+# Render Web Service — admin + API (keep public site on Static Site)
 # https://render.com/docs/blueprint-spec
 #
-# Use this when you need /admin (password login + card uploads).
-# Static Site hosting cannot run the API — use this Web Service instead.
+# Split setup:
+#   • Static Site (render.yaml) — public website, fast CDN
+#   • This Web Service — /admin login, /api/trpc, optional card uploads
+#
+# After deploy, copy this service URL and set on the Static Site:
+#   VITE_ADMIN_URL=https://<this-service>.onrender.com/admin
+# Then redeploy the Static Site.
 #
 # Deploy:
-#   1. Render Dashboard → New → Blueprint
-#   2. Point to this repo and select render-web.yaml (or create Web Service manually)
-#   3. Set ADMIN_PASSWORD when prompted (8 digits)
-#   4. Optional: DATABASE_URL + Forge storage keys for saving new cards
+#   1. Render Dashboard → New → Web Service
+#   2. Same repo, branch main
+#   3. Set ADMIN_PASSWORD (8 digits, e.g. 48291730)
 
 services:
   - type: web
-    name: shop-lake-norman-lkn
+    name: shop-lake-norman-admin
     runtime: node
     region: ohio
     branch: main
@@ -20,7 +24,7 @@ services:
     buildCommand: pnpm install && pnpm build
     preDeployCommand: bash scripts/render-predeploy.sh
     startCommand: pnpm start
-    healthCheckPath: /
+    healthCheckPath: /admin
     envVars:
       - key: NODE_ENV
         value: production

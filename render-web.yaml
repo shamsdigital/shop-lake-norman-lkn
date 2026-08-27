@@ -1,0 +1,38 @@
+# Render Web Service — full site + /admin
+# https://render.com/docs/blueprint-spec
+#
+# Use this when you need /admin (password login + card uploads).
+# Static Site hosting cannot run the API — use this Web Service instead.
+#
+# Deploy:
+#   1. Render Dashboard → New → Blueprint
+#   2. Point to this repo and select render-web.yaml (or create Web Service manually)
+#   3. Set ADMIN_PASSWORD when prompted (8 digits)
+#   4. Optional: DATABASE_URL + Forge storage keys for saving new cards
+
+services:
+  - type: web
+    name: shop-lake-norman-lkn
+    runtime: node
+    region: ohio
+    branch: main
+    plan: free
+    buildCommand: pnpm install && pnpm build
+    preDeployCommand: bash scripts/render-predeploy.sh
+    startCommand: pnpm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: BUILT_IN_FORGE_API_URL
+        sync: false
+      - key: BUILT_IN_FORGE_API_KEY
+        sync: false

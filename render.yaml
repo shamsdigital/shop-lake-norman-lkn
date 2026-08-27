@@ -1,6 +1,8 @@
 # Render Static Site — Shop Lake Norman / LKNSBN
 # https://render.com/docs/blueprint-spec
 #
+# Public site only (no /admin). For admin, use render-web.yaml instead.
+#
 # IMPORTANT: Publish Directory must be dist/public (not dist)
 #
 # Deploy:

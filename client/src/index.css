@@ -114,6 +114,11 @@ button, input, textarea { font: inherit; }
   font-weight: 700;
   letter-spacing: -.045em;
 }
+.home-display {
+  font-family: 'Prata', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
 .rule { border-top: 1px solid #cdd7e4; }
 .rule-bottom { border-bottom: 1px solid #cdd7e4; }
 .focus-ring:focus-visible { outline: 3px solid rgba(11,61,145,.35); outline-offset: 3px; }

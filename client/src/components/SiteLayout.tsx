@@ -77,7 +77,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
             <Link href={contactHref} className="mt-4 inline-flex items-center gap-1 text-sm text-[#ffffff] hover:text-[#a8c0e0]">Contact<ArrowUpRight size={13}/></Link>
           </div>
         </div>
-        <div className="border-t border-white/15 px-5 py-4 lg:px-10"><div className="mx-auto flex max-w-[1380px] flex-col justify-between gap-2 text-[11px] text-[#9eb0c8] sm:flex-row"><span>© {new Date().getFullYear()} Lake Norman Small Business Network • Cornelius NC</span><a href="https://alianzaconnects.com/" target="_blank" rel="noreferrer" className="uppercase tracking-[.08em] text-[#9eb0c8] underline decoration-[#6b8fc4] underline-offset-4 transition hover:text-[#ffffff]">Website maintained by Alianza</a></div></div>
+        <div className="border-t border-white/15 px-5 py-4 lg:px-10"><div className="mx-auto flex max-w-[1380px] flex-col justify-between gap-2 text-[11px] text-[#9eb0c8] sm:flex-row"><span>© {new Date().getFullYear()} Lake Norman Small Business Network • Cornelius NC</span><a href="https://alianzaconnects.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 uppercase tracking-[.08em] text-[#9eb0c8] underline decoration-[#6b8fc4] underline-offset-4 transition hover:text-[#ffffff]"><img src="/home/hero-meeting.png" alt="Alianza" className="h-8 w-auto rounded-sm bg-white object-contain" />Website maintained by Alianza</a></div></div>
       </footer>
     </div>
   );

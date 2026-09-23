@@ -9,10 +9,12 @@ import { cn } from '@/lib/utils';
 import { businesses, type Business } from '@/lib/businesses';
 import { trpc } from '@/lib/trpc';
 
+const sectionImage = '/home/hero-meeting.png';
+
 const images = {
-  hero: '/home/hero-meeting.png',
+  hero: sectionImage,
   hashtags: '/home/hashtags.png',
-  events: '/home/events.png',
+  events: sectionImage,
   important: '/home/important.png',
 };
 
@@ -178,7 +180,7 @@ export default function Home() {
           </li>
           <li>
             <a href="https://www.facebook.com/groups/helpwantedlkn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-semibold text-[#0b3d91] hover:underline">
-              <ChevronRight size={16} /> ISO LKN Facebook page is now Help Wanted LKN
+              <ChevronRight size={16} /> ISO LKN FB page is now help wanted lkn
             </a>
           </li>
           <li>

@@ -70,7 +70,7 @@ export function Contact() {
                 <li>Your website, if you&apos;d like to be added to the network</li>
               </ul>
             </div>
-            <Link href="/" className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] hover:underline">
+            <Link href="/members" className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] hover:underline">
               See who&apos;s in the network <ArrowUpRight size={15} />
             </Link>
           </aside>

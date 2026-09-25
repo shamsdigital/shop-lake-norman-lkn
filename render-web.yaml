@@ -12,7 +12,7 @@
 # Deploy:
 #   1. Render Dashboard → New → Web Service
 #   2. Same repo, branch main
-#   3. Set ADMIN_PASSWORD (8 digits, e.g. 48291730)
+#   3. Set ADMIN_PASSWORD (at least 8 characters)
 
 services:
   - type: web

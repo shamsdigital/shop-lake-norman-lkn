@@ -7,9 +7,9 @@ describe('admin.verifyPassword', () => {
     const ctx = { user: null, req: { headers: {} } as TrpcContext['req'], res: { setHeader: () => undefined } as TrpcContext['res'] } satisfies TrpcContext;
     const caller = appRouter.createCaller(ctx);
     const configuredPassword = process.env.ADMIN_PASSWORD ?? '';
-    expect(configuredPassword).toMatch(/^\d{8}$/);
+    expect(configuredPassword.length).toBeGreaterThanOrEqual(8);
     await expect(caller.admin.verifyPassword({ password: configuredPassword })).resolves.toEqual({ ok: true });
-    const wrongPassword = configuredPassword.slice(0, 7) + (configuredPassword.endsWith('0') ? '1' : '0');
+    const wrongPassword = `${configuredPassword}-no`;
     await expect(caller.admin.verifyPassword({ password: wrongPassword })).rejects.toThrow();
   });
 });

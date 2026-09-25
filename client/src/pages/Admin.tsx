@@ -72,7 +72,7 @@ export default function Admin() {
         <div className="eyebrow mb-4 text-[#0b3d91]">Private index room</div>
         <h1 className="display text-5xl text-[#0b3d91]">Unlock the card desk.</h1>
         <p className="mt-4 text-sm leading-7 text-[#4a5c70]">
-          Enter the eight-digit admin password to add a new business card to the directory.
+          Enter the admin password to add a new business card to the directory.
         </p>
         <form
           className="mt-8 flex gap-3"
@@ -83,14 +83,13 @@ export default function Admin() {
         >
           <input
             aria-label="Admin password"
-            inputMode="numeric"
-            pattern="[0-9]{8}"
-            maxLength={8}
             type="password"
+            minLength={8}
+            maxLength={128}
             value={password}
-            onChange={(event) => setPassword(event.target.value.replace(/\D/g, ''))}
-            className="min-w-0 flex-1 border-b border-[#9aabc0] bg-transparent px-1 py-3 tracking-[.35em] outline-none"
-            placeholder="8 digits"
+            onChange={(event) => setPassword(event.target.value)}
+            className="min-w-0 flex-1 border-b border-[#9aabc0] bg-transparent px-1 py-3 outline-none"
+            placeholder="Password"
           />
           <Button type="submit">Unlock</Button>
         </form>

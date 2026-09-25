@@ -49,7 +49,7 @@ export const appRouter = router({
   }),
   cards: router({ list: publicProcedure.query(() => listBusinessCards()) }),
   admin: router({
-    verifyPassword: publicProcedure.input(z.object({ password: z.string().regex(/^\d{8}$/) })).mutation(async ({ input, ctx }) => {
+    verifyPassword: publicProcedure.input(z.object({ password: z.string().min(8).max(128) })).mutation(async ({ input, ctx }) => {
       if (!ENV.adminPassword || input.password !== ENV.adminPassword) throw new TRPCError({ code: "UNAUTHORIZED", message: "Invalid admin password" });
       const token = await makeAdminToken();
       const secureFlag = ENV.isProduction ? "; Secure" : "";

@@ -178,8 +178,7 @@ export default function Admin() {
         </div>
       </form>
       <p className="mt-6 max-w-2xl text-xs leading-6 text-[#7a8b9c]">
-        Uploaded images are stored through the project’s managed file storage and referenced by the card record,
-        while the original 283-card catalog remains bundled in the repository.
+        The card image is saved with the listing. The original catalog stays bundled in the site.
       </p>
     </main>
   );

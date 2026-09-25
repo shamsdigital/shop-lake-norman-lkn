@@ -273,7 +273,7 @@ export default function Home() {
           <div>
             <SectionLabel>Rules</SectionLabel>
             <h2 className="home-display mt-3 text-4xl leading-[1.05] sm:text-5xl">
-              We lead networking groups in being in the no.
+              We lead networking groups in being in the know.
             </h2>
           </div>
           <ul className="divide-y divide-[#cdd7e4] border-y border-[#cdd7e4]">

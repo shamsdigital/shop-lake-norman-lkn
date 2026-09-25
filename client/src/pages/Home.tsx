@@ -183,11 +183,6 @@ export default function Home() {
               <ChevronRight size={16} /> ISO LKN FB page is now help wanted lkn
             </a>
           </li>
-          <li>
-            <a href="https://www.lknsbn.com/contribute-to-community-outreach/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-semibold text-[#0b3d91] hover:underline">
-              <ChevronRight size={16} /> LKNSBN’s Community Chest
-            </a>
-          </li>
         </ul>
       </section>
 

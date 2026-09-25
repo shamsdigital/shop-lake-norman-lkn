@@ -15,7 +15,7 @@ const images = {
   hero: sectionImage,
   hashtags: '/home/hashtags.png',
   events: sectionImage,
-  important: '/home/important.png',
+  important: '/home/important.webp',
 };
 
 const rules = [

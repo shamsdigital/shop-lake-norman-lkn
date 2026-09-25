@@ -14,7 +14,7 @@ const sectionImage = '/home/hero-meeting.png';
 const images = {
   hero: sectionImage,
   hashtags: '/home/hashtags.png',
-  events: sectionImage,
+  events: '/home/events.png',
   important: '/home/important.webp',
 };
 
@@ -220,7 +220,7 @@ export default function Home() {
             </div>
           </div>
           <figure className="overflow-hidden rounded-lg border border-[#cdd7e4] bg-white">
-            <img src={images.events} alt="Members gathered at an LKNSBN event" className="aspect-[4/3] w-full object-cover" />
+            <img src={images.events} alt="Final Wednesday open networking, LKNSBN" className="aspect-square w-full object-contain" />
           </figure>
         </div>
       </section>

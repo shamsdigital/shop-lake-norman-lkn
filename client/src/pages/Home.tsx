@@ -237,7 +237,7 @@ export default function Home() {
           </div>
         </div>
         <figure className="overflow-hidden rounded-lg border border-[#cdd7e4] bg-[#f4f8fb]">
-          <img src={images.important} alt="A local gathering around the Lake Norman community" className="aspect-[4/3] w-full object-cover" />
+          <img src={images.important} alt="LKNSBN, 12 years of community" className="aspect-[4/3] w-full object-cover" />
         </figure>
       </section>
 

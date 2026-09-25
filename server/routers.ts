@@ -65,10 +65,16 @@ export const appRouter = router({
         const match = input.imageDataUrl.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/);
         if (!match) throw new TRPCError({ code: "BAD_REQUEST", message: "Image upload must be a base64 image data URL" });
         const [, contentType, base64] = match;
-        const extension = contentType.split('/')[1].replace('jpeg', 'jpg');
-        const stored = await storagePut(`business-cards/${Date.now()}-${input.businessName.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 48)}.${extension}`, Buffer.from(base64, 'base64'), contentType);
-        imageUrl = stored.url;
-        imageKey = stored.key;
+        const bytes = Buffer.from(base64, "base64");
+        if (bytes.length > 4 * 1024 * 1024) throw new TRPCError({ code: "BAD_REQUEST", message: "Image must be 4 MB or smaller" });
+        if (ENV.forgeApiUrl && ENV.forgeApiKey) {
+          const extension = contentType.split("/")[1].replace("jpeg", "jpg");
+          const stored = await storagePut(`business-cards/${Date.now()}-${input.businessName.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 48)}.${extension}`, bytes, contentType);
+          imageUrl = stored.url;
+          imageKey = stored.key;
+        } else {
+          imageUrl = input.imageDataUrl;
+        }
       }
       if (!imageUrl) throw new TRPCError({ code: "BAD_REQUEST", message: "Add an image upload or image URL" });
       return createBusinessCard({ category: input.category, businessName: input.businessName, businessUrl: input.businessUrl || null, imageUrl, imageKey: imageKey ?? null });

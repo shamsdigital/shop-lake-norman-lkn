@@ -13,6 +13,7 @@
 #   1. Render Dashboard → New → Web Service
 #   2. Same repo, branch main
 #   3. Set ADMIN_PASSWORD (at least 8 characters)
+#   4. Set DATABASE_URL to the Neon pooled URL and DATABASE_URL_UNPOOLED to the direct URL
 
 services:
   - type: web
@@ -35,6 +36,10 @@ services:
       - key: ADMIN_PASSWORD
         sync: false
       - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_URL_UNPOOLED
+        sync: false
+      - key: CORS_ORIGINS
         sync: false
       - key: BUILT_IN_FORGE_API_URL
         sync: false

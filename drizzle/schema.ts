@@ -1,26 +1,31 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { pgEnum, pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core";
 
-export const users = mysqlTable("users", {
-  id: int("id").autoincrement().primaryKey(),
+export const userRole = pgEnum("user_role", ["user", "admin"]);
+
+const timestamps = {
+  createdAt: timestamp("createdAt", { mode: "date", withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt", { mode: "date", withTimezone: true }).defaultNow().notNull().$onUpdate(() => new Date()),
+};
+
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
   openId: varchar("openId", { length: 64 }).notNull().unique(),
   name: text("name"),
   email: varchar("email", { length: 320 }),
   loginMethod: varchar("loginMethod", { length: 64 }),
-  role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
-  createdAt: timestamp("createdAt").defaultNow().notNull(),
-  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
-  lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
+  role: userRole("role").default("user").notNull(),
+  ...timestamps,
+  lastSignedIn: timestamp("lastSignedIn", { mode: "date", withTimezone: true }).defaultNow().notNull(),
 });
 
-export const businessCards = mysqlTable("business_cards", {
-  id: int("id").autoincrement().primaryKey(),
+export const businessCards = pgTable("business_cards", {
+  id: serial("id").primaryKey(),
   category: varchar("category", { length: 255 }).notNull(),
   businessName: varchar("businessName", { length: 255 }).notNull(),
   businessUrl: text("businessUrl"),
   imageUrl: text("imageUrl").notNull(),
   imageKey: text("imageKey"),
-  createdAt: timestamp("createdAt").defaultNow().notNull(),
-  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  ...timestamps,
 });
 
 export type User = typeof users.$inferSelect;

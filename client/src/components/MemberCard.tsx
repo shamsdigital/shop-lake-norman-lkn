@@ -1,54 +1,66 @@
 import { useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { Business } from '@/lib/businesses';
 
 export function MemberCard({ business, index }: { business: Business; index: number }) {
   const [imageFailed, setImageFailed] = useState(false);
   const fallbackLetter = business.business_name.trim().charAt(0).toUpperCase();
+
   const inner = (
-    <article className="group overflow-hidden border border-[#cdd7e4] bg-[#ffffff] transition duration-200 hover:-translate-y-1 hover:border-[#0b3d91] hover:shadow-[0_16px_30px_rgba(11,61,145,.12)]">
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#e0e7f0] p-3">
-        <div className="relative flex h-full w-full items-center justify-center overflow-hidden border border-[#cdd7e4] bg-[#ffffff]">
+    <article
+      className="group flex h-full flex-col overflow-hidden rounded-lg border border-[#dce4ee] bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#0b3d91]/35 hover:shadow-lg"
+    >
+      <div className="relative aspect-[1.75/1] overflow-hidden bg-[#f4f7fb] p-2 sm:p-2.5">
+        <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-white">
           {!imageFailed ? (
             <img
               src={business.visiting_card_image_url}
               onError={() => setImageFailed(true)}
               alt={`${business.business_name} business card`}
-              loading={index < 8 ? 'eager' : 'lazy'}
-              className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.035]"
+              width={350}
+              height={200}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.02]"
             />
           ) : (
-            <div className="flex h-full w-full flex-col justify-between bg-[#0b3d91] p-5 text-[#ffffff]">
+            <div className="flex h-full w-full flex-col justify-between bg-[#0b3d91] p-5 text-white">
               <div className="flex items-start justify-between">
                 <span className="eyebrow text-[#a8c0e0]">LKN / {business.category}</span>
-                <span className="display text-6xl leading-none text-white">{fallbackLetter}</span>
+                <span className="display text-5xl leading-none">{fallbackLetter}</span>
               </div>
               <div>
                 <div className="eyebrow mb-2 text-[#a8c0e0]">Card image unavailable</div>
-                <div className="display text-2xl leading-tight">{business.business_name}</div>
+                <div className="display text-xl leading-tight">{business.business_name}</div>
               </div>
             </div>
           )}
         </div>
-        <span className="absolute left-5 top-5 bg-[#ffffff]/90 px-2 py-1 eyebrow text-[9px] text-[#0b3d91]">
+        <span
+          className="absolute left-3 top-3 rounded-full bg-white/95 px-2 py-0.5 text-[10px] font-semibold tracking-[.12em] text-[#0b3d91] shadow-sm backdrop-blur-sm"
+          aria-hidden
+        >
           {String(index + 1).padStart(2, '0')}
         </span>
       </div>
-      <div className="border-t border-[#dce4ee] p-4">
-        <div className="eyebrow mb-2 text-[9px] text-[#0b3d91]">{business.category}</div>
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="display text-[21px] font-semibold leading-tight text-[#0b3d91]">{business.business_name}</h3>
-          {business.business_url && <ExternalLink size={15} className="mt-1 shrink-0 text-[#0b3d91]" />}
-        </div>
-        <div className="mt-3 text-xs text-[#7a8b9c]">View member details</div>
+      <div className="flex flex-1 flex-col border-t border-[#eef2f7] p-4">
+        <span className="inline-flex w-fit rounded-full bg-[#e8eef5] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[.1em] text-[#0b3d91]">
+          {business.category}
+        </span>
+        <h3 className="display mt-3 text-lg font-semibold leading-snug text-[#0b3d91]">{business.business_name}</h3>
+        <p className="mt-3 flex items-center gap-1.5 text-xs font-semibold text-[#4a5c70] transition-colors group-hover:text-[#0b3d91]">
+          View member details
+          <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+        </p>
       </div>
     </article>
   );
+
   return business.business_url ? (
-    <a href={business.business_url} target="_blank" rel="noreferrer" aria-label={`Visit ${business.business_name}`}>
+    <a href={business.business_url} target="_blank" rel="noreferrer" aria-label={`Visit ${business.business_name}`} className="block h-full">
       {inner}
     </a>
   ) : (
-    <div>{inner}</div>
+    <div className="h-full">{inner}</div>
   );
 }

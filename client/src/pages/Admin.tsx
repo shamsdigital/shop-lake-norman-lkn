@@ -17,7 +17,7 @@ function isApiUnavailable(error: unknown) {
 
 function StaticHostingNotice() {
   return (
-    <main className="mx-auto max-w-xl px-5 py-24">
+    <main className="page-top mx-auto max-w-xl px-5 pb-16">
       <div className="eyebrow mb-4 text-[#0b3d91]">Admin / Server required</div>
       <h1 className="display text-4xl text-[#0b3d91] sm:text-5xl">Admin needs a backend.</h1>
       <p className="mt-4 text-sm leading-7 text-[#4a5c70]">
@@ -56,7 +56,7 @@ export default function Admin() {
 
   if (session.isLoading) {
     return (
-      <main className="mx-auto max-w-4xl px-5 py-24">
+      <main className="page-top mx-auto max-w-4xl px-5 pb-16">
         <div className="eyebrow text-[#0b3d91]">Admin / Loading</div>
       </main>
     );
@@ -68,7 +68,7 @@ export default function Admin() {
 
   if (!session.data?.ok) {
     return (
-      <main className="mx-auto max-w-xl px-5 py-24">
+      <main className="page-top mx-auto max-w-xl px-5 pb-16">
         <div className="eyebrow mb-4 text-[#0b3d91]">Private index room</div>
         <h1 className="display text-5xl text-[#0b3d91]">Unlock the card desk.</h1>
         <p className="mt-4 text-sm leading-7 text-[#4a5c70]">
@@ -116,7 +116,7 @@ export default function Admin() {
   };
 
   return (
-    <main className="mx-auto max-w-5xl px-5 py-16 lg:px-10">
+    <main className="page-top mx-auto max-w-5xl px-5 pb-16 lg:px-10">
       <div className="eyebrow mb-4 text-[#0b3d91]">Private index room / Add a card</div>
       <div className="flex flex-wrap items-end justify-between gap-5">
         <h1 className="display text-5xl text-[#0b3d91]">Add a new listing.</h1>

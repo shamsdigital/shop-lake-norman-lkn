@@ -1,7 +1,7 @@
 /* Homepage adapted from the LKNSBN landing design. The site header stays as-is. */
 import { useMemo, type ReactNode } from 'react';
 import { Link } from 'wouter';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, ChevronRight, Mail } from 'lucide-react';
 import { MemberCard } from '@/components/MemberCard';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { buttonVariants } from '@/components/ui/button';
@@ -18,14 +18,14 @@ const images = {
   important: '/home/important.webp',
 };
 
-const rules = [
-  'No application to join',
-  'No fees',
-  'No industry limits',
-  'No membership categories',
-  'No requirements beyond living in the region',
-  'No mandatory attendance',
-  'No referral requirements',
+const ruleFeatures = [
+  { title: 'No Fees', description: 'No fees to join or participate' },
+  { title: 'No Application', description: 'No application to join' },
+  { title: 'No Mandatory Attendance', description: 'Show up when it works for you' },
+  { title: 'No Industry Limits', description: 'Every trade and profession is welcome' },
+  { title: 'No Membership Categories', description: 'No tiers or membership levels' },
+  { title: 'No Regional Restrictions Beyond Living in LKN', description: 'Live in the Lake Norman region' },
+  { title: 'No Referral Quotas', description: 'No referral requirements' },
 ];
 
 const faqs = [
@@ -116,16 +116,16 @@ export default function Home() {
   }, [storedCards]);
 
   return (
-    <main className="bg-white text-[#0f212b]">
-      <section className="mx-auto grid max-w-[1380px] items-center gap-10 px-5 py-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-16 lg:px-10 lg:py-20">
+    <main className="page-top bg-white text-[#0f212b]">
+      <section className="mx-auto grid max-w-[1380px] grid-cols-1 items-center gap-8 px-5 pb-10 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:pb-14">
         <div>
           <p className="text-sm font-semibold tracking-[.08em] text-[#0b3d91]">(LKNSBN) 2026</p>
-          <h1 className="home-display mt-4 text-5xl leading-[1.02] text-[#0f212b] sm:text-6xl lg:text-7xl">
+          <h1 className="home-display mt-3 text-4xl leading-[1.08] text-[#0f212b] sm:text-5xl lg:text-[3.5rem]">
             Lake Norman Small
             <br />
             Business Network
           </h1>
-          <ul className="mt-8 space-y-4 text-base leading-7 text-[#3d4c5c] sm:text-lg">
+          <ul className="mt-5 space-y-2 text-base leading-6 text-[#3d4c5c] sm:text-[1.05rem] sm:leading-7">
             <li className="flex gap-3">
               <ChevronRight className="mt-1 shrink-0 text-[#0b3d91]" size={18} />
               <span>Our main meetings are at the H2 Public House in Cornelius every Wednesday (Weekly Wednesdays at 9 a.m.)</span>
@@ -139,51 +139,99 @@ export default function Home() {
               <span>No mobile information is shared with third parties or affiliates for marketing or promotional purposes.</span>
             </li>
           </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="https://www.facebook.com/groups/LakeNormanSmallBusiness/" target="_blank" rel="noreferrer" data-slot="button" className={cn(buttonVariants({ size: 'lg' }))}>
+          <div className="mt-5 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+            <a href="https://www.facebook.com/groups/LakeNormanSmallBusiness/" target="_blank" rel="noreferrer" data-slot="button" className={cn(buttonVariants({ size: 'lg' }), 'w-full sm:w-auto')}>
               Facebook
             </a>
-            <a href="https://www.facebook.com/groups/shoplakenorman/" target="_blank" rel="noreferrer" data-slot="button" className={cn(buttonVariants({ size: 'lg', variant: 'outline' }))}>
+            <a href="https://www.facebook.com/groups/shoplakenorman/" target="_blank" rel="noreferrer" data-slot="button" className={cn(buttonVariants({ size: 'lg', variant: 'outline' }), 'w-full sm:w-auto')}>
               Facebook Shop Local
             </a>
           </div>
         </div>
-        <figure className="overflow-hidden rounded-lg border border-[#cdd7e4] bg-[#f4f8fb]">
-          <img src={images.hero} alt="Lake Norman Small Business Network members meeting together" className="aspect-[5/4] w-full object-cover" />
+        <figure className="overflow-hidden rounded-xl border border-[#cdd7e4] bg-[#f4f8fb]">
+          <img
+            src={images.hero}
+            alt="Lake Norman Small Business Network members meeting together"
+            width={1200}
+            height={960}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="aspect-[5/4] w-full max-h-[280px] object-cover sm:max-h-[380px] lg:max-h-none"
+          />
         </figure>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#0f212b] text-white">
-        <img src={images.hashtags} alt="" className="absolute inset-0 h-full w-full object-cover opacity-50" />
-        <div className="absolute inset-0 bg-[#0f212b]/55" />
-        <div className="relative mx-auto max-w-[1380px] px-5 py-16 lg:px-10 lg:py-24">
-          <p className="home-display text-3xl leading-tight sm:text-5xl">#IntheMix26 #BeofServicetoOthers</p>
+      <section className="relative bg-[#0f212b] text-white">
+        <img
+          src={images.hashtags}
+          alt=""
+          width={1600}
+          height={900}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover opacity-50"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-[#0f212b]/60" aria-hidden />
+        <div className="relative mx-auto flex max-w-[1380px] flex-col justify-center px-5 py-12 md:py-16 lg:px-10">
+          <p className="home-display text-3xl leading-snug sm:text-5xl">#IntheMix26 #BeofServicetoOthers</p>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/90 sm:text-xl">
             #Denver #Cornelius #Davidson #Mooresville #Huntersville #Concord #Troutman #NorthMeck
           </p>
-          <p className="mt-6 max-w-3xl text-base leading-7 text-white/85 sm:text-lg">
+          <p className="mt-8 max-w-3xl text-base leading-relaxed text-white/90 sm:text-lg sm:leading-8">
             Our organization has no dues, no substitutions needed, and no formal rules. The LKNSBN is free.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1380px] px-5 py-14 lg:px-10 lg:py-20">
-        <SectionLabel>Contributions and sponsorships</SectionLabel>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-[#3d4c5c]">
-          Contact <a href="mailto:lknsbn@yahoo.com" className="font-semibold text-[#0b3d91] underline decoration-[#7ec1f3] underline-offset-4">lknsbn@yahoo.com</a> for info. Note our service Facebook pages:
-        </p>
-        <ul className="mt-6 space-y-3 text-base leading-7">
-          <li>
-            <a href="https://www.facebook.com/groups/812647097021022" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-semibold text-[#0b3d91] hover:underline">
-              <ChevronRight size={16} /> LKNSBN Skilled Trades Education Partnership
+      <section className="mx-auto max-w-[1380px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+          <article className="flex flex-col rounded-lg border border-[#cdd7e4] bg-white p-6 shadow-sm sm:p-8">
+            <p className="eyebrow text-[#0b3d91]">Partnerships</p>
+            <h2 className="home-display mt-3 text-3xl leading-tight text-[#0f212b] sm:text-4xl">Contributions &amp; Sponsorships</h2>
+            <p className="mt-4 flex-1 text-base leading-7 text-[#3d4c5c]">
+              Support the Lake Norman Small Business Network through sponsorships, community outreach, and partnerships
+              that help local professionals connect, learn, and grow together around the lake.
+            </p>
+            <a
+              href="mailto:lknsbn@yahoo.com?subject=LKNSBN%20Contributions%20%26%20Sponsorships"
+              data-slot="button"
+              className={cn(buttonVariants({ size: 'lg' }), 'mt-8 w-full sm:w-auto')}
+            >
+              <Mail size={18} />
+              lknsbn@yahoo.com
             </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/groups/helpwantedlkn" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-semibold text-[#0b3d91] hover:underline">
-              <ChevronRight size={16} /> ISO LKN FB page is now help wanted lkn
-            </a>
-          </li>
-        </ul>
+          </article>
+
+          <article className="flex flex-col rounded-lg border border-[#cdd7e4] bg-[#f4f8fb] p-6 sm:p-8">
+            <p className="eyebrow text-[#0b3d91]">Community initiatives</p>
+            <h2 className="home-display mt-3 text-3xl leading-tight text-[#0f212b] sm:text-4xl">Our Service Facebook Pages</h2>
+            <p className="mt-4 text-base leading-7 text-[#3d4c5c]">
+              Follow these focused groups for trades education, hiring, and service-oriented conversations across Lake Norman.
+            </p>
+            <div className="mt-6 space-y-3">
+              <a
+                href="https://www.facebook.com/groups/812647097021022"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-3 rounded-lg border border-[#cdd7e4] bg-white px-4 py-4 transition hover:border-[#0b3d91] hover:shadow-sm"
+              >
+                <span className="text-sm font-semibold leading-snug text-[#0b3d91]">LKNSBN Skilled Trades Education Partnership</span>
+                <ArrowUpRight size={18} className="shrink-0 text-[#0b3d91] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href="https://www.facebook.com/groups/helpwantedlkn"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-3 rounded-lg border border-[#cdd7e4] bg-white px-4 py-4 transition hover:border-[#0b3d91] hover:shadow-sm"
+              >
+                <span className="text-sm font-semibold leading-snug text-[#0b3d91]">Help Wanted LKN</span>
+                <ArrowUpRight size={18} className="shrink-0 text-[#0b3d91] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section className="bg-[#f4f8fb]">
@@ -220,7 +268,15 @@ export default function Home() {
             </div>
           </div>
           <figure className="overflow-hidden rounded-lg border border-[#cdd7e4] bg-white">
-            <img src={images.events} alt="Final Wednesday open networking, LKNSBN" className="aspect-square w-full object-contain" />
+            <img
+              src={images.events}
+              alt="Final Wednesday open networking, LKNSBN"
+              width={800}
+              height={800}
+              loading="lazy"
+              decoding="async"
+              className="aspect-square w-full object-contain"
+            />
           </figure>
         </div>
       </section>
@@ -237,7 +293,15 @@ export default function Home() {
           </div>
         </div>
         <figure className="overflow-hidden rounded-lg border border-[#cdd7e4] bg-[#f4f8fb]">
-          <img src={images.important} alt="LKNSBN, 12 years of community" className="aspect-[4/3] w-full object-cover" />
+          <img
+            src={images.important}
+            alt="LKNSBN, 12 years of community"
+            width={1200}
+            height={900}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[4/3] w-full object-cover"
+          />
         </figure>
       </section>
 
@@ -269,21 +333,36 @@ export default function Home() {
       </section>
 
       <section className="bg-[#f4f8fb]">
-        <div className="mx-auto grid max-w-[1380px] gap-10 px-5 py-14 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-20">
+        <div className="mx-auto grid max-w-[1380px] gap-10 px-5 py-12 lg:grid-cols-2 lg:items-start lg:gap-12 lg:px-10 lg:py-16">
           <div>
             <SectionLabel>Rules</SectionLabel>
             <h2 className="home-display mt-3 text-4xl leading-[1.05] sm:text-5xl">
               We lead networking groups in being in the know.
             </h2>
+            <p className="mt-5 max-w-lg text-base leading-7 text-[#3d4c5c]">
+              LKNSBN is built for neighbors who want connection without pressure — show up when you can, share when it
+              helps, and keep the focus on relationships over rigid membership rules.
+            </p>
+            <span className="mt-6 inline-flex rounded-full border border-[#cdd7e4] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[.12em] text-[#0b3d91]">
+              100% Free • Zero Quotas
+            </span>
           </div>
-          <ul className="divide-y divide-[#cdd7e4] border-y border-[#cdd7e4]">
-            {rules.map((rule) => (
-              <li key={rule} className="flex items-center gap-3 py-4 text-lg text-[#0f212b]">
-                <ChevronRight className="shrink-0 text-[#0b3d91]" size={18} />
-                {rule}
-              </li>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {ruleFeatures.map((rule) => (
+              <div
+                key={rule.title}
+                className="flex gap-3 rounded-lg border border-[#dce4ee] bg-white p-4 shadow-sm transition hover:border-[#0b3d91]/30"
+              >
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e8eef5] text-[#0b3d91]">
+                  <Check size={14} strokeWidth={2.5} />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-[#0f212b]">{rule.title}</p>
+                  <p className="mt-1 text-xs leading-5 text-[#4a5c70]">{rule.description}</p>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
@@ -307,28 +386,39 @@ export default function Home() {
               Text <a href="tel:7048006152" className="font-semibold text-[#0b3d91]">704 800 6152</a>
             </p>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-4">
             <div className="rounded-lg border border-[#cdd7e4] bg-[#f4f8fb] p-6">
               <p className="text-sm font-semibold uppercase tracking-[.14em] text-[#0b3d91]">No spam here</p>
               <p className="mt-3 text-base leading-7 text-[#3d4c5c]">
                 Please refrain from marketing, advertising, and selling on this page. Use our marketing and shopping pages.
               </p>
             </div>
-            <div>
-              <p className="text-sm text-[#5b5b5b]">https://www.lknsbn.com/</p>
-              <a href="https://www.lknsbn.com/" target="_blank" rel="noreferrer" data-slot="button" className={cn(buttonVariants({ size: 'lg' }), 'mt-3')}>
-                Go
-              </a>
-            </div>
-            <div>
-              <p className="text-lg font-semibold text-[#0f212b]">Marketing info</p>
-              <p className="mt-3 text-base leading-7 text-[#3d4c5c]">
-                Put your ads, apps, marketing, and self-promos on the following group marketing page. This is the place to advertise what you do.
+            <article className="rounded-lg border border-[#cdd7e4] bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-[#0f212b]">Member Directory &amp; E-Rolodex</h3>
+              <p className="mt-2 text-sm leading-6 text-[#3d4c5c]">
+                Browse business cards from local members and go straight to their websites.
               </p>
-              <a href="https://www.facebook.com/groups/shoplakenormanlkn" target="_blank" rel="noreferrer" className="mt-3 inline-block break-all text-sm font-semibold text-[#0b3d91] underline decoration-[#7ec1f3] underline-offset-4">
-                https://www.facebook.com/groups/shoplakenormanlkn
+              <Link href="/members" data-slot="button" className={cn(buttonVariants({ size: 'lg' }), 'mt-5 w-full sm:w-auto')}>
+                Browse Member Directory
+                <ArrowRight size={16} />
+              </Link>
+            </article>
+            <article className="rounded-lg border border-[#cdd7e4] bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-[#0f212b]">LKN Marketing Group</h3>
+              <p className="mt-2 text-sm leading-6 text-[#3d4c5c]">
+                Share promotions, events, and marketing on the dedicated Facebook group for Shop Lake Norman.
+              </p>
+              <a
+                href="https://www.facebook.com/groups/shoplakenormanlkn"
+                target="_blank"
+                rel="noreferrer"
+                data-slot="button"
+                className={cn(buttonVariants({ size: 'lg', variant: 'outline' }), 'mt-5 w-full sm:w-auto')}
+              >
+                Visit Marketing Group
+                <ArrowUpRight size={16} />
               </a>
-            </div>
+            </article>
           </div>
         </div>
       </section>

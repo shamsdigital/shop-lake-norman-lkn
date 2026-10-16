@@ -67,7 +67,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 a:not([data-slot="button"]) {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -122,6 +121,43 @@ button, input, textarea { font: inherit; }
 .rule { border-top: 1px solid #cdd7e4; }
 .rule-bottom { border-bottom: 1px solid #cdd7e4; }
 .focus-ring:focus-visible { outline: 3px solid rgba(11,61,145,.35); outline-offset: 3px; }
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.page-top {
+  padding-top: 1.5rem;
+}
+@media (min-width: 640px) {
+  .page-top {
+    padding-top: 2rem;
+  }
+}
+
+.page-shell {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .page-content {
+    padding-bottom: 3rem;
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .reveal { animation: reveal .6s cubic-bezier(.23,1,.32,1) both; }

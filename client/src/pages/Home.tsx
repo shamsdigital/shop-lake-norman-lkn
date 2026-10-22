@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { businesses, type Business } from '@/lib/businesses';
+import { apiEnabled } from '@/lib/host';
 import { trpc } from '@/lib/trpc';
 
 const sectionImage = '/home/hero-meeting.png';
@@ -101,7 +102,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
 }
 
 export default function Home() {
-  const storedCards = trpc.cards.list.useQuery().data ?? [];
+  const storedCards = trpc.cards.list.useQuery(undefined, { enabled: apiEnabled, retry: false }).data ?? [];
   const preview = useMemo<Business[]>(() => {
     const all: Business[] = [
       ...businesses,

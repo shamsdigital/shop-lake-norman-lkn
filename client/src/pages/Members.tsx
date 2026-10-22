@@ -6,6 +6,7 @@ import { MemberCard } from '@/components/MemberCard';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { businesses, categories, type Business } from '@/lib/businesses';
+import { apiEnabled } from '@/lib/host';
 import { trpc } from '@/lib/trpc';
 
 function formatCategoryLabel(label: string) {
@@ -31,7 +32,7 @@ function selectLetter(setLetter: (value: string) => void, setVisibleCount: (valu
 }
 
 export default function Members() {
-  const storedCards = trpc.cards.list.useQuery().data ?? [];
+  const storedCards = trpc.cards.list.useQuery(undefined, { enabled: apiEnabled, retry: false }).data ?? [];
   const allBusinesses = useMemo<Business[]>(() => [...businesses, ...storedCards.map((card) => ({ business_name: card.businessName, business_url: card.businessUrl ?? '', visiting_card_image_url: card.imageUrl, category: card.category }))], [storedCards]);
   const allCategories = useMemo(() => Array.from(new Set([...categories, ...storedCards.map(card => card.category)])).sort(), [storedCards]);
   const [category, setCategory] = useState('All categories');

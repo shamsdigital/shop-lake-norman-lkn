@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { TRPCClientError } from '@trpc/client';
 import { Button } from '@/components/ui/button';
+import { apiEnabled } from '@/lib/host';
 import { trpc } from '@/lib/trpc';
 
 function isApiUnavailable(error: unknown) {
@@ -21,15 +22,16 @@ function StaticHostingNotice() {
       <div className="eyebrow mb-4 text-[#0b3d91]">Admin / Server required</div>
       <h1 className="display text-4xl text-[#0b3d91] sm:text-5xl">Admin needs a backend.</h1>
       <p className="mt-4 text-sm leading-7 text-[#4a5c70]">
-        This site is hosted on Render Static, which serves HTML and assets only. The admin tools
-        talk to <code className="text-[#0b3d91]">/api/trpc</code> on a Node server — on static
-        hosting that URL returns the home page instead of JSON, so login cannot work here.
+        Cloudflare Pages serves the public site as static files. Admin tools talk to{' '}
+        <code className="text-[#0b3d91]">/api/trpc</code> on a Node server, which this host does not run,
+        so login cannot work here.
       </p>
       <p className="mt-4 text-sm leading-7 text-[#4a5c70]">
-        To use <strong>/admin</strong>, deploy a Render <strong>Web Service</strong> (not Static Site)
-        with <code className="text-[#0b3d91]">pnpm install && pnpm build</code> and{' '}
-        <code className="text-[#0b3d91]">pnpm start</code>, plus{' '}
-        <code className="text-[#0b3d91]">ADMIN_PASSWORD</code> in environment variables.
+        To use <strong>/admin</strong>, run the Node server with{' '}
+        <code className="text-[#0b3d91]">pnpm build</code> and <code className="text-[#0b3d91]">pnpm start</code>,
+        set <code className="text-[#0b3d91]">ADMIN_PASSWORD</code>, then set{' '}
+        <code className="text-[#0b3d91]">VITE_ADMIN_URL</code> on the Pages build to that server&apos;s{' '}
+        <code className="text-[#0b3d91]">/admin</code> address.
       </p>
       <a href="/" className="mt-8 inline-flex text-xs font-semibold uppercase tracking-[.13em] text-[#0b3d91] underline underline-offset-4">
         Back to the member directory
@@ -39,7 +41,7 @@ function StaticHostingNotice() {
 }
 
 export default function Admin() {
-  const session = trpc.admin.session.useQuery(undefined, { retry: false, refetchOnWindowFocus: false });
+  const session = trpc.admin.session.useQuery(undefined, { enabled: apiEnabled, retry: false, refetchOnWindowFocus: false });
   const utils = trpc.useUtils();
   const verify = trpc.admin.verifyPassword.useMutation({ onSuccess: () => session.refetch() });
   const create = trpc.admin.createCard.useMutation({
@@ -53,6 +55,8 @@ export default function Admin() {
   const [password, setPassword] = useState('');
   const [saved, setSaved] = useState(false);
   const [form, setForm] = useState({ category: '', businessName: '', businessUrl: '', imageDataUrl: '' });
+
+  if (!apiEnabled) return <StaticHostingNotice />;
 
   if (session.isLoading) {
     return (

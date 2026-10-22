@@ -45,12 +45,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          preCommands: |
-            if wrangler pages project list --json | grep -q 'shop-lake-norman-lkn'; then
-              echo "Pages project already exists"
-            else
-              wrangler pages project create shop-lake-norman-lkn --production-branch main
-            fi
+          preCommands: wrangler pages project list --json | grep -q shop-lake-norman-lkn || wrangler pages project create shop-lake-norman-lkn --production-branch main
           command: pages deploy dist/public --project-name=shop-lake-norman-lkn --branch=main
 
       - name: Cloudflare credentials missing

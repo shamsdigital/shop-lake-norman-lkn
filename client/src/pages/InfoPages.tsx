@@ -4,8 +4,9 @@ import { Link } from 'wouter';
 import { PageIntro } from '@/components/SiteLayout';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { chairContact, meetingVenue, meetingVenueLine } from '@/lib/meeting-info';
 
-const contactEmail = 'lknsbn@yahoo.com';
+const contactEmail = chairContact.email;
 
 export function About() { return <main><PageIntro eyebrow="About the network" title="Small business is a local language." dek="The Lake Norman Small Business Network exists to help neighbors find, support, and celebrate the independent businesses that give this area its character." image="/branding-assets/lkn-network-meeting.jpg" imageAlt="Local business owners meeting around Lake Norman"/><section className="mx-auto grid max-w-[1120px] gap-12 border-t border-[#cdd7e4] px-5 py-14 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-20"><div><div className="eyebrow text-[#0b3d91]">What we believe</div><div className="display mt-5 text-4xl leading-tight text-[#0b3d91]">A directory is useful. A community is lasting.</div></div><div className="space-y-6 text-base leading-8 text-[#4a5c70]"><p>The LKNSBN is a free network for small businesses across Cornelius, Davidson, Mooresville, Huntersville, Concord, Troutman, North Mecklenburg, and the communities around Lake Norman.</p><p>We meet, share referrals, show up for one another, and make it easier for local customers to discover the people behind the places they love. No dues. No substitutions. No formal rules—just a commitment to keeping the local economy connected.</p><p>This directory is our digital front door: a simple place to browse the cards, click through to a member’s website, and choose close.</p></div></section><section className="bg-[#e8eef5] paper-noise"><div className="mx-auto grid max-w-[1120px] gap-8 px-5 py-14 sm:grid-cols-3 lg:px-10 lg:py-18"><div><div className="eyebrow text-[#0b3d91]">01 / Discover</div><h3 className="display mt-3 text-3xl text-[#0b3d91]">Find your next favorite.</h3><p className="mt-3 text-sm leading-6 text-[#4a5c70]">Search the e-rolodex by name, category, or the first letter of a business.</p></div><div><div className="eyebrow text-[#0b3d91]">02 / Support</div><h3 className="display mt-3 text-3xl text-[#0b3d91]">Choose close.</h3><p className="mt-3 text-sm leading-6 text-[#4a5c70]">Click through to a member’s own website and take the next step directly with them.</p></div><div><div className="eyebrow text-[#0b3d91]">03 / Connect</div><h3 className="display mt-3 text-3xl text-[#0b3d91]">Show up locally.</h3><p className="mt-3 text-sm leading-6 text-[#4a5c70]">Join the conversation through the network’s gatherings and community links.</p></div></div></section></main>; }
 
@@ -50,7 +51,11 @@ export function Contact() {
                 <div className="eyebrow">When we gather</div>
               </div>
               <p className="mt-3 text-sm leading-7 text-[#4a5c70]">
-                The network meets Wednesdays at 9 a.m. and gathers for member-sponsored events throughout the month.
+                Weekly Wednesdays at 9 a.m. and First Fridays at 5:30 p.m. at {meetingVenueLine}. Phone:{' '}
+                <a href={meetingVenue.phoneHref} className="font-semibold text-[#0b3d91]">
+                  {meetingVenue.phoneDisplay}
+                </a>
+                .
               </p>
             </div>
             <div>

@@ -1,6 +1,7 @@
 /* LKNSBN brand: long-form stories use a narrow reading measure, quiet metadata rail, and archival imagery. */
 import { Link, useRoute } from 'wouter';
 import { ArrowLeft, ArrowUpRight, CalendarDays } from 'lucide-react';
+import { chairContact, meetingVenue, meetingVenueLine } from '@/lib/meeting-info';
 
 const sponsors = ['Tara Attwood — New Penn Financial','Jim Vogel — I.M.U. Social Media','Regis Murphy — Helen Adams Realty, The Positive Real Estate Agent','Shelia Brabham Brumlow — OhanaKey','Brian and Tricia Sisson — The Range','Kimberly Fulford — Regency On Time Advantage (Regency OTA)','Trina Goodman — Social Teigh & Social Media Management','Jim Mooney — Keller Williams','Ravena Sapna Mahtani — Zija International','Anette Powell — Lip Sense by SeneGence International','Douglas Marion — Advanced Wealth Solutions','Chris Villani — Performance Coaching Unleashed','Danielle Ratliff — Serenity Now','Jodie Moyes — US Health Advisors','Katie Muir Stankiewicz — Willow Equine','Lori Yotes DiDonato — Untangled Salon','Matt Swanson — MS Digital Solutions','Rob Bennett — Charlotte Cycleboats','Jeannie DeSena — De Sena Words and Pictures','Todd Kofoed — Bigg Time Carpet & Upholstery','Cori Stuart — Right at Home','Bill Albert — Right at Home','John Burak — Majestik Home & Lawn','Kim Snyder — High Caliber Realtors','Charlie Elmers — PostNet Cornelius','Juan Zambrano — Photography','Kris Kane — Bank of the Ozarks','Lynn Alberts — The Lynn Project','Rob Debreczeni — Total Office Group','Wendy Lloyd — Coaching What Matters','Tim Pfeiffer — My Reputation Ninja','Karen Dortschy — Haute Dauge Portraits','Andy Piatt — Experimac','Maria Kemp — Beyond Decadence','Teri Tetta Lippy — Eleven Lakes Brewing','Dana and Chris Pape — Papemore Real Estate','Gary Nowicki — Zija International','Jen Dabiero — Gymboree','John McHugh — Ocaid Photography','Jose Lopez — Lopez Drywall','Leslie Costello — Avon','Marguerite White — Holly Receptionist','Sara Sleik — Concierge of LKN','Shawn Cooper — Tutor Doctor','Sheri Bowman — Bank of the Ozarks','Sylvia Moneti — Brain Balance','Todd Little — Little Heating and Cooling'];
 
@@ -75,10 +76,15 @@ export function Introducing() {
       date="September 29, 2014"
       image={introStoryImage}
     >
-      <p>The Lake Norman Small Business Network (LKNSBN) meets “Weekly Wednesdays” at 9 a.m. at Brick Row in Cornelius. Brick Row is located at 19725 Oak St. Unit 9, Cornelius NC 28031.</p>
-      <p>Our “First Fridays” of every month are at Bin 110, 19712 W. Catawba Avenue, Cornelius, NC 28031. Our “Final Thursdays” of every month are sponsored by our members.</p>
+      <p>
+        The Lake Norman Small Business Network (LKNSBN) meets at {meetingVenueLine}. Weekly Wednesdays are at 9 a.m. First Fridays are at 5:30 p.m. Phone:{' '}
+        <a href={meetingVenue.phoneHref}>{meetingVenue.phoneDisplay}</a>.
+      </p>
       <h2>Come find your people</h2>
-      <p>D9 Brewing Company, 11138 Treynorth Drive, Cornelius NC 28031, is another place the network gathers. For additional information, contact Jim Vogel at <a href="tel:9805330771">980 533 0771</a> or <a href="mailto:lknsbn@yahoo.com">lknsbn@yahoo.com</a>.</p>
+      <p>
+        For additional information, contact {chairContact.name}, {chairContact.role}, at{' '}
+        <a href={`mailto:${chairContact.email}`}>{chairContact.email}</a>.
+      </p>
       <p>Explore the community through the links below, then browse the member listings to meet the people and businesses keeping Lake Norman moving:</p>
       <ul>
         <li><a href="https://www.facebook.com/groups/LakeNormanSmallBusiness/" target="_blank" rel="noreferrer">Lake Norman Small Business Network on Facebook</a></li>
@@ -86,8 +92,10 @@ export function Introducing() {
         <li><a href="https://www.facebook.com/groups/shopcatawbaavenue/" target="_blank" rel="noreferrer">Shop Catawba Avenue</a></li>
         <li><a href="https://www.facebook.com/LKNSBNCommunityBloodDrive/" target="_blank" rel="noreferrer">LKNSBN Community Blood Drive</a></li>
       </ul>
-      <h2>Your LKNSBN Board of Directors</h2>
-      <p>Douglas Marion, Associate Chair<br/>Jim Vogel, Chair<br/>Regis Murphy, Secretary</p>
+      <h2>LKNSBN leadership</h2>
+      <p>
+        {chairContact.name}, {chairContact.role}
+      </p>
     </ArticleShell>
   );
 }

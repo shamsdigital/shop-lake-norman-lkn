@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { businesses, type Business } from '@/lib/businesses';
 import { apiEnabled } from '@/lib/host';
+import { chairContact, meetingVenue, meetingVenueLine } from '@/lib/meeting-info';
 import { trpc } from '@/lib/trpc';
 
 const sectionImage = '/home/hero-meeting.png';
@@ -44,7 +45,7 @@ const faqs = [
           </a>
         </p>
         <p className="mt-4">
-          All members can have their business cards on our website after they have attended meetings for at least two consecutive Weekly Wednesdays. After those two meetings, give a business card to Jim Vogel or Dennis Heskett and we will make sure your information gets added.
+          All members can have their business cards on our website after they have attended meetings for at least two consecutive Weekly Wednesdays. After those two meetings, give a business card to {chairContact.name} and we will make sure your information gets added.
         </p>
       </>
     ),
@@ -54,7 +55,7 @@ const faqs = [
     question: 'Where does the LKNSBN meet?',
     answer: (
       <p>
-        The LKNSBN has Weekly Wednesday meetings at 9:00 a.m. every Wednesday at H2 Public House, 19906 N. Cove Rd. Suite A, Cornelius. Typically each attendee gets a 30-second intro in front of the group. Tell us who you are, what you do, and where you are located. We do not sell in our meetings. We use the time to learn about and connect with each other.
+        The LKNSBN meets at {meetingVenueLine}. Weekly Wednesdays are at 9:00 a.m. every Wednesday. Typically each attendee gets a 30-second intro in front of the group. Tell us who you are, what you do, and where you are located. We do not sell in our meetings. We use the time to learn about and connect with each other.
       </p>
     ),
   },
@@ -63,7 +64,11 @@ const faqs = [
     question: 'First Friday Socials',
     answer: (
       <p>
-        First Friday Socials are at Bin 110 at 5:30 p.m. The address is 19712 One Norman Boulevard, Suite 110, Cornelius. It is a sponsored event, and we typically use a few minutes to discuss LKNSBN community projects and charitable causes, including our quarterly blood drive. Please mingle and have fun. Light hors d’oeuvres are served.
+        First Friday Socials are at 5:30 p.m. at the same location: {meetingVenueLine}. Phone:{' '}
+        <a href={meetingVenue.phoneHref} className="font-semibold text-[#0b3d91] underline decoration-[#7ec1f3] underline-offset-4">
+          {meetingVenue.phoneDisplay}
+        </a>
+        . Please mingle and have fun.
       </p>
     ),
   },
@@ -129,7 +134,9 @@ export default function Home() {
           <ul className="mt-8 space-y-4 text-base leading-7 text-[#3d4c5c] sm:text-lg">
             <li className="flex gap-3">
               <ChevronRight className="mt-1 shrink-0 text-[#0b3d91]" size={18} />
-              <span>Our main meetings are at the H2 Public House in Cornelius every Wednesday (Weekly Wednesdays at 9 a.m.)</span>
+              <span>
+                We meet at {meetingVenue.name} in Cornelius: Weekly Wednesdays at 9 a.m. and First Fridays at 5:30 p.m.
+              </span>
             </li>
             <li className="flex gap-3">
               <ChevronRight className="mt-1 shrink-0 text-[#0b3d91]" size={18} />
@@ -201,22 +208,16 @@ export default function Home() {
             </p>
             <div className="mt-8 space-y-5 text-base leading-7 text-[#3d4c5c]">
               <p>
-                <span className="font-semibold text-[#0f212b]">Weekly Wednesdays, 9 a.m.</span>
+                <span className="font-semibold text-[#0f212b]">{meetingVenueLine}</span>
                 <br />
-                Lake Norman Small Business Network (LKNSBN)
-                <br />
-                Weekly Wednesdays (masks optional)
-                <br />
-                H2 Public House, 19906 North Cove Road, Suite A, Cornelius
-                <br />
-                <a href="tel:9802315936" className="font-semibold text-[#0b3d91]">980 231 5936</a>
+                <a href={meetingVenue.phoneHref} className="font-semibold text-[#0b3d91]">
+                  {meetingVenue.phoneDisplay}
+                </a>
               </p>
               <p>
-                <span className="font-semibold text-[#0f212b]">First Friday</span>
+                <span className="font-semibold text-[#0f212b]">Weekly Wednesdays, 9 a.m.</span>
                 <br />
-                Now at H2 Public House, 19906 N. Cove, Suite A, Cornelius, NC 28031.
-                <br />
-                <a href="tel:9802315936" className="font-semibold text-[#0b3d91]">980 231 5936</a>
+                <span className="font-semibold text-[#0f212b]">First Fridays, 5:30 p.m.</span>
               </p>
             </div>
           </div>
@@ -301,11 +302,10 @@ export default function Home() {
             </p>
             <p>Maximize our pages by showing up at events. It is that easy. No selling and no ISO on the main group page. Thank you.</p>
             <p>
-              Contact the LKNSBN Chair: Jim Vogel{' '}
-              <a href="mailto:lknsbn@yahoo.com" className="font-semibold text-[#0b3d91] underline decoration-[#7ec1f3] underline-offset-4">lknsbn@yahoo.com</a>{' '}
-              for further information.
-              <br />
-              Text <a href="tel:7048006152" className="font-semibold text-[#0b3d91]">704 800 6152</a>
+              {chairContact.name}, {chairContact.role}:{' '}
+              <a href={`mailto:${chairContact.email}`} className="font-semibold text-[#0b3d91] underline decoration-[#7ec1f3] underline-offset-4">
+                {chairContact.email}
+              </a>
             </p>
           </div>
           <div className="space-y-8">

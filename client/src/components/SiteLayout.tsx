@@ -4,6 +4,7 @@ import { Link, useLocation } from 'wouter';
 import { Menu, X, ArrowUpRight, MapPin } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { chairContact, meetingVenue } from '@/lib/meeting-info';
 
 const nav = [
   { href: '/members', label: 'Members' },
@@ -70,9 +71,15 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
           </div>
           <div>
             <div className="eyebrow mb-4 text-[#a8c0e0]">Contacts</div>
-            <p className="text-sm leading-6 text-[#c5d4e8]">E: Jim Vogel</p>
-            <a href="mailto:lknsbn@yahoo.com" className="mt-1 block text-sm text-[#ffffff] underline decoration-[#6b8fc4] underline-offset-4">lknsbn@yahoo.com</a>
-            <a href="tel:7048006152" className="mt-3 block text-sm text-[#ffffff]">P: +1 704 800 6152</a>
+            <p className="text-sm leading-6 text-[#c5d4e8]">
+              {chairContact.name}, {chairContact.role}
+            </p>
+            <a href={`mailto:${chairContact.email}`} className="mt-1 block text-sm text-[#ffffff] underline decoration-[#6b8fc4] underline-offset-4">
+              {chairContact.email}
+            </a>
+            <a href={meetingVenue.phoneHref} className="mt-3 block text-sm text-[#ffffff]">
+              P: {meetingVenue.phoneDisplay}
+            </a>
             <p className="mt-4 flex gap-2 text-sm leading-6 text-[#c5d4e8]"><MapPin size={15} className="mt-1 shrink-0"/>Cornelius, Davidson, Mooresville, Huntersville & beyond.</p>
             <Link href={contactHref} className="mt-4 inline-flex items-center gap-1 text-sm text-[#ffffff] hover:text-[#a8c0e0]">Contact<ArrowUpRight size={13}/></Link>
           </div>

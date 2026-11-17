@@ -12,4 +12,6 @@ export const chairContact = {
   name: 'Jim Vogel',
   role: 'Chair',
   email: 'lknsbn@yahoo.com',
+  phoneDisplay: '704 800 6252',
+  phoneHref: 'tel:7048006252',
 } as const;

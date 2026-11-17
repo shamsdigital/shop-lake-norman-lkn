@@ -306,6 +306,11 @@ export default function Home() {
               <a href={`mailto:${chairContact.email}`} className="font-semibold text-[#0b3d91] underline decoration-[#7ec1f3] underline-offset-4">
                 {chairContact.email}
               </a>
+              <br />
+              Text{' '}
+              <a href={chairContact.phoneHref} className="font-semibold text-[#0b3d91] underline decoration-[#7ec1f3] underline-offset-4">
+                {chairContact.phoneDisplay}
+              </a>
             </p>
           </div>
           <div className="space-y-8">

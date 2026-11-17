@@ -42,6 +42,12 @@ export function Contact() {
                 {contactEmail}
               </a>
             </p>
+            <p className="mt-3 text-sm text-[#7a8b9c]">
+              LKNSBN line:{' '}
+              <a href={chairContact.phoneHref} className="font-semibold text-[#0b3d91] underline decoration-[#6b8fc4] underline-offset-4">
+                {chairContact.phoneDisplay}
+              </a>
+            </p>
           </div>
 
           <aside className="space-y-8">

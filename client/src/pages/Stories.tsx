@@ -83,7 +83,8 @@ export function Introducing() {
       <h2>Come find your people</h2>
       <p>
         For additional information, contact {chairContact.name}, {chairContact.role}, at{' '}
-        <a href={`mailto:${chairContact.email}`}>{chairContact.email}</a>.
+        <a href={`mailto:${chairContact.email}`}>{chairContact.email}</a> or{' '}
+        <a href={chairContact.phoneHref}>{chairContact.phoneDisplay}</a>.
       </p>
       <p>Explore the community through the links below, then browse the member listings to meet the people and businesses keeping Lake Norman moving:</p>
       <ul>
